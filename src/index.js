@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./global.css";
 
 function App() {
-  return <div className="App">123</div>;
+  return <div className="App">12345</div>;
 }
 
 const root = ReactDOM.createRoot(
