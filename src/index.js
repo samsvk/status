@@ -7,17 +7,15 @@ import { useState } from "react";
 
 function App() {
   const [input, setInput] = useState("");
-
+  const [returnedValue, setReturnedValue] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
-    createNewEmail({
-      parentEmail: input,
-      childEmails: [
-        `${(Math.random() + 1)
-          .toString(36)
-          .substring(7)}@mask.me`,
-      ],
-    });
+    createNewEmail(
+      {
+        parentEmail: input,
+      },
+      setReturnedValue
+    );
     setInput("");
   }
 
@@ -31,6 +29,7 @@ function App() {
         a healthier digital footprint, online-ecosystem and
         protect your inbox.
       </p>
+      {returnedValue}
       <form
         onSubmit={(e) => handleSubmit(e)}
         className=" max-w-[440px] mx-auto w-full bg-gray-200/50 flex focus:outline focus:outline-offset-0 hover:outline hover:outline-offset-0 outline-gray-200 outline-2 hover:cursor-pointer min-h-[35px] rounded-full px-1 py-1 "

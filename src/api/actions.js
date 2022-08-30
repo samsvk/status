@@ -9,10 +9,11 @@ const getTest = async (param) => {
   }
 };
 
-const createNewEmail = async (param) => {
+const createNewEmail = async (param, setReturnedValue) => {
   try {
     const { data } = await api.createNewEmail(param);
-    return data;
+    console.log(data);
+    setReturnedValue(data);
   } catch (error) {
     console.log(error);
   }
