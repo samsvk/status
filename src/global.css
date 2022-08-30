@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black;
+  @apply flex flex-col items-center justify-center w-screen h-screen bg-gray-100;
 }
