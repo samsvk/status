@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="max-w-[1200px] w-full mx-auto px-6 flex items-center justify-center flex-col">
-      <h1 className="text-6xl font-semibold tracking-tight text-black z-[-10] mb-0 text-center">
+      <h1 className="text-6xl font-semibold tracking-tight z-[-10] mb-0 text-center animate-colors">
         Enter Your Email
       </h1>
       <p className="text-[18px] text-center leading-7 font-normal tracking-tight text-neutral-700/60 my-8 max-w-[660px] w-full">
