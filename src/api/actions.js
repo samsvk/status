@@ -12,7 +12,6 @@ const getTest = async (param) => {
 const createNewEmail = async (param, setReturnedValue) => {
   try {
     const { data } = await api.createNewEmail(param);
-    console.log(data);
     setReturnedValue(data);
   } catch (error) {
     console.log(error);
