@@ -17,31 +17,14 @@ export default function Artist() {
   }, []);
 
   if (!randomArtist) return null;
-  // console.log(randomArtist.mainArtistInfo.followers);
+  console.log(randomArtist);
 
   return (
-    <motion.div
-      variants={container}
-      initial={"hidden"}
-      animate={randomArtist && "visible"}
-      className="flex flex-col pl-8 ml-8"
-    >
-      <motion.div
-        variants={child}
-        className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text"
-      >
+    <div className="flex flex-col pl-8 ml-8">
+      <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text">
         {/* start */}
-        <motion.div
-          variants={container}
-          initial={"hidden"}
-          animate={"visible"}
-          className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2"
-        >
-          <motion.div
-            variants={child}
-            custom={{ num: 65 }}
-            className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg"
-          >
+        <div className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2">
+          <div className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg">
             <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
               <div className="h-[144px] w-[154px] overflow-hidden relative">
                 <div className="absolute z-20 w-full h-full bg-black/30" />
@@ -51,10 +34,8 @@ export default function Artist() {
                 />
               </div>
             </div>
-          </motion.div>
-          <motion.div
-            variants={child}
-            custom={{ num: 65 }}
+          </div>
+          <div
             className="block rounded-lg max-w-[154px] min-w-[154px] w-full relative z-50 
           before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg ml-12 mt-1.5"
           >
@@ -68,10 +49,8 @@ export default function Artist() {
                 </div>
               </aside>
             </div>
-          </motion.div>
-          <motion.div
-            variants={child}
-            custom={{ num: -65 }}
+          </div>
+          <div
             className="block rounded-lg max-w-[154px] min-w-[154px]  w-full relative z-50 
           before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-1 before:left-1 before:border-2 before:border-spotify-text before:-z-20 shadow-lg mr-12  mt-2
           "
@@ -92,8 +71,8 @@ export default function Artist() {
                 </div>
               </aside>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         {/* end */}
         <div className="relative flex flex-col w-full h-full p-5 overflow-hidden">
           <div className="flex flex-1">
@@ -107,13 +86,13 @@ export default function Artist() {
             </h2>
             <ul className="relative flex flex-wrap gap-2 z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
               {randomArtist?.mainArtistInfo?.genres
-                .slice(0, 3)
+                .slice(0, 2)
                 .map((genre, index) => (
                   <li key={index}>
                     {randomArtist.mainArtistInfo.genres[
                       randomArtist.mainArtistInfo.genres.slice(
                         0,
-                        3
+                        2
                       ).length - 1
                     ] === genre ? (
                       <>{genre} </>
@@ -131,10 +110,10 @@ export default function Artist() {
           src={`${randomArtist.mainArtistInfo.image}`}
           className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
         />
-      </motion.div>
+      </div>
       {/* <div className="mt-3 overflow-hidden">
         <div className="h-[4px] max-w-[350px] bg-spotify-text/10 animate-x willchange-transform"></div>
       </div> */}
-    </motion.div>
+    </div>
   );
 }

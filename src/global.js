@@ -29,3 +29,28 @@ export const child = {
     },
   },
 };
+
+const listVariants = {
+  hidden: {
+    transition: {
+      staggerChildren: 0.1,
+      staggerDirection: -1,
+    },
+  },
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    x: -16,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
