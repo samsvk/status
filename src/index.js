@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import { useState } from "react";
 import Grid from "./components/grid";
 import { FaSpotify } from "react-icons/fa";
 import Artist from "./components/artist";
