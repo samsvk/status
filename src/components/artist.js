@@ -9,14 +9,16 @@ export default function Artist() {
     fetchRandomArtist(setRandomArtist);
   }, []);
   if (!randomArtist) return null;
-  console.log(randomArtist);
+  // console.log(randomArtist);
   return (
     <div className="flex flex-col pl-8 ml-8">
       <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text ">
         {/* start */}{" "}
         <div
-          className="block rounded-lg max-w-[154px] absolute right-[-5rem] top-[-3.5rem] z-50 border
-       before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-2 before:right-2 before:border-2 before:border-spotify-text before:-z-20
+          className="block rounded-lg max-w-[154px] absolute right-[-5rem] top-[-3.5rem] z-50 
+        before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-2 before:right-2 before:border-2 before:border-spotify-text before:-z-20
+         after:rounded-lg after:absolute after:content-[''] after:h-full after:w-full after:bg-spotify-green after:top-[-0.5rem] after:right-[-0.5rem] after:border-2 after:border-spotify-text after:-z-20
+         shadow-lg
         "
         >
           <div className="block overflow-hidden">
@@ -26,11 +28,11 @@ export default function Artist() {
                 className="absolute top-0 left-0 block object-cover object-center w-full h-full overflow-hidden rounded-t-lg"
               />
             </div>
-            <aside className="flex flex-col px-2 py-2 rounded-b-lg bg-spotify-text">
-              <h5 className="font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
+            <aside className="flex flex-col px-2 py-2 rounded-b-lg bg-spotify-bg">
+              <h5 className="font-medium tracking-[3px] text-[10px] uppercase text-spotify-text">
                 Recent Track
               </h5>
-              <div className="relative z-10 overflow-hidden text-base font-normal leading-none tracking-tight text-spotify-bg whitespace-nowrap text-ellipsis ">
+              <div className="relative z-10 overflow-hidden text-base font-medium leading-none tracking-tight text-spotify-text whitespace-nowrap text-ellipsis ">
                 {randomArtist.name}
               </div>
             </aside>
