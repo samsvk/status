@@ -20,20 +20,18 @@ function App() {
   return (
     <>
       <Grid />
-      <div className="mt-[20vh] max-w-[1150px] w-full mx-auto flex items-center">
+      <div className="mt-[30vh] max-w-[1250px] w-full mx-auto flex items-center">
         <div className="flex flex-col flex-1">
-          <h1 className="text-7xl font-medium tracking-tighter z-[-10] mb-0 text-left text-spotify-text leading-[1.3]">
+          <h1 className="text-7xl font-medium tracking-tighter z-[-10] mb-0 text-left text-spotify-text leading-tight">
             Create your new
             <br /> playlist in{" "}
-            <span className="text-spotify-green">
-              One Click.
-            </span>
+            <span className="text-spotify-green">One Click</span>
           </h1>
-          <p className="w-full my-8 text-2xl font-normal leading-7 tracking-tight text-left text-neutral-700/60">
+          <p className="w-full max-w-lg my-8 text-2xl font-normal leading-relaxed tracking-tight text-spotify-text">
             Share your music taste with friends, and build a
             playlist that suits all.
           </p>
-          <div>
+          {/* <div>
             <p className="text-center mx-auto text-[14px] flex-1 mt-12 leading-5 font-normal text-neutral-700/80 my-10 tracking-tight flex gap-1 items-center">
               <span className="underline">
                 Don't understand how it works?
@@ -45,7 +43,7 @@ function App() {
               </span>
               for unlimited masks.
             </p>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col flex-1">123</div>
       </div>
