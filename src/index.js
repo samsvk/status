@@ -1,24 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
-import { createNewEmail } from "./api/actions";
 import { useState } from "react";
 import Grid from "./components/grid";
 import { FaSpotify } from "react-icons/fa";
 import Artist from "./components/artist";
 
 function App() {
-  // const [returnedValue, setReturnedValue] = useState("");
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   createNewEmail(
-  //     {
-  //       parentEmail: "hi",
-  //     },
-  //     setReturnedValue
-  //   );
-  // }
-
   return (
     <>
       <Grid />
