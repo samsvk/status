@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import { fetchRandomArtist } from "../api/actions";
 import { FaSpotify } from "react-icons/fa";
+import useRender from "../hooks/useRender";
 
 export default function Artist() {
   const [randomArtist, setRandomArtist] = useState();
 
   useEffect(() => {
     fetchRandomArtist(setRandomArtist);
+    const interval = setInterval(() => {
+      fetchRandomArtist(setRandomArtist);
+    }, 8000);
+    return () => clearInterval(interval);
   }, []);
 
   if (!randomArtist) return null;
+
   return (
     <div className="flex flex-col pl-8 ml-8">
       <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text ">
@@ -101,6 +107,9 @@ export default function Artist() {
           className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
         />
       </div>
+      {/* <div className="mt-3 overflow-hidden">
+        <div className="h-[4px] max-w-[350px] bg-spotify-text/10 animate-x willchange-transform"></div>
+      </div> */}
     </div>
   );
 }
