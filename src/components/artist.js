@@ -17,6 +17,7 @@ export default function Artist() {
   }, []);
 
   if (!randomArtist) return null;
+  // console.log(randomArtist.mainArtistInfo.followers);
 
   return (
     <motion.div
@@ -81,7 +82,13 @@ export default function Artist() {
                   Popularity
                 </h5>
                 <div className="relative z-10 mt-0.5 mb-0.5 overflow-hidden text-base font-medium leading-none tracking-tight text-spotify-text whitespace-nowrap text-ellipsis ">
-                  {randomArtist.name}
+                  {randomArtist.mainArtistInfo.followers.toString()
+                    .length > 6
+                    ? "World Famous"
+                    : randomArtist.mainArtistInfo.followers.toString()
+                        .length > 4
+                    ? "Well known"
+                    : "Low-key"}
                 </div>
               </aside>
             </div>
