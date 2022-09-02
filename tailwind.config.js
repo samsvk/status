@@ -8,6 +8,7 @@ module.exports = {
           green: "#52784f",
           bg: "#fdf7f2",
           text: "#040403",
+          offset: "#f4d2eb",
         },
       },
     },
