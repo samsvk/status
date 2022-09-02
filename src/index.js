@@ -5,18 +5,19 @@ import { createNewEmail } from "./api/actions";
 import { useState } from "react";
 import Grid from "./components/grid";
 import { FaSpotify } from "react-icons/fa";
+import Artist from "./components/artist";
 
 function App() {
-  const [returnedValue, setReturnedValue] = useState("");
-  function handleSubmit(e) {
-    e.preventDefault();
-    createNewEmail(
-      {
-        parentEmail: "hi",
-      },
-      setReturnedValue
-    );
-  }
+  // const [returnedValue, setReturnedValue] = useState("");
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   createNewEmail(
+  //     {
+  //       parentEmail: "hi",
+  //     },
+  //     setReturnedValue
+  //   );
+  // }
 
   return (
     <>
@@ -57,7 +58,9 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col flex-1">123</div>
+        <div className="flex flex-col flex-1">
+          <Artist />
+        </div>
       </div>
     </>
   );

@@ -8,3 +8,5 @@ const API = axios.create({
 export const test = () => API.get("/email");
 export const createNewEmail = (emailObj) =>
   API.post("/email/create", emailObj);
+
+export const fetchRandomArtist = () => API.get("/home");

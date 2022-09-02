@@ -18,4 +18,13 @@ const createNewEmail = async (param, setReturnedValue) => {
   }
 };
 
-export { getTest, createNewEmail };
+const fetchRandomArtist = async (setRandomArtit) => {
+  try {
+    const { data } = await api.fetchRandomArtist();
+    setRandomArtist(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { getTest, createNewEmail, fetchRandomArtist };
