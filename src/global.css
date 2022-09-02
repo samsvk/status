@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply relative flex flex-col items-center justify-center w-screen h-screen bg-spotify-bg;
+  @apply relative w-full h-full bg-spotify-bg;
 }
