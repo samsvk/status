@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchRandomArtist } from "../api/actions";
 import { FaSpotify } from "react-icons/fa";
 import useRender from "../hooks/useRender";
+import { motion } from "framer-motion";
+import { container, child } from "../global";
 
 export default function Artist() {
   const [randomArtist, setRandomArtist] = useState();
@@ -17,30 +19,43 @@ export default function Artist() {
   if (!randomArtist) return null;
 
   return (
-    <div className="flex flex-col pl-8 ml-8">
-      <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text ">
-        {/* start */}{" "}
-        <div className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2">
-          <div
-            className="mr-7 block rounded-lg max-w-[154px] relative z-50 
-          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg"
+    <motion.div
+      variants={container}
+      initial={"hidden"}
+      animate={randomArtist && "visible"}
+      className="flex flex-col pl-8 ml-8"
+    >
+      <motion.div
+        variants={child}
+        className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text"
+      >
+        {/* start */}
+        <motion.div
+          variants={container}
+          initial={"hidden"}
+          animate={"visible"}
+          className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2"
+        >
+          <motion.div
+            variants={child}
+            custom={{ num: 65 }}
+            className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg"
           >
             <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
               <div className="h-[144px] w-[154px] overflow-hidden relative">
-                <div className="absolute z-20 w-full h-full bg-black/20" />
+                <div className="absolute z-20 w-full h-full bg-black/30" />
                 <img
                   src={randomArtist.image}
                   className="absolute top-0 left-0 block object-cover object-center w-full h-full overflow-hidden"
                 />
               </div>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={child}
+            custom={{ num: 65 }}
             className="block rounded-lg max-w-[154px] min-w-[154px] w-full relative z-50 
-          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20
-          shadow-lg
-          ml-12 mt-1.5
-          "
+          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg ml-12 mt-1.5"
           >
             <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
               <aside className="flex flex-col px-1.5 py-1.5 rounded-b-lg bg-spotify-bg">
@@ -52,11 +67,12 @@ export default function Artist() {
                 </div>
               </aside>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={child}
+            custom={{ num: -65 }}
             className="block rounded-lg max-w-[154px] min-w-[154px]  w-full relative z-50 
-          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-1 before:left-1 before:border-2 before:border-spotify-text before:-z-20
-          shadow-lg mr-12  mt-2
+          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-1 before:left-1 before:border-2 before:border-spotify-text before:-z-20 shadow-lg mr-12  mt-2
           "
           >
             <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
@@ -69,8 +85,8 @@ export default function Artist() {
                 </div>
               </aside>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* end */}
         <div className="relative flex flex-col w-full h-full p-5 overflow-hidden">
           <div className="flex flex-1">
@@ -102,14 +118,16 @@ export default function Artist() {
             </ul>
           </div>
         </div>
+        {/* clip-path: inset(0 100% 0 0); */}
+
         <img
           src={`${randomArtist.mainArtistInfo.image}`}
           className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
         />
-      </div>
+      </motion.div>
       {/* <div className="mt-3 overflow-hidden">
         <div className="h-[4px] max-w-[350px] bg-spotify-text/10 animate-x willchange-transform"></div>
       </div> */}
-    </div>
+    </motion.div>
   );
 }
