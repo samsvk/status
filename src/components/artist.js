@@ -3,28 +3,53 @@ import { fetchRandomArtist } from "../api/actions";
 import { FaSpotify } from "react-icons/fa";
 import useRender from "../hooks/useRender";
 import { motion, AnimatePresence } from "framer-motion";
-import { container, child } from "../global";
+import { container, child, item, small } from "../global";
 
 export default function Artist() {
   const [randomArtist, setRandomArtist] = useState();
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
+    setLoad(true);
     fetchRandomArtist(setRandomArtist);
     const interval = setInterval(() => {
+      setLoad(true);
       fetchRandomArtist(setRandomArtist);
-    }, 8000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   if (!randomArtist) return null;
 
   return (
-    <div className="flex flex-col pl-8 ml-8">
-      <AnimatePresence>
-        <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text">
-          {/* start */}
+    <div className="flex flex-col pl-8 ml-8" t>
+      <motion.div
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 0.35,
+            ease: [0.34, 0.53, 0.37, 1.02],
+            duration: 0.4,
+          },
+        }}
+        initial={{
+          opacity: 0,
+          y: 150,
+        }}
+        className="
+      relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:bg-black/60 after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text"
+      >
+        <motion.div
+          variants={container}
+          initial={"hidden"}
+          animate={"visible"}
+        >
           <div className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2">
-            <div className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg">
+            <motion.div
+              variants={child}
+              className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg"
+            >
               <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
                 <div className="h-[144px] w-[154px] overflow-hidden relative">
                   <div className="absolute z-20 w-full h-full bg-black/30" />
@@ -34,8 +59,9 @@ export default function Artist() {
                   />
                 </div>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={child}
               className="block rounded-lg max-w-[154px] min-w-[154px] w-full relative z-50 
             before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg ml-12 mt-1.5"
             >
@@ -49,8 +75,9 @@ export default function Artist() {
                   </div>
                 </aside>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={child}
               className="block rounded-lg max-w-[154px] min-w-[154px]  w-full relative z-50 
             before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-1 before:left-1 before:border-2 before:border-spotify-text before:-z-20 shadow-lg mr-12  mt-2
             "
@@ -71,7 +98,7 @@ export default function Artist() {
                   </div>
                 </aside>
               </div>
-            </div>
+            </motion.div>
           </div>
           {/* end */}
           <div className="relative flex flex-col w-full h-full p-5 overflow-hidden">
@@ -108,8 +135,8 @@ export default function Artist() {
             src={`${randomArtist.mainArtistInfo.image}`}
             className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
           />
-        </div>
-      </AnimatePresence>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
