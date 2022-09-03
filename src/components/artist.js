@@ -74,11 +74,10 @@ export default function Artist() {
     setIndex(index - 1);
   }
 
-  console.log(randomArtist[0]);
   if (!randomArtist) return null;
 
   return (
-    <div className="flex flex-col items-start justify-start w-full h-full pl-8 ml-8 overflow-hidden bg-orange-500">
+    <div className="flex flex-col items-start justify-start w-full h-full pl-8 ml-8 overflow-hidden">
       <div className="relative m-auto oveflow-hidden min-h-[440px] w-full h-full">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
@@ -90,22 +89,114 @@ export default function Artist() {
             key={index}
             custom={direction}
           >
-            {randomArtist[index].name}
-            {/* <motion.img
-              variants={variants}
-              src={images[index]}
-              alt="slides"
-              className="slides"
-            /> */}
+            <div
+              className="
+              relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text"
+            >
+              <div className="h-[440px]">
+                <div className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2">
+                  <div className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg">
+                    <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
+                      <div className="h-[144px] w-[154px] overflow-hidden relative">
+                        <div className="absolute z-20 w-full h-full bg-black/30" />
+                        <img
+                          src={randomArtist[index].image}
+                          className="absolute top-0 left-0 block object-cover object-center w-full h-full overflow-hidden"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="block rounded-lg max-w-[154px] min-w-[154px] w-full relative z-50
+          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg ml-12 mt-1.5"
+                  >
+                    <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
+                      <aside className="flex flex-col px-1.5 py-1.5 rounded-b-lg bg-spotify-bg">
+                        <h5 className="font-normal text-[14px] tracking-tight text-spotify-text text-neutral-700/80 underline">
+                          Recent Track
+                        </h5>
+                        <div className="relative z-10 mt-0.5 mb-0.5 overflow-hidden text-base font-medium leading-none tracking-tight text-spotify-text whitespace-nowrap text-ellipsis ">
+                          {randomArtist[index].name}
+                        </div>
+                      </aside>
+                    </div>
+                  </div>
+                  <div
+                    className="block rounded-lg max-w-[154px] min-w-[154px]  w-full relative z-50
+          before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-offset before:top-1 before:left-1 before:border-2 before:border-spotify-text before:-z-20 shadow-lg mr-12  mt-2
+          "
+                  >
+                    <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
+                      <aside className="flex flex-col px-1.5 py-1.5 rounded-b-lg bg-spotify-bg">
+                        <h5 className="font-normal text-[14px] tracking-tight text-spotify-text text-neutral-700/80 underline">
+                          Popularity
+                        </h5>
+                        <div className="relative z-10 mt-0.5 mb-0.5 overflow-hidden text-base font-medium leading-none tracking-tight text-spotify-text whitespace-nowrap text-ellipsis ">
+                          {randomArtist[
+                            index
+                          ].mainArtistInfo.followers.toString()
+                            .length > 6
+                            ? "World Famous"
+                            : randomArtist[
+                                index
+                              ].mainArtistInfo.followers.toString()
+                                .length > 4
+                            ? "Well known"
+                            : "Low-key"}
+                        </div>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative flex flex-col w-full h-full p-5 overflow-hidden">
+                  <div className="flex flex-1">
+                    <span className="relative z-10 block text-xl text-spotify-bg">
+                      <FaSpotify />
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-start justify-end flex-1 mt-auto">
+                    <h2 className="relative z-10 text-2xl font-medium leading-relaxed text-spotify-bg">
+                      {randomArtist[index].mainArtistInfo.name}
+                    </h2>
+                    <ul className="relative flex flex-wrap gap-2 z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
+                      {randomArtist[
+                        index
+                      ]?.mainArtistInfo?.genres
+                        .slice(0, 2)
+                        .map((genre, index) => (
+                          <li key={index}>
+                            {randomArtist[index].mainArtistInfo
+                              .genres[
+                              randomArtist[
+                                index
+                              ].mainArtistInfo.genres.slice(0, 2)
+                                .length - 1
+                            ] === genre ? (
+                              <>{genre} </>
+                            ) : (
+                              <>{genre} /</>
+                            )}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+                <img
+                  src={`${randomArtist[index].mainArtistInfo.image}`}
+                  className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
           </motion.div>
         </AnimatePresence>
-        <br />
-        <button className="prevButton" onClick={prevStep}>
-          ◀
-        </button>
-        <button className="nextButton" onClick={nextStep}>
-          ▶
-        </button>
+        <div className="absolute bottom-0 mt-10 bg-black">
+          <button className="text-white" onClick={prevStep}>
+            ◀
+          </button>
+          <button className="text-white" onClick={nextStep}>
+            ▶
+          </button>
+        </div>
       </div>
     </div>
   );
