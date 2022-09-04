@@ -11,7 +11,6 @@ const variants = {
     return {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
-      // scale: 0.5,
     };
   },
   animate: {
@@ -65,6 +64,13 @@ export default function Artist() {
   }
 
   if (!randomArtist) return null;
+
+  function onStart() {
+    const x = setTimeout(() => {
+      nextStep();
+      return () => clearTimeout(x);
+    }, 7000);
+  }
 
   return (
     <div className="flex flex-col items-start justify-start w-full h-full pl-8 ml-8">
@@ -183,40 +189,42 @@ export default function Artist() {
               <BiLeftArrowAlt size={18} />
             </button>
             <div className="min-h-[74px] min-w-[74px] max-w-[60px] max-h-[60px] w-full h-full rounded-full flex items-center justify-center relative">
-              <svg
-                height="78"
-                width="78"
-                className="absolute overflow-visible rotate-[-90deg]"
-              >
-                <circle
-                  cx="39"
-                  cy="39"
-                  r="36"
-                  stroke="rgba(0,0,0,0.15)"
-                  fill="none"
-                  strokeWidth="2"
-                />
+              <AnimatePresence>
+                <svg
+                  height="78"
+                  width="78"
+                  className="absolute overflow-visible rotate-[-90deg]"
+                >
+                  <circle
+                    cx="39"
+                    cy="39"
+                    r="36"
+                    className="stroke-neutral-700/80"
+                    fill="none"
+                    strokeWidth="2"
+                  />
 
-                <motion.circle
-                  initial={{
-                    strokeDasharray: 300,
-                    strokeDashoffset: 300,
-                  }}
-                  animate={{ strokeDashoffset: 0 }}
-                  transition={{
-                    ease: "linear",
-                    duration: 10,
-                    repeat: Infinity,
-                  }}
-                  cx="39"
-                  cy="39"
-                  r="36"
-                  stroke="rgba(0,0,0,1)"
-                  fill="none"
-                  strokeWidth="3"
-                  // className="[stroke-dasharray:700] [stroke-dashoffset:700]"
-                />
-              </svg>
+                  <motion.circle
+                    key={index}
+                    initial={{
+                      strokeDasharray: 300,
+                      strokeDashoffset: 300,
+                    }}
+                    animate={{ strokeDashoffset: 0 }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                    }}
+                    onAnimationStart={onStart}
+                    cx="39"
+                    cy="39"
+                    r="36"
+                    fill="none"
+                    strokeWidth="3"
+                    className="stroke-spotify-text"
+                  />
+                </svg>
+              </AnimatePresence>
               <AnimatePresence
                 initial={false}
                 custom={direction}
@@ -232,7 +240,7 @@ export default function Artist() {
                 >
                   <>
                     <img
-                      className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto border-2 border-spotify-text"
+                      className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
                       src={`${randomArtist[index].mainArtistInfo.image}`}
                     />
                   </>
