@@ -4,6 +4,7 @@ import { FaSpotify } from "react-icons/fa";
 import useRender from "../hooks/useRender";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, child, item, small } from "../global";
+import { BiLeftArrowAlt } from "react-icons/bi";
 
 const variants = {
   initial: (direction) => {
@@ -174,12 +175,19 @@ export default function Artist() {
               </div>
             </motion.div>
           </AnimatePresence>
-          <div className="absolute bottom-0 mx-auto mt-10 bg-black">
-            <button className="text-white" onClick={prevStep}>
-              ◀
+          <div className="absolute bottom-[-0.5rem] left-0  mt-10 w-[360px] flex items-center justify-center py-3">
+            <button
+              className="relative p-1.5 mr-0.5 border-2 rounded-full border-spotify-text text-spotify-text bg-spotify-bg shadow-sm"
+              onClick={prevStep}
+            >
+              <BiLeftArrowAlt size={18} />
             </button>
-            <button className="text-white" onClick={nextStep}>
-              ▶
+
+            <button
+              className="relative p-1.5 ml-0.5 border-2 rounded-full border-spotify-text text-spotify-text bg-spotify-bg shadow-sm"
+              onClick={nextStep}
+            >
+              <BiLeftArrowAlt size={18} className="rotate-180" />
             </button>
           </div>
         </div>
