@@ -71,7 +71,7 @@ export default function Artist() {
       <div className="w-full h-full max-w-[550px] overflow-hidden">
         {" "}
         {/*bgorange for dev */}
-        <div className="relative min-h-[500px] max-w-[453px] mx-auto items-center justify-center flex">
+        <div className="relative min-h-[550px] max-w-[453px] mx-auto items-center justify-center flex">
           {/*bgblack for dev */}
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
@@ -175,16 +175,72 @@ export default function Artist() {
               </div>
             </motion.div>
           </AnimatePresence>
-          <div className="absolute bottom-[-0.5rem] left-0  mt-10 w-[360px] flex items-center justify-center py-3">
+          <div className="absolute bottom-[-0.3rem] left-0 gap-3 mt-10 w-[360px] flex items-center justify-center py-3">
             <button
-              className="relative p-1.5 mr-0.5 border-2 rounded-full border-spotify-text text-spotify-text bg-spotify-bg shadow-sm"
+              className="relative p-1.5 border-2 rounded-full z-100 bg-spotify-bg border-spotify-text text-spotify-text"
               onClick={prevStep}
             >
               <BiLeftArrowAlt size={18} />
             </button>
+            <div className="min-h-[74px] min-w-[74px] max-w-[60px] max-h-[60px] w-full h-full rounded-full flex items-center justify-center relative">
+              <svg
+                height="78"
+                width="78"
+                className="absolute overflow-visible rotate-[-90deg]"
+              >
+                <circle
+                  cx="39"
+                  cy="39"
+                  r="36"
+                  stroke="rgba(0,0,0,0.15)"
+                  fill="none"
+                  strokeWidth="2"
+                />
 
+                <motion.circle
+                  initial={{
+                    strokeDasharray: 300,
+                    strokeDashoffset: 300,
+                  }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{
+                    ease: "linear",
+                    duration: 10,
+                    repeat: Infinity,
+                  }}
+                  cx="39"
+                  cy="39"
+                  r="36"
+                  stroke="rgba(0,0,0,1)"
+                  fill="none"
+                  strokeWidth="3"
+                  // className="[stroke-dasharray:700] [stroke-dashoffset:700]"
+                />
+              </svg>
+              <AnimatePresence
+                initial={false}
+                custom={direction}
+              >
+                <motion.div
+                  className="absolute"
+                  variants={variants}
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  key={index}
+                  custom={direction}
+                >
+                  <>
+                    <img
+                      className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto border-2 border-spotify-text"
+                      src={`${randomArtist[index].mainArtistInfo.image}`}
+                    />
+                  </>
+                </motion.div>
+              </AnimatePresence>
+            </div>
             <button
-              className="relative p-1.5 ml-0.5 border-2 rounded-full border-spotify-text text-spotify-text bg-spotify-bg shadow-sm"
+              className="relative p-1.5 mr-2 border-2 rounded-full z-100 bg-spotify-bg border-spotify-text text-spotify-text"
               onClick={nextStep}
             >
               <BiLeftArrowAlt size={18} className="rotate-180" />
