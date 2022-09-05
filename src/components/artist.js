@@ -72,11 +72,11 @@ export default function Artist() {
     }, 7000);
   }
 
-  function possibleNextArtist(amount) {
+  function possibleNextArtist() {
     if (index === randomArtist.length - 1) {
       return randomArtist[0];
     }
-    return randomArtist[index + amount] || randomArtist[0];
+    return randomArtist[index + 1] || randomArtist[0];
   }
 
   function generatePreviousArtist() {
@@ -85,7 +85,6 @@ export default function Artist() {
     }
     return randomArtist[index - 1];
   }
-
   return (
     <motion.div
       variants={container}
@@ -170,27 +169,19 @@ export default function Artist() {
                         {randomArtist[index].mainArtistInfo.name}
                       </h2>
                       <ul className="relative flex flex-wrap gap-2 z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
-                        {randomArtist[
-                          index
-                        ]?.mainArtistInfo?.genres
-                          .slice(0, 2)
-                          .map((genre, index) => (
-                            <li key={index}>
-                              {randomArtist[index].mainArtistInfo
-                                .genres[
-                                randomArtist[
-                                  index
-                                ].mainArtistInfo.genres.slice(
-                                  0,
-                                  2
-                                ).length - 1
-                              ] === genre ? (
-                                <>{genre} </>
-                              ) : (
-                                <>{genre} /</>
-                              )}
-                            </li>
-                          ))}
+                        <li>
+                          {
+                            randomArtist[index].mainArtistInfo
+                              .genres[0]
+                          }
+                          /
+                        </li>
+                        <li>
+                          {
+                            randomArtist[index].mainArtistInfo
+                              .genres[1]
+                          }
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -283,10 +274,7 @@ export default function Artist() {
                   <div>
                     <img
                       className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
-                      src={`${
-                        possibleNextArtist(0).mainArtistInfo
-                          .image
-                      }`}
+                      src={`${randomArtist[index].mainArtistInfo.image}`}
                     />
                   </div>
                 </motion.div>
@@ -308,8 +296,7 @@ export default function Artist() {
                     <img
                       className="block min-h-[33px] min-w-[33px] max-w-[33px] max-h-[33px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
                       src={`${
-                        possibleNextArtist(1).mainArtistInfo
-                          .image
+                        possibleNextArtist().mainArtistInfo.image
                       }`}
                     />
                   </div>
