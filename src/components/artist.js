@@ -210,7 +210,7 @@ export default function Artist() {
                     r="36"
                     className="opacity-50 stroke-neutral-700/80"
                     fill="none"
-                    strokeWidth="2"
+                    strokeWidth="1"
                   />
 
                   <motion.circle
@@ -229,7 +229,7 @@ export default function Artist() {
                     cy="39"
                     r="36"
                     fill="none"
-                    strokeWidth="3"
+                    strokeWidth="2"
                     className="stroke-spotify-text"
                   />
                 </svg>
@@ -249,7 +249,7 @@ export default function Artist() {
                 >
                   <div>
                     <img
-                      className="block min-h-[33px] min-w-[33px] max-w-[33px] max-h-[33px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
+                      className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm "
                       src={`${
                         generatePreviousArtist().mainArtistInfo
                           .image
@@ -273,7 +273,7 @@ export default function Artist() {
                 >
                   <div>
                     <img
-                      className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
+                      className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm"
                       src={`${randomArtist[index].mainArtistInfo.image}`}
                     />
                   </div>
@@ -294,9 +294,10 @@ export default function Artist() {
                 >
                   <div>
                     <img
-                      className="block min-h-[33px] min-w-[33px] max-w-[33px] max-h-[33px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
+                      className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm"
                       src={`${
-                        possibleNextArtist().mainArtistInfo.image
+                        possibleNextArtist(1).mainArtistInfo
+                          .image
                       }`}
                     />
                   </div>
