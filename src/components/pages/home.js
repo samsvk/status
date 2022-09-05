@@ -10,7 +10,7 @@ export default function Home() {
     const window = getWindow();
     window.location.href = "http://localhost:3001/login";
   }
-  console.log("ape");
+
   return (
     <>
       <Grid />
