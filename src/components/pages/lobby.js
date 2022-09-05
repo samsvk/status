@@ -7,7 +7,7 @@ import {
 export default function Lobby() {
   const [searchParams] = useSearchParams();
   // const user = searchParams.get("user");
-  const token = searchParams.get("access_token");
+  const token = searchParams.get("at");
   const [userData, setUserData] = useState();
   const [playlists, setPlaylists] = useState();
 
