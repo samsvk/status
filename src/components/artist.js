@@ -72,11 +72,18 @@ export default function Artist() {
     }, 7000);
   }
 
-  function possibleNextArtist() {
+  function possibleNextArtist(amount) {
     if (index === randomArtist.length - 1) {
       return randomArtist[0];
     }
-    return randomArtist[index + 1];
+    return randomArtist[index + amount] || randomArtist[0];
+  }
+
+  function generatePreviousArtist() {
+    if (index === 0) {
+      return randomArtist[randomArtist.length - 1];
+    }
+    return randomArtist[index - 1];
   }
 
   return (
@@ -241,6 +248,30 @@ export default function Artist() {
                 custom={direction}
               >
                 <motion.div
+                  className="absolute right-[5.5rem]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  key={index}
+                  custom={direction}
+                >
+                  <div>
+                    <img
+                      className="block min-h-[33px] min-w-[33px] max-w-[33px] max-h-[33px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
+                      src={`${
+                        generatePreviousArtist().mainArtistInfo
+                          .image
+                      }`}
+                    />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+              <AnimatePresence
+                initial={false}
+                custom={direction}
+              >
+                <motion.div
                   className="absolute"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -249,14 +280,39 @@ export default function Artist() {
                   key={index}
                   custom={direction}
                 >
-                  <>
+                  <div>
                     <img
                       className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
                       src={`${
-                        possibleNextArtist().mainArtistInfo.image
+                        possibleNextArtist(0).mainArtistInfo
+                          .image
                       }`}
                     />
-                  </>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+              <AnimatePresence
+                initial={false}
+                custom={direction}
+              >
+                <motion.div
+                  className="absolute left-[5.5rem]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  key={index}
+                  custom={direction}
+                >
+                  <div>
+                    <img
+                      className="block min-h-[33px] min-w-[33px] max-w-[33px] max-h-[33px] relative w-full h-full bg-black rounded-full m-auto shadow-md"
+                      src={`${
+                        possibleNextArtist(1).mainArtistInfo
+                          .image
+                      }`}
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
