@@ -1,39 +1,9 @@
+import useRender from "../hooks/useRender";
 import { useEffect, useState } from "react";
 import { fetchRandomArtist } from "../api/actions";
 import { FaSpotify } from "react-icons/fa";
-import useRender from "../hooks/useRender";
 import { motion, AnimatePresence } from "framer-motion";
-import { container, child, item, small } from "../global";
-import { BiLeftArrowAlt } from "react-icons/bi";
-
-const variants = {
-  initial: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      x: { stiffness: 300, damping: 30 },
-      opacity: { duration: 0.2 },
-      ease: [0.34, 0.53, 0.37, 1.02],
-    },
-  },
-  exit: (direction) => {
-    return {
-      x: direction > 0 ? -1000 : 1000,
-      opacity: 0,
-      transition: {
-        x: { stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
-        ease: [0.34, 0.53, 0.37, 1.02],
-      },
-    };
-  },
-};
+import { container, child, variants } from "../global";
 
 export default function Artist() {
   const [randomArtist, setRandomArtist] = useState();
@@ -112,17 +82,6 @@ export default function Artist() {
               <div className="relative h-[440px] w-[350px] rounded-lg block after:absolute after:content-[''] after:h-full after:w-full after:rounded-lg after:top-0 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-2 before:left-2 before:border-2 before:border-spotify-text">
                 <div className="h-[440px] relative">
                   <div className="absolute z-10 flex flex-col items-center justify-center w-full h-full m-auto top-[50%] translate-y-[-50%] translate-x-1/2">
-                    <div className="mr-7 block rounded-lg max-w-[154px] relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:right-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg">
-                      <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
-                        <div className="h-[144px] w-[154px] overflow-hidden relative">
-                          <div className="absolute z-20 w-full h-full bg-black/30" />
-                          <img
-                            src={randomArtist[index].image}
-                            className="absolute top-0 left-0 block object-cover object-center w-full h-full overflow-hidden"
-                          />
-                        </div>
-                      </div>
-                    </div>
                     <div className="block rounded-lg max-w-[154px] min-w-[154px] w-full relative z-50 before:rounded-lg before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-green before:top-1 before:left-[-0.25rem] before:border-2 before:border-spotify-text before:-z-20 shadow-lg ml-12 mt-1.5">
                       <div className="block overflow-hidden border-2 rounded-lg border-spotify-text">
                         <aside className="flex flex-col px-1.5 py-1.5 rounded-b-lg bg-spotify-bg">
@@ -186,6 +145,7 @@ export default function Artist() {
                     </div>
                   </div>
                   <img
+                    alt=""
                     src={`${randomArtist[index].mainArtistInfo.image}`}
                     className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
                   />
@@ -249,6 +209,7 @@ export default function Artist() {
                 >
                   <div>
                     <img
+                      alt=""
                       className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm "
                       src={`${
                         generatePreviousArtist().mainArtistInfo
@@ -273,6 +234,7 @@ export default function Artist() {
                 >
                   <div>
                     <img
+                      alt=""
                       className="block min-h-[60px] min-w-[60px] max-w-[60px] max-h-[60px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm"
                       src={`${randomArtist[index].mainArtistInfo.image}`}
                     />
@@ -294,6 +256,7 @@ export default function Artist() {
                 >
                   <div>
                     <img
+                      alt=""
                       className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm"
                       src={`${
                         possibleNextArtist(1).mainArtistInfo

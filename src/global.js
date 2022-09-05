@@ -30,48 +30,31 @@ export const child = {
   },
 };
 
-export const item = {
-  hidden: (i) => ({
-    opacity: 0,
-    y: 150,
-    transition: {
-      ease: [0.34, 0.53, 0.37, 1.02],
-      delay: i * 0.15,
-    },
-  }),
-  visible: (i) => ({
+export const variants = {
+  initial: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  animate: {
+    x: 0,
     opacity: 1,
-    y: 0,
     transition: {
+      x: { stiffness: 300, damping: 30 },
+      opacity: { duration: 0.2 },
       ease: [0.34, 0.53, 0.37, 1.02],
-      delay: i * 0.15,
     },
-  }),
-  exit: (i) => ({
-    opacity: 0,
-    y: -50,
-    transition: {
-      ease: [0.34, 0.53, 0.37, 1.02],
-      delay: i * 0.15,
-    },
-  }),
-};
-
-export const small = {
-  hidden: (i) => ({
-    opacity: 0,
-    y: 10,
-    transition: {
-      ease: [0.34, 0.53, 0.37, 1.02],
-      delay: i * 0.15,
-    },
-  }),
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: [0.34, 0.53, 0.37, 1.02],
-      delay: i * 0.15,
-    },
-  }),
+  },
+  exit: (direction) => {
+    return {
+      x: direction > 0 ? -1000 : 1000,
+      opacity: 0,
+      transition: {
+        x: { stiffness: 300, damping: 30 },
+        opacity: { duration: 0.2 },
+        ease: [0.34, 0.53, 0.37, 1.02],
+      },
+    };
+  },
 };
