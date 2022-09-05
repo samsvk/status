@@ -10,7 +10,6 @@ export default function Lobby() {
   const [searchParams] = useSearchParams();
   const token = searchParams.get("at");
   const [userData, setUserData] = useState();
-  const [playlists, setPlaylists] = useState();
 
   useEffect(() => {
     if (token) {
@@ -19,26 +18,23 @@ export default function Lobby() {
     }
   }, [token]);
 
-  console.log(userData?.id);
+  console.log(userData);
 
   return (
     <>
-      <div>
-        Lobby, user shite:
-        <br />
-        <div className="max-w-[550px] w-full">{token}</div>
-        <br /> <br />
+      <div className="w-full max-w-6xl mx-auto my-10">
         <button
           onClick={() => fetchUserDetails(token, setUserData)}
         >
           CLICK MEEEE
         </button>
-        <br /> <br /> <br /> <br /> <br /> <br />
-        {userData?.display_name}
-        <img
-          src={userData?.images[0]?.url}
-          className="h-[100px] w-[100px]"
-        />
+        <div>
+          <header>Name: {userData?.display_name}</header>
+          <img
+            src={userData?.image}
+            className="h-[100px] w-[100px] rounded-full object-cover"
+          />
+        </div>
         {/* {playlists?.map((playlist, index) => (
           <div>
             <img
