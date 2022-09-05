@@ -6,3 +6,5 @@ const API = axios.create({
 });
 
 export const fetchRandomArtist = () => API.get("/home");
+export const fetchUserDetails = (user) =>
+  API.get(`/getUser/?access_token=${user}`);

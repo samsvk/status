@@ -9,4 +9,14 @@ const fetchRandomArtist = async (setRandomArtist) => {
   }
 };
 
-export { fetchRandomArtist };
+const fetchUserDetails = async (user, next) => {
+  try {
+    const { data } = await api.fetchUserDetails(user);
+    console.log(data);
+    next(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { fetchRandomArtist, fetchUserDetails };
