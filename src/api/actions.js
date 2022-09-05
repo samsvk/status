@@ -9,9 +9,10 @@ const fetchRandomArtist = async (setRandomArtist) => {
   }
 };
 
-const fetchUserDetails = async (user, next) => {
+const fetchUserDetails = async (next) => {
   try {
-    const { data } = await api.fetchUserDetails(user);
+    console.log("triggering");
+    const { data } = await api.fetchUserDetails();
     next(data);
   } catch (error) {
     console.log(error);

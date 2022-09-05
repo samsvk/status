@@ -136,12 +136,6 @@ export default function Artist() {
                                 randomArtist[index]
                                   .mainArtistInfo.genres[0]
                               }
-                              /
-                            </li>
-                            <li>
-                              {" " +
-                                randomArtist[index]
-                                  .mainArtistInfo.genres[1]}
                             </li>
                           </>
                         )}

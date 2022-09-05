@@ -6,8 +6,7 @@ const API = axios.create({
 });
 
 export const fetchRandomArtist = () => API.get("/home");
-export const fetchUserDetails = (user) =>
-  API.get(`/getUser/?at=${user}`);
+export const fetchUserDetails = () => API.get(`/getUser/`);
 
 export const setUserCookie = (cookie) =>
   API.get(`/setCookie/?cookie=${cookie}`);

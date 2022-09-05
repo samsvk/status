@@ -1,3 +1,4 @@
+import Grid from "../grid";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -20,30 +21,37 @@ export default function Lobby() {
 
   console.log(userData);
 
+  useEffect(() => {
+    fetchUserDetails(setUserData);
+  }, []);
+
   return (
     <>
+      <Grid />
       <div className="w-full max-w-6xl mx-auto my-10">
-        <button
+        {/* <button
           onClick={() => fetchUserDetails(token, setUserData)}
         >
           CLICK MEEEE
-        </button>
+        </button> */}
         <div>
-          <header>Name: {userData?.display_name}</header>
+          <header>Name: {userData?.name}</header>
           <img
             src={userData?.image}
-            className="h-[100px] w-[100px] rounded-full object-cover"
+            className="h-[100px] w-[100px]  object-cover"
           />
         </div>
-        {/* {playlists?.map((playlist, index) => (
-          <div>
-            <img
-              src={playlist?.images[0]?.url}
-              className="h-[200px] w-[200px]"
-            />
-            <h1>{playlist?.name}</h1>
-          </div>
-        ))} */}
+        <div className="flex gap-10 mt-10">
+          {userData?.playlists?.map((playlist, index) => (
+            <div key={playlist.id}>
+              <img
+                src={playlist.image}
+                className="h-[80px] w-[80px]  object-cover"
+              />
+              <h1>{playlist?.name}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
