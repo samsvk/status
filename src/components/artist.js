@@ -127,20 +127,24 @@ export default function Artist() {
                       <h2 className="relative z-10 text-2xl font-medium leading-relaxed text-spotify-bg">
                         {randomArtist[index].mainArtistInfo.name}
                       </h2>
-                      <ul className="relative flex flex-wrap gap-2 z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
-                        <li>
-                          {
-                            randomArtist[index].mainArtistInfo
-                              .genres[0]
-                          }
-                          /
-                        </li>
-                        <li>
-                          {
-                            randomArtist[index].mainArtistInfo
-                              .genres[1]
-                          }
-                        </li>
+                      <ul className="relative flex flex-wrap z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
+                        {randomArtist[index].mainArtistInfo
+                          ?.genres?.length > 0 && (
+                          <>
+                            <li>
+                              {
+                                randomArtist[index]
+                                  .mainArtistInfo.genres[0]
+                              }
+                              /
+                            </li>
+                            <li>
+                              {" " +
+                                randomArtist[index]
+                                  .mainArtistInfo.genres[1]}
+                            </li>
+                          </>
+                        )}
                       </ul>
                     </div>
                   </div>
