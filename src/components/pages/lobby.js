@@ -33,27 +33,18 @@ export default function Lobby() {
   return (
     <>
       <Grid />
-      <div className="flex w-full max-w-6xl gap-10 mx-auto my-10">
-        <div className="flex-1 p-10 border-2 border-spotify-text bg-spotify-bg">
-          <header className="relative flex items-center justify-center w-full mb-10 max-w-max">
-            <div className="relative w-32 h-32 overflow-hidden rounded-full drop-shadow-md">
+      <div className="relative flex w-full gap-10 mx-auto my-10 max-w-max">
+        <div className="relative z-50 flex items-end flex-1 gap-12 p-10 border-2 border-spotify-text bg-spotify-green before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:left-1 before:border-2 before:border-spotify-text before:-z-20">
+          <header className="flex flex-col items-end justify-end bg-orange-500 text-spotify-text w-max">
+            <div className="relative w-28 h-28 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 before:border-spotify-text">
               <img
-                alt=""
-                src={`${userData.image}`}
-                className="absolute top-0 left-0 object-cover object-center w-full h-full"
+                src={userData.image}
+                className="relative block object-cover w-full h-full drop-shadow-md"
               />
             </div>
-            <aside className="relative grid h-full ml-5 max-h-32">
-              <h1 className="self-start font-medium leading-none tracking-tighter align-text-top text-start max-h-max text-7xl text-spotify-text">
-                {userData.name}
-              </h1>
-              <span className="flex items-center text-left text-[14px] font-normal tracking-tight first-letter:uppercase whitespace-nowrap">
-                {userData.playlists.length} Playlists Available
-                {/* {userData} */}
-              </span>
-            </aside>
           </header>
-          <div className="grid items-start justify-start grid-cols-2 gap-10 text-spotify-text w-max">
+
+          <div className="grid items-start grid-cols-3 gap-8 justify-evenly text-spotify-text w-max">
             {userData?.playlists?.map((playlist, index) => (
               <div
                 key={playlist.id}
