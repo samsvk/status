@@ -33,9 +33,12 @@ export default function Lobby() {
   return (
     <>
       <Grid />
-      <div className="relative flex w-full gap-10 mx-auto my-10 max-w-max">
-        <div className="relative z-50 flex items-end flex-1 gap-12 p-10 border-2 border-spotify-text bg-spotify-green before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:top-[-0.25rem] before:left-1 before:border-2 before:border-spotify-text before:-z-20">
-          <header className="flex flex-col items-end justify-end bg-orange-500 text-spotify-text w-max">
+      <div className="flex w-full gap-10 mx-auto my-10 max-w-max">
+        <div
+          className="flex items-center p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative
+          after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-green after:border-2 after:border-spotify-text"
+        >
+          <header className="flex flex-col items-end justify-end mr-10 bg-orange-500 text-spotify-text w-max">
             <div className="relative w-28 h-28 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 before:border-spotify-text">
               <img
                 src={userData.image}
