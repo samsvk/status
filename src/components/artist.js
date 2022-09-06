@@ -145,7 +145,7 @@ export default function Artist() {
                   <img
                     alt=""
                     src={`${randomArtist[index].mainArtistInfo.image}`}
-                    className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg shadow-lg"
+                    className="absolute top-0 left-0 object-cover object-center w-full h-full rounded-lg drop-shadow-lg"
                   />
                 </div>
               </div>
