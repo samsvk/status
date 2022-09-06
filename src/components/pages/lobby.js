@@ -22,7 +22,10 @@ export default function Lobby() {
   console.log(userData);
 
   useEffect(() => {
-    fetchUserDetails(setUserData);
+    const timeout = setTimeout(() => {
+      fetchUserDetails(setUserData);
+    }, 500);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
