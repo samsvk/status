@@ -30,7 +30,6 @@ const getUserPlaylistTracks = async (userObj, next) => {
 const createUserPlaylist = async (userObj) => {
   try {
     const { data } = await api.createUserPlaylist(userObj);
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
