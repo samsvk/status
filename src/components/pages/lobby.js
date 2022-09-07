@@ -30,7 +30,6 @@ export default function Lobby() {
   }, []);
 
   function addSelected(name) {
-    // const exists = selected.some((item) => item.id == name.id);
     if (!selected.some((item) => item.id == name.id)) {
       setSelected((_) => [..._, name]);
     } else {
@@ -41,11 +40,12 @@ export default function Lobby() {
   }
 
   if (!userData) return null;
-  // console.log(playlistTunes);
   return (
     <>
       <Grid />
-      {selected.map((item) => item.name).join(", ")}
+      {selected.map((item) => (
+        <span>{item.name}</span>
+      ))}
       <button
         onClick={() =>
           getUserPlaylistTracks(selected, setPlaylistTunes)
@@ -54,7 +54,20 @@ export default function Lobby() {
         {" "}
         get playlists
       </button>
-      {playlistTunes.map((item) => item.name).join(", ")}
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="relative">
+        {playlistTunes.map((item, index) => (
+          <div
+            className="absolute left-10"
+            style={{ top: index * 20 }}
+          >
+            {item.name}
+          </div>
+        ))}
+      </div>
       <div className="flex w-full gap-10 mx-auto my-10 max-w-max">
         <div
           className="flex items-center p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative
