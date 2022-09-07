@@ -5,14 +5,15 @@ import {
   fetchUserDetails,
   fetchUserPlaylists,
   setUserCookie,
+  getUserPlaylistTracks,
 } from "../../api/actions";
-
 export default function Lobby() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const token = searchParams.get("at");
   const [userData, setUserData] = useState();
   const [selected, setSelected] = useState([]);
+  const [playlistTunes, setPlaylistTunes] = useState([]);
 
   useEffect(() => {
     if (token) {
@@ -29,12 +30,6 @@ export default function Lobby() {
   }, []);
 
   function addSelected(name) {
-    // const tempSelected = selected.slice();
-    // const newSelected = tempSelected.filter(
-    // (item) => !item.include(name)
-    // );
-    console.log(name);
-
     if (!selected.includes(name)) {
       setSelected((_) => [..._, name]);
     } else {
@@ -43,13 +38,21 @@ export default function Lobby() {
   }
 
   if (!userData) return null;
-  console.log(userData);
-
+  console.log(playlistTunes);
   return (
     <>
       <Grid />
+      {/* {selected.map((item) => item.name).join(", ")}
+      <button
+        onClick={() =>
+          getUserPlaylistTracks(selected, setPlaylistTunes)
+        }
+      >
+        {" "}
+        get playlists
+      </button> */}
+      {/* {playlistTunes.map((item) => item.name).join(", ")} */}
       <div className="flex w-full gap-10 mx-auto my-10 max-w-max">
-        {selected.map((item) => item).join(", ")}
         <div
           className="flex items-center p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative
           after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-green after:border-2 after:border-spotify-text"
@@ -73,7 +76,10 @@ export default function Lobby() {
                     <div className="flex">
                       <div
                         onClick={() =>
-                          addSelected(playlist.name)
+                          addSelected({
+                            name: playlist.name,
+                            id: playlist.id,
+                          })
                         }
                         className="relative w-10 h-10 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 before:border-spotify-text"
                       >

@@ -18,10 +18,24 @@ const fetchUserDetails = async (next) => {
   }
 };
 
+const getUserPlaylistTracks = async (userObj, next) => {
+  try {
+    const { data } = await api.getUserPlaylistTracks(userObj);
+    next(data.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const setUserCookie = async (cookie) => {
   try {
     await api.setUserCookie(cookie);
   } catch (error) {}
 };
 
-export { fetchRandomArtist, fetchUserDetails, setUserCookie };
+export {
+  fetchRandomArtist,
+  fetchUserDetails,
+  setUserCookie,
+  getUserPlaylistTracks,
+};
