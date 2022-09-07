@@ -30,19 +30,22 @@ export default function Lobby() {
   }, []);
 
   function addSelected(name) {
-    if (!selected.includes(name)) {
+    // const exists = selected.some((item) => item.id == name.id);
+    if (!selected.some((item) => item.id == name.id)) {
       setSelected((_) => [..._, name]);
     } else {
-      setSelected((_) => _.filter((item) => item !== name));
+      setSelected((_) =>
+        _.filter((item) => item.id !== name.id)
+      );
     }
   }
 
   if (!userData) return null;
-  console.log(playlistTunes);
+  // console.log(playlistTunes);
   return (
     <>
       <Grid />
-      {/* {selected.map((item) => item.name).join(", ")}
+      {selected.map((item) => item.name).join(", ")}
       <button
         onClick={() =>
           getUserPlaylistTracks(selected, setPlaylistTunes)
@@ -50,8 +53,8 @@ export default function Lobby() {
       >
         {" "}
         get playlists
-      </button> */}
-      {/* {playlistTunes.map((item) => item.name).join(", ")} */}
+      </button>
+      {playlistTunes.map((item) => item.name).join(", ")}
       <div className="flex w-full gap-10 mx-auto my-10 max-w-max">
         <div
           className="flex items-center p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative
@@ -67,39 +70,50 @@ export default function Lobby() {
           </header>
           <div className="w-full h-full">
             <div className="grid items-start grid-cols-3 gap-8 justify-evenly text-spotify-text w-max">
-              {userData?.playlists?.map((playlist, index) => (
-                <div
-                  key={playlist.id}
-                  className="relative flex-1 w-full col-span-1"
-                >
-                  <div className="flex flex-row items-center min-w-0">
-                    <div className="flex">
-                      <div
-                        onClick={() =>
-                          addSelected({
-                            name: playlist.name,
-                            id: playlist.id,
-                          })
-                        }
-                        className="relative w-10 h-10 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 before:border-spotify-text"
-                      >
-                        <img
-                          src={playlist.image}
-                          className="relative block object-cover w-10 h-10 min-h-10 min-w-10 drop-shadow-md"
-                        />
-                      </div>
-                      <div className="inline-flex flex-col items-start justify-end ml-2 ">
-                        <h3 className="w-[76px] block text-left text-[14px] font-normal tracking-tight first-letter:uppercase text-ellipsis whitespace-nowrap overflow-hidden">
-                          {playlist.name}
-                        </h3>
-                        <p className="relative flex flex-wrap z-10 font-medium text-[10px] uppercase text-neutral-700/80  whitespace-nowrap">
-                          Songs: #{playlist.length}
-                        </p>
+              {userData?.playlists?.map((playlist, index) => {
+                const sel = selected.some(
+                  (item) => item.id === playlist.id
+                );
+
+                return (
+                  <div
+                    key={playlist.id}
+                    className="relative flex-1 w-full col-span-1"
+                  >
+                    <div className="flex flex-row items-center min-w-0">
+                      <div className="flex">
+                        <div
+                          onClick={() =>
+                            addSelected({
+                              name: playlist.name,
+                              id: playlist.id,
+                            })
+                          }
+                          className={`
+                          relative w-10 h-10 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 ${
+                            sel
+                              ? "before:border-spotify-green"
+                              : "before:border-spotify-text"
+                          }`}
+                        >
+                          <img
+                            src={playlist.image}
+                            className="relative block object-cover w-10 h-10 min-h-10 min-w-10 drop-shadow-md"
+                          />
+                        </div>
+                        <div className="inline-flex flex-col items-start justify-end ml-2 ">
+                          <h3 className="w-[76px] block text-left text-[14px] font-normal tracking-tight first-letter:uppercase text-ellipsis whitespace-nowrap overflow-hidden">
+                            {playlist.name}
+                          </h3>
+                          <p className="relative flex flex-wrap z-10 font-medium text-[10px] uppercase text-neutral-700/80  whitespace-nowrap">
+                            Songs: #{playlist.length}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
