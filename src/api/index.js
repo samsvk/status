@@ -13,3 +13,6 @@ export const setUserCookie = (cookie) =>
 
 export const getUserPlaylistTracks = (userObj) =>
   API.post(`/getUserPlaylistTracks/`, userObj);
+
+export const createUserPlaylist = (userObj) =>
+  API.post(`/createUserPlaylist/`, userObj);

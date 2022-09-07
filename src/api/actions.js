@@ -27,6 +27,15 @@ const getUserPlaylistTracks = async (userObj, next) => {
   }
 };
 
+const createUserPlaylist = async (userObj) => {
+  try {
+    const { data } = await api.createUserPlaylist(userObj);
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const setUserCookie = async (cookie) => {
   try {
     await api.setUserCookie(cookie);
@@ -38,4 +47,5 @@ export {
   fetchUserDetails,
   setUserCookie,
   getUserPlaylistTracks,
+  createUserPlaylist,
 };

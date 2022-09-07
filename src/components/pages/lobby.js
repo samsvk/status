@@ -6,6 +6,7 @@ import {
   fetchUserPlaylists,
   setUserCookie,
   getUserPlaylistTracks,
+  createUserPlaylist,
 } from "../../api/actions";
 export default function Lobby() {
   const navigate = useNavigate();
@@ -46,14 +47,25 @@ export default function Lobby() {
       {selected.map((item) => (
         <span>{item.name}</span>
       ))}
-      <button
-        onClick={() =>
-          getUserPlaylistTracks(selected, setPlaylistTunes)
-        }
-      >
-        {" "}
-        get playlists
-      </button>
+      <div className="flex gap-10">
+        <button
+          onClick={() =>
+            getUserPlaylistTracks(selected, setPlaylistTunes)
+          }
+        >
+          {" "}
+          get playlists
+        </button>
+        <button
+          onClick={() =>
+            createUserPlaylist({ ...userData, playlistTunes })
+          }
+        >
+          {" "}
+          create playlist
+        </button>
+      </div>
+
       <br />
       <br />
       <br />
