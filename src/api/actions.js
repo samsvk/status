@@ -11,7 +11,6 @@ const fetchRandomArtist = async (setRandomArtist) => {
 
 const fetchUserDetails = async (next) => {
   try {
-    console.log("triggering");
     const { data } = await api.fetchUserDetails();
     next(data);
   } catch (error) {
