@@ -100,6 +100,7 @@ export default function Lobby() {
                             addSelected({
                               name: playlist.name,
                               id: playlist.id,
+                              length: playlist.length,
                             })
                           }
                           className={`
