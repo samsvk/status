@@ -43,6 +43,7 @@ export default function Lobby() {
   }
 
   if (!userData) return null;
+  console.log(userData);
   return (
     <>
       <Grid />
@@ -83,7 +84,7 @@ export default function Lobby() {
         <div className="col-span-5">
           <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text leading-tight">
             Welcome to Shuff.le,{" "}
-            <span className="first-letter:uppercase text-spotify-green">
+            <span className=" first-letter:uppercase text-spotify-green">
               {userData.name}!
             </span>
           </h1>
@@ -111,7 +112,20 @@ export default function Lobby() {
             </span>
           </p>
         </div>
-        <div className="col-span-3 max-w-xs flex items-center rounded-lg p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-green after:border-2 after:border-spotify-text after:rounded-lg"></div>
+        <div className="col-span-3 max-w-xs flex items-start rounded-lg py-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-green after:border-2 after:border-spotify-text after:rounded-lg flex-col">
+          <div className="z-10 w-32 h-32 mx-auto overflow-hidden border-2 rounded-full border-spotify-text drop-shadow-md">
+            <img src={userData.image} className="block" />
+          </div>
+          <ul className="grid w-full grid-cols-3 mt-10 border-t-2 border-b-2 border-spotify-text">
+            <li className="col-span-1 bg-orange-500 border-r-2 border-spotify-text">
+              1
+            </li>
+            <li className="col-span-1 bg-pink-500 border-r-2 border-spotify-text">
+              1
+            </li>
+            <li className="col-span-1 bg-purple-500">1</li>
+          </ul>
+        </div>
         <div className="col-span-1 max-w-xs flex items-center rounded-lg p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-offset after:border-2 after:border-spotify-text after:rounded-lg"></div>
       </div>
     </>
