@@ -7,9 +7,13 @@ class SOCKET {
     });
   }
 
-  logUser(param) {
-    this.socket.on("logUser", ({ data }) => {
-      console.log(data);
+  joinLobby(id) {
+    this.socket.emit("joinLobby", id);
+  }
+
+  updateLobbyData(next) {
+    this.socket.on("updateLobbyData", (data) => {
+      next(data);
     });
   }
 }
