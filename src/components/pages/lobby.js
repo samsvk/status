@@ -9,6 +9,7 @@ import {
   createUserPlaylist,
 } from "../../api/actions";
 import { IoPeopleSharp } from "react-icons/io5";
+import SOCKET from "../../api/socket";
 
 export default function Lobby() {
   const navigate = useNavigate();
@@ -42,8 +43,11 @@ export default function Lobby() {
     }
   }
 
+  useEffect(() => {
+    console.log(SOCKET);
+  }, [SOCKET]);
+
   if (!userData) return null;
-  console.log(userData);
   return (
     <>
       <Grid />
