@@ -123,7 +123,13 @@ export default function Lobby() {
                 {userData.name}'s Profile
               </span>
               <p className="block relative z-50 px-0 mx-0 mt-[-5px] text-[14px] font-normal text-neutral-700/80 tracking-tight text-center leading-normal hover:cursor-pointer hover:underline">
-                Spotify
+                <a
+                  href={`${userData.href}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Spotify
+                </a>
               </p>
             </div>
             <div className="w-full px-4 mx-auto">
