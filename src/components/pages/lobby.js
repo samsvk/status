@@ -8,6 +8,8 @@ import {
   getUserPlaylistTracks,
   createUserPlaylist,
 } from "../../api/actions";
+import { IoPeopleSharp } from "react-icons/io5";
+
 export default function Lobby() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -77,47 +79,79 @@ export default function Lobby() {
         ))}
       </div>
 
-      <div className="relative max-w-[1100px] w-full mx-auto h-[500px] my-12 grid grid-cols-4 p-10">
-        <div className="relative flex flex-col justify-center col-span-1 px-5 py-8 text-xl border-2 border-spotify-text bg-spotify-bg ">
-          {/* after:absolute after:content-[''] after:w-full */}
-          {/* after:h-full after:bottom-2 after:right-2 after:-z-10 */}
-          {/* after:bg-spotify-green after:border-2 */}
-          {/* after:border-spotify-text */}
-          <header className="z-10 mx-auto">
-            <div className="relative w-32 h-32 mx-auto">
-              <img
-                src={userData.image}
-                className="relative block object-cover w-full h-full border-2 rounded-full drop-shadow-md border-spotify-text"
-              />
-            </div>
-            <h1 className="w-full max-w-lg mt-2 text-xl font-normal leading-relaxed tracking-tight text-center text-spotify-text first-letter:uppercase">
-              {userData.name}'s Profile
-            </h1>
-            <p className="text-center mx-auto text-[14px] flex-1 leading-4 font-normal text-neutral-700/80 tracking-tight flex gap-1 items-center">
-              <span className="first-letter:uppercase">
-                {userData.name}
-              </span>{" "}
-              has {userData.playlists.length} playlists
-              available.
-              {/* <span className="line-through">$0</span>
-              It's completely{" "}
-              <span className="font-medium text-black/80">
-              free
-              </span>
-            forever. */}
-            </p>
-
-            <button className="mx-auto mt-3 flex items-center gap-4 px-5 py-1 text-[14px] font-normal leading-relaxed tracking-tight rounded-lg bg-spotify-green relative text-spotify-bg hover:shadow-lg duration-200">
-              View Profile
-            </button>
-          </header>
-
-          <section className="w-full h-full mt-3 bg-orange-500"></section>
+      <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
+        <div className="col-span-5">
+          <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text leading-tight">
+            Welcome to Shuff.le,{" "}
+            <span className="first-letter:uppercase text-spotify-green">
+              {userData.name}!
+            </span>
+          </h1>
+          <p className="w-full max-w-lg mt-10 text-2xl font-normal leading-relaxed tracking-tight text-spotify-text">
+            You have {userData.playlists.length} playlists
+            available for shufflin', invite your friends and
+            we'll work our magic!
+          </p>
+          <button
+            className="mt-10 flex items-center gap-4 px-8 py-5 text-xl font-normal leading-relaxed tracking-tight rounded-lg bg-spotify-green relative text-spotify-bg 
+                  after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:rounded-lg after:bg-spotify-bg after:border-2 after:border-spotify-text
+                  hover:shadow-lg duration-200
+                  "
+          >
+            <IoPeopleSharp size={27} />
+            Invite your friends
+          </button>
+          <p className="text-center mx-auto mt-10 text-[14px] flex-1 leading-5 font-normal text-neutral-700/80  tracking-tight flex gap-1 items-center">
+            <span className="underline">
+              Don't have their email?
+            </span>
+            Invite via this:
+            <span className="font-medium text-black/80 hover:cursor-pointer hover:underline">
+              Link
+            </span>
+          </p>
         </div>
+        <div className="col-span-3 max-w-xs flex items-center rounded-lg p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-green after:border-2 after:border-spotify-text after:rounded-lg"></div>
+        <div className="col-span-1 max-w-xs flex items-center rounded-lg p-10 text-xl font-normal leading-relaxed tracking-tight border-2 border-spotify-text bg-spotify-bg relative after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:bg-spotify-offset after:border-2 after:border-spotify-text after:rounded-lg"></div>
       </div>
     </>
   );
 }
+
+//  <div className="relative flex flex-row justify-center col-span-1 gap-5 p-5 text-xl border-2 border-spotify-text bg-spotify-bg ">
+//    {/* after:absolute after:content-[''] after:w-full */}
+//    {/* after:h-full after:bottom-2 after:right-2 after:-z-10 */}
+//    {/* after:bg-spotify-green after:border-2 */}
+//    {/* after:border-spotify-text */}
+//    <header className="z-10 mx-auto">
+//      <div className="relative w-16 h-16 mx-auto overflow-hidden rounded-full">
+//        <img
+//          src={userData.image}
+//          className="relative block object-cover w-full h-full"
+//        />
+//      </div>
+//      <h1 className="w-full max-w-lg mt-2 text-xl font-normal leading-relaxed tracking-tight text-left text-spotify-text first-letter:uppercase">
+//        {userData.name}'s Profile
+//      </h1>
+//      <p className="w-full block text-[14px] font-normal text-neutral-700/80 tracking-tight leading-tight first-letter:uppercase">
+//        <span className="inline first-letter:uppercase">
+//          {userData.name}
+//        </span>
+//        {"\u00A0"}
+//        has
+//        {"\u00A0"}
+//        {userData.playlists.length}
+//        {"\u00A0"}
+//        playlists available.
+//      </p>
+
+//      <button className="mr-auto mt-3 flex items-center gap-4 px-5 py-1 text-[14px] font-normal leading-relaxed tracking-tight rounded-lg bg-spotify-green relative text-spotify-bg hover:shadow-lg duration-200">
+//        View Profile
+//      </button>
+//    </header>
+
+//    <section className="w-full h-full bg-orange-500"></section>
+//  </div>;
 
 //  <div className="flex w-full gap-10 mx-auto my-10 max-w-max">
 //  <div
