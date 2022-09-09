@@ -105,7 +105,7 @@ export default function Lobby() {
       </div>
 
       <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
-        <div className="fixed col-span-5 max-w-[600px] w-full">
+        <div className="fixed col-span-5 max-w-[600px] w-full h-full">
           <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text leading-tight">
             Welcome to Shuff.le,{" "}
             <span className=" first-letter:uppercase text-spotify-green">
@@ -131,7 +131,7 @@ export default function Lobby() {
             </span>
           </p>
 
-          <ul className="overflow-y-scroll">
+          <ul className="overflow-y -scroll">
             {lobbyData?.tracks?.map((item) => (
               <li key={item.href}>{item.name}</li>
             ))}
@@ -185,7 +185,7 @@ export default function Lobby() {
 
                         return (
                           <div
-                            key={playlist.id}
+                            key={index}
                             className="relative flex flex-col flex-1 w-full col-span-1"
                           >
                             <div className="flex flex-row">
