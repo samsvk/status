@@ -16,6 +16,10 @@ class SOCKET {
       next(data);
     });
   }
+
+  sendPlaylistTracks(tracks, next) {
+    this.socket.emit("sendPlaylistTracks", tracks);
+  }
 }
 
 const instance = new SOCKET();

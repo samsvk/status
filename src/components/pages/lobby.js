@@ -83,25 +83,25 @@ export default function Lobby() {
           {" "}
           get playlists
         </button>
-        <button
+        {/* <button
           onClick={() =>
             createUserPlaylist({ ...userData, playlistTunes })
           }
         >
           {" "}
           create playlist
-        </button>
-      </div>
+        </button> */}
 
-      <div className="relative">
-        {playlistTunes.map((item, index) => (
-          <div
-            className="absolute left-10"
-            style={{ top: index * 20 }}
-          >
-            {item.name}
-          </div>
-        ))}
+        <button
+          onClick={() =>
+            SOCKET.sendPlaylistTracks({
+              id: lobbyData.id,
+              playlistTunes,
+            })
+          }
+        >
+          send playlist
+        </button>
       </div>
 
       <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
@@ -130,6 +130,12 @@ export default function Lobby() {
               Link
             </span>
           </p>
+
+          <ul className="overflow-y-scroll">
+            {lobbyData?.tracks?.map((item) => (
+              <li key={item.href}>{item.name}</li>
+            ))}
+          </ul>
         </div>
         <div className="flex items-start w-full col-span-5 ml-[600px]">
           {lobbyData?.users?.map((user, index) => {
