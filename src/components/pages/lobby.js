@@ -52,21 +52,24 @@ export default function Lobby() {
     SOCKET.updateLobbyData(setLobbyData);
   }, [SOCKET]);
 
+  useEffect(() => {
+    if (userData) {
+      SOCKET.joinLobby(
+        {
+          userData,
+          lobbyData,
+        },
+        1000
+      );
+    }
+  }, [SOCKET, userData]);
+
   if (!userData) return null;
-  console.log(userData);
+
+  console.log(lobbyData);
 
   return (
     <>
-      <button
-        onClick={() =>
-          SOCKET.joinLobby({
-            userData,
-            lobbyData,
-          })
-        }
-      >
-        Join
-      </button>
       <Grid />
       {selected.map((item) => (
         <span>{item.name}</span>
@@ -144,11 +147,11 @@ export default function Lobby() {
                     <span className="absolute block w-2 h-2 scale-75 bg-orange-500 rounded left-3 top-7 rotate-12" />
                   </div>
                   <span className="z-50 block px-0 mx-0 mt-1 text-base font-medium leading-normal tracking-tight text-center align-text-top text-spotify-text first-letter:uppercase">
-                    {user.name}'s Profile
+                    {user.userData.name}'s Profile
                   </span>
                   <p className="block relative z-50 px-0 mx-0 mt-[-5px] text-[14px] font-normal text-neutral-700/80 tracking-tight text-center leading-normal hover:cursor-pointer hover:underline">
                     <a
-                      href={`${user.href}`}
+                      href={`${user.userData.href}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -159,7 +162,7 @@ export default function Lobby() {
                 <div className="w-full px-4 mx-auto">
                   <div className="relative z-10 w-40 mx-auto border-2 h-36 border-spotify-text bg-spotify-bg ">
                     <img
-                      src={user.image}
+                      src={user.userData.image}
                       className="block object-cover w-full h-full blur-[0.035rem] p-1  z-50 relative bg-spotify-bg"
                     />
                     <div className="absolute right-0 block w-full h-full scale-95 rotate-0 border-2 -z-30 top-3 left-3 border-spotify-text" />
@@ -168,49 +171,51 @@ export default function Lobby() {
 
                 <div className="w-full h-full">
                   <div className="flex flex-col items-center justify-center gap-8 mx-auto mt-8 text-spotify-text max-w-max">
-                    {user?.playlists?.map((playlist, index) => {
-                      const sel = selected.some(
-                        (item) => item.id === playlist.id
-                      );
+                    {user.userData?.playlists?.map(
+                      (playlist, index) => {
+                        const sel = selected.some(
+                          (item) => item.id === playlist.id
+                        );
 
-                      return (
-                        <div
-                          key={playlist.id}
-                          className="relative flex flex-col flex-1 w-full col-span-1"
-                        >
-                          <div className="flex flex-row">
-                            <div
-                              onClick={() =>
-                                addSelected({
-                                  name: playlist.name,
-                                  id: playlist.id,
-                                  length: playlist.length,
-                                })
-                              }
-                              className={`
+                        return (
+                          <div
+                            key={playlist.id}
+                            className="relative flex flex-col flex-1 w-full col-span-1"
+                          >
+                            <div className="flex flex-row">
+                              <div
+                                onClick={() =>
+                                  addSelected({
+                                    name: playlist.name,
+                                    id: playlist.id,
+                                    length: playlist.length,
+                                  })
+                                }
+                                className={`
                           relative w-14 h-14 before:absolute before:content-[''] before:h-full before:w-full before:bg-spotify-bg before:bottom-1 before:right-1 before:border-2 ${
                             sel
                               ? "before:border-spotify-text before:bg-spotify-green"
                               : "before:border-spotify-text"
                           }`}
-                            >
-                              <img
-                                src={playlist.image}
-                                className="relative block object-cover w-14 h-14 min-h-14 min-w-14 drop-shadow-lg"
-                              />
-                            </div>
-                            <div className="inline-flex flex-col items-start justify-end ml-2">
-                              <h3 className="block text-left text-[14px] font-normal tracking-tight first-letter:uppercase text-ellipsis whitespace-nowrap overflow-hidden">
-                                {playlist.name}
-                              </h3>
-                              <p className="relative flex flex-wrap z-10 font-medium text-[10px] uppercase text-neutral-700/80  whitespace-nowrap">
-                                Songs: #{playlist.length}
-                              </p>
+                              >
+                                <img
+                                  src={playlist.image}
+                                  className="relative block object-cover w-14 h-14 min-h-14 min-w-14 drop-shadow-lg"
+                                />
+                              </div>
+                              <div className="inline-flex flex-col items-start justify-end ml-2">
+                                <h3 className="block text-left text-[14px] font-normal tracking-tight first-letter:uppercase text-ellipsis whitespace-nowrap overflow-hidden">
+                                  {playlist.name}
+                                </h3>
+                                <p className="relative flex flex-wrap z-10 font-medium text-[10px] uppercase text-neutral-700/80  whitespace-nowrap">
+                                  Songs: #{playlist.length}
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      }
+                    )}
                   </div>
                 </div>
               </aside>
