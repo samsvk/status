@@ -135,7 +135,7 @@ export default function Lobby() {
           {lobbyData?.users?.map((user, index) => {
             if (user == null) return null;
             return (
-              <aside className="">
+              <aside className="" key={user._id}>
                 <div className="relative mx-auto mb-5 min-w-[120px] max-w-[120px] min-h-[50px]">
                   <div className="absolute z-20 w-full h-full">
                     <span className="absolute right-0 block w-2 h-2 scale-50 bg-yellow-500 rounded-full top-1 rotate-12" />
