@@ -20,6 +20,19 @@ class SOCKET {
   sendPlaylistTracks(tracks, next) {
     this.socket.emit("sendPlaylistTracks", tracks);
   }
+
+  setLobbyUsers(next) {
+    this.socket.on("setLobbyUsers", (data) => {
+      next(data);
+    });
+  }
+
+  logUsers() {
+    this.socket.emit("logUsers");
+  }
+  logLobbies() {
+    this.socket.emit("logLobbies");
+  }
 }
 
 const instance = new SOCKET();

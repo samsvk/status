@@ -23,6 +23,8 @@ export default function Lobby() {
   const [selected, setSelected] = useState([]);
   const [playlistTunes, setPlaylistTunes] = useState([]);
 
+  const [lobbyUsers, setLobbyUsers] = useState([]);
+
   useEffect(() => {
     if (token) {
       setUserCookie(token);
@@ -48,30 +50,38 @@ export default function Lobby() {
 
   useEffect(() => {
     SOCKET.updateLobbyData(setLobbyData);
+    SOCKET.setLobbyUsers(setLobbyUsers);
   }, [SOCKET]);
 
   useEffect(() => {
     if (userData) {
       SOCKET.joinLobby(
         {
-          userData,
-          lobbyData,
+          ...userData,
+          lobbyId: lobbyData.id,
         },
         1000
       );
     }
   }, [SOCKET, userData]);
 
+  useEffect(() => {
+    if (playlistTunes && userData && playlistTunes.length > 0) {
+      SOCKET.sendPlaylistTracks({
+        id: lobbyData.id,
+        playlistTunes,
+      });
+    }
+  }, [playlistTunes]);
+
   if (!userData) return null;
   console.log(lobbyData);
-  console.log(playlistTunes[0]);
+  // console.log(userData);
+  // console.log(lobbyUsers);
 
   return (
     <>
       <Grid />
-      {selected.map((item) => (
-        <span>{item.name}</span>
-      ))}
       <div className="flex gap-10">
         {/* <button
           onClick={() =>
@@ -81,6 +91,8 @@ export default function Lobby() {
           {" "}
           create playlist
         </button> */}
+        <button onClick={() => SOCKET.logUsers()}>log users</button>
+        <button onClick={() => SOCKET.logLobbies()}>log lobbies</button>
 
         <button
           onClick={() =>
@@ -94,12 +106,54 @@ export default function Lobby() {
         </button>
       </div>
 
-      <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
+      <div className="max-w-5xl mx-auto">
+        <p>
+          {lobbyUsers.length}'s users in this lobby with the ID: {lobbyData.id}
+        </p>
+        <ul>{lobbyUsers.map((item) => item.name).join(", ")}</ul>
+
+        <div className="mt-10">
+          {userData.playlists.map((playlist, index) => (
+            <div
+              key={index}
+              onClick={() =>
+                addSelected({
+                  name: playlist.name,
+                  id: playlist.id,
+                  length: playlist.length,
+                })
+              }
+            >
+              {playlist.name}
+            </div>
+          ))}
+        </div>
+        <div className="flex-col mt-10 bg-green-500 fkex">
+          {userData.name}'s selected playlist(s):
+          {selected.map((item, index) => (
+            <span className="block" key={index}>
+              {item.name}
+            </span>
+          ))}
+          <span
+            onClick={async () => {
+              getUserPlaylistTracks(selected, setPlaylistTunes);
+            }}
+            className="block px-5 py-1 mt-5 border rounded-3xl border-spotify-text max-w-max"
+          >
+            Submit Playlists
+          </span>
+        </div>
+        {lobbyData?.tracks?.map((item) => item.name).join(", ")}
+      </div>
+
+      {/* <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
         <div className="fixed col-span-5 max-w-[600px] w-full h-full">
           <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text leading-tight">
             Welcome to Shuff.le,
             <span className=" first-letter:uppercase text-spotify-green">
-              {userData.name}!
+              {" "}
+              {userData.name}
             </span>
           </h1>
           <p className="w-full max-w-lg mt-10 text-2xl font-normal leading-relaxed tracking-tight text-spotify-text">
@@ -221,7 +275,7 @@ export default function Lobby() {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
