@@ -74,6 +74,16 @@ export default function Lobby() {
   }, [playlistTunes]);
 
   if (!userData) return null;
+  console.log(lobbyData);
+
+  const example = {
+    url: "https://open.spotify.com/track/3iKBtYoamggdtSbDL9FUCa",
+    name: "Got Me Thinking",
+    image: "https://i.scdn.co/image/ab67616d0000b27354290571f398bd37e7f19602",
+    id: "3iKBtYoamggdtSbDL9FUCa",
+    artists: ["Maduk", "Veela"],
+    uri: "spotify:track:3iKBtYoamggdtSbDL9FUCa",
+  };
 
   return (
     <>
@@ -132,8 +142,31 @@ export default function Lobby() {
             Submit Songs
           </span>
         </div>
-        {lobbyData?.tracks?.map((item) => item.name).join(", ")}
 
+        <ul className="p-10 mt-10 border-2 bg-spotify-bg border-spotify-text">
+          {/* {lobbyData?.tracks?.map((item, index) => (
+            <li key={index}>
+              <span>#{index + 1}</span>
+              {item.name}
+            </li>
+          ))} */}
+          <li className="flex gap-4">
+            <span className="h-full my-auto">#1</span>
+            <img className="w-10 h-10" src={example.image} />
+            <div className="relative h-full">
+              <h2 className="p-0 align-text-top x-0 mt-[-0.3rem] whitespace-nowrap">
+                {example.name}
+              </h2>
+              <ul className="flex">
+                {example.artists.map((artist, index) => (
+                  <li key={index} className="whitespace-nowrap">
+                    {artist}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        </ul>
         <button
           className="block px-5 py-1 mt-10 border rounded-3xl border-spotify-text max-w-max"
           onClick={() => createUserPlaylist({ ...userData, playlistTunes })}

@@ -16,11 +16,7 @@ export default function Home() {
       <Grid />
       <div className="min-h-screen h-full max-w-[1250px] w-full mx-auto flex items-center gap-5">
         <AnimatePresence exitBeforeEnter>
-          <motion.div
-            variants={container}
-            initial={"hidden"}
-            animate={"visible"}
-          >
+          <motion.div variants={container} initial={"hidden"} animate={"visible"}>
             <div className="flex flex-col flex-1 gap-10">
               <motion.h1
                 variants={child}
@@ -28,16 +24,14 @@ export default function Home() {
               >
                 Create your new
                 <br /> playlist in{" "}
-                <span className="text-spotify-green">
-                  One Click
-                </span>
+                <span className="text-spotify-green">One Click</span>
               </motion.h1>
               <motion.p
                 variants={child}
                 className="w-full max-w-lg text-2xl font-normal leading-relaxed tracking-tight text-spotify-text"
               >
-                Share your music taste with friends, and build a
-                playlist that fits everyone!
+                Share your music taste with friends, and build a playlist that fits
+                everyone!
               </motion.p>
               <div>
                 <motion.div variants={child}>
@@ -59,14 +53,10 @@ export default function Home() {
                   variants={child}
                   className="text-center mx-auto text-[14px] flex-1 leading-5 font-normal text-neutral-700/80  tracking-tight flex gap-1 items-center"
                 >
-                  <span className="underline">
-                    Don't understand how it works?
-                  </span>
+                  <span className="underline">Don't understand how it works?</span>
                   <span className="line-through">$0</span>
                   It's completely{" "}
-                  <span className="font-medium text-black/80">
-                    free
-                  </span>
+                  <span className="font-medium text-black/80">free</span>
                   forever.
                 </motion.p>
               </div>
