@@ -36,7 +36,6 @@ export default function Lobby() {
     const timeout = setTimeout(() => {
       fetchUserDetails(setUserData);
     }, 500);
-
     return () => clearTimeout(timeout);
   }, []);
 
@@ -75,22 +74,11 @@ export default function Lobby() {
   }, [playlistTunes]);
 
   if (!userData) return null;
-  console.log(lobbyData);
-  // console.log(userData);
-  // console.log(lobbyUsers);
 
   return (
     <>
       <Grid />
       <div className="flex gap-10">
-        {/* <button
-          onClick={() =>
-            createUserPlaylist({ ...userData, playlistTunes })
-          }
-        >
-          {" "}
-          create playlist
-        </button> */}
         <button onClick={() => SOCKET.logUsers()}>log users</button>
         <button onClick={() => SOCKET.logLobbies()}>log lobbies</button>
 
@@ -141,10 +129,18 @@ export default function Lobby() {
             }}
             className="block px-5 py-1 mt-5 border rounded-3xl border-spotify-text max-w-max"
           >
-            Submit Playlists
+            Submit Songs
           </span>
         </div>
         {lobbyData?.tracks?.map((item) => item.name).join(", ")}
+
+        <button
+          className="block px-5 py-1 mt-10 border rounded-3xl border-spotify-text max-w-max"
+          onClick={() => createUserPlaylist({ ...userData, playlistTunes })}
+        >
+          {" "}
+          create playlist on account
+        </button>
       </div>
 
       {/* <div className="relative max-w-[1250px] w-full mx-auto my-12 grid grid-cols-10 p-10">
