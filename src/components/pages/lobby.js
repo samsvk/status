@@ -126,7 +126,7 @@ export default function Lobby() {
             </span>
           ))}
           <span
-            onClick={async () => {
+            onClick={() => {
               getUserPlaylistTracks(selected, setPlaylistTunes);
             }}
             className="block px-5 py-1 mt-5 border rounded-3xl border-spotify-text max-w-max"
@@ -136,11 +136,43 @@ export default function Lobby() {
         </div>
 
         <ul className="flex flex-col gap-2 p-10 mt-10 border-2 bg-spotify-bg border-spotify-text">
+          <li className="grid grid-cols-5">
+            <div className="flex col-span-2 gap-4">
+              <span className="w-4 my-auto text-xl font-medium text-right h-max text-spotify-text racking-tight" />
+              <div className="relative h-full">
+                <h2
+                  className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
+                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
+                >
+                  Title
+                </h2>
+              </div>
+            </div>
+
+            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-center">
+              <h2
+                className="block  relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
+                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis text-left"
+              >
+                Album
+              </h2>
+            </div>
+            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
+              <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
+                Date
+              </h2>
+            </div>
+            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right mr-5">
+              <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
+                Time
+              </h2>
+            </div>
+          </li>
           {lobbyData?.tracks?.map((item, index) => (
             <li className="grid grid-cols-5" key={index}>
               <div className="flex col-span-2 gap-4">
-                <span className="w-4 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight">
-                  #{index + 1}
+                <span className="w-4 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
+                  {index + 1}
                 </span>
                 <img className="object-fill w-10 h-10" src={item.image} />
                 <div className="relative h-full">
