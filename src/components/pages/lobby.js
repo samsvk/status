@@ -134,80 +134,82 @@ export default function Lobby() {
             Submit Songs
           </span>
         </div>
-
-        <ul className="flex flex-col gap-2 p-10 mt-10 border-2 bg-spotify-bg border-spotify-text">
-          <li className="grid grid-cols-5">
-            <div className="flex col-span-2 gap-4">
-              <span className="w-4 my-auto text-xl font-medium text-right h-max text-spotify-text racking-tight" />
-              <div className="relative h-full">
-                <h2
-                  className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
-                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
-                >
-                  Title
-                </h2>
-              </div>
-            </div>
-
-            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-center">
-              <h2
-                className="block  relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
-                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis text-left"
-              >
-                Album
-              </h2>
-            </div>
-            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
-              <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
-                Date
-              </h2>
-            </div>
-            <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right mr-5">
-              <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
-                Time
-              </h2>
-            </div>
-          </li>
-          {lobbyData?.tracks?.map((item, index) => (
-            <li className="grid grid-cols-5" key={index}>
+        {lobbyData?.tracks?.length > 0 && (
+          <ul className="flex flex-col gap-2 mt-10 rounded-md">
+            <li className="grid grid-cols-5 py-2 border-b border-spotify-text/1">
               <div className="flex col-span-2 gap-4">
-                <span className="w-4 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
-                  {index + 1}
-                </span>
-                <img className="object-fill w-10 h-10" src={item.image} />
+                <span className="w-4 my-auto text-xl font-medium text-right h-max text-spotify-text racking-tight" />
                 <div className="relative h-full">
                   <h2
                     className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
                    max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
                   >
-                    {item.name}
+                    Title
                   </h2>
-                  <ul className="flex gap-1 mx-auto text-[14px] flex-1 leading-5 font-normal mt-1 text-neutral-700/80 tracking-tight">
-                    {item.artists.map((artist, index) => (
-                      <li key={index} className="whitespace-nowrap">
-                        {artist === item.artists[item.artists.length - 1]
-                          ? `${artist}`
-                          : `${artist},`}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
 
               <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-center">
-                <p className="text-left max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis block">
-                  {item.album}
-                </p>
+                <h2
+                  className="block  relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
+                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis text-left"
+                >
+                  Album
+                </h2>
               </div>
               <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
-                {item.added.slice(0, 10).split("-").reverse().join("/")}
+                <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
+                  Date
+                </h2>
               </div>
               <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right mr-5">
-                {millsToMins(item.length)}
+                <h2 className="relative z-10 block p-0 text-base font-medium leading-none tracking-tight text-right align-text-top text-spotify-text">
+                  Time
+                </h2>
               </div>
             </li>
-          ))}
-        </ul>
+            {lobbyData?.tracks?.map((item, index) => (
+              <li className="grid grid-cols-5" key={index}>
+                <div className="flex col-span-2 gap-4">
+                  <span className="w-4 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
+                    {index + 1}
+                  </span>
+                  <img className="object-fill w-10 h-10" src={item.image} />
+                  <div className="relative h-full">
+                    <h2
+                      className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
+                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
+                    >
+                      {item.name}
+                    </h2>
+                    <ul className="flex gap-1 mx-auto text-[14px] flex-1 leading-5 font-normal mt-1 text-neutral-700/80 tracking-tight">
+                      {item.artists.map((artist, index) => (
+                        <li key={index} className="whitespace-nowrap">
+                          {artist === item.artists[item.artists.length - 1]
+                            ? `${artist}`
+                            : `${artist},`}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-center">
+                  <p className="text-left max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis block">
+                    {item.album}
+                  </p>
+                </div>
+                <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
+                  {item.added.slice(0, 10).split("-").reverse().join("/")}
+                </div>
+                <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right mr-5">
+                  {millsToMins(item.length)}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <button
           className="block px-5 py-1 mt-10 border rounded-3xl border-spotify-text max-w-max"
           onClick={() =>
