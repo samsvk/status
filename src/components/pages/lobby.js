@@ -96,7 +96,7 @@ export default function Lobby() {
         </button>
       </div>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         <p>
           {lobbyUsers.length}'s users in this lobby with the ID: {lobbyData.id}
         </p>

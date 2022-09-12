@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Grid />
-      <div className="min-h-screen h-full max-w-[1250px] w-full mx-auto flex items-center gap-5">
+      <div className="min-h-screen h-full max-w-[1280px] w-full mx-auto flex items-center gap-5">
         <AnimatePresence exitBeforeEnter>
           <motion.div variants={container} initial={"hidden"} animate={"visible"}>
             <div className="flex flex-col flex-1 gap-10">
