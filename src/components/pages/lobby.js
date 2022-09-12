@@ -10,6 +10,7 @@ import {
 } from "../../api/actions";
 import { IoPeopleSharp } from "react-icons/io5";
 import SOCKET from "../../api/socket";
+import { millsToMins } from "../../global";
 
 export default function Lobby() {
   const navigate = useNavigate();
@@ -74,16 +75,231 @@ export default function Lobby() {
   }, [playlistTunes]);
 
   if (!userData) return null;
+
   console.log(lobbyData);
 
-  const example = {
-    url: "https://open.spotify.com/track/3iKBtYoamggdtSbDL9FUCa",
-    name: "Got Me Thinking",
-    image: "https://i.scdn.co/image/ab67616d0000b27354290571f398bd37e7f19602",
-    id: "3iKBtYoamggdtSbDL9FUCa",
-    artists: ["Maduk", "Veela"],
-    uri: "spotify:track:3iKBtYoamggdtSbDL9FUCa",
-  };
+  const tracks = [
+    {
+      added: "2022-08-24T14:26:16Z",
+      url: "https://open.spotify.com/track/7hoLG1AYY3zwkLdWLO57Of",
+      name: "One's Own",
+      image: "https://i.scdn.co/image/ab67616d0000b27336a5035c6076518f3e5558c8",
+      id: "7hoLG1AYY3zwkLdWLO57Of",
+      artists: ["Koven"],
+      uri: "spotify:track:7hoLG1AYY3zwkLdWLO57Of",
+      length: 266404,
+      album: "Sometimes We Are",
+    },
+    {
+      added: "2022-08-24T14:29:17Z",
+      url: "https://open.spotify.com/track/03HEvpOcpBuIV1QAonZt8t",
+      name: "On My Mind",
+      image: "https://i.scdn.co/image/ab67616d0000b273d2a0863bcae0479dda466b7d",
+      id: "03HEvpOcpBuIV1QAonZt8t",
+      artists: ["Macca", "Loz Contreras"],
+      uri: "spotify:track:03HEvpOcpBuIV1QAonZt8t",
+      length: 338428,
+      album: "Point of Origin, Vol. 2",
+    },
+    {
+      added: "2022-08-24T14:28:53Z",
+      url: "https://open.spotify.com/track/4FIVgd968FSqR0ourgJ1V4",
+      name: "Your Way",
+      image: "https://i.scdn.co/image/ab67616d0000b27317bdd6e3bdd6b32e44993400",
+      id: "4FIVgd968FSqR0ourgJ1V4",
+      artists: ["Netsky"],
+      uri: "spotify:track:4FIVgd968FSqR0ourgJ1V4",
+      length: 360000,
+      album: "Your Way / Daydreamin",
+    },
+    {
+      added: "2022-08-24T11:56:52Z",
+      url: "https://open.spotify.com/track/6tWYDHCH8isT5MEjjQQGrE",
+      name: "Ember - Hybrid Minds Remix",
+      image: "https://i.scdn.co/image/ab67616d0000b2738af1203bd1f85fee3012b738",
+      id: "6tWYDHCH8isT5MEjjQQGrE",
+      artists: ["Camo & Krooked", "Hybrid Minds"],
+      uri: "spotify:track:6tWYDHCH8isT5MEjjQQGrE",
+      length: 342857,
+      album: "MOSAIK REMIXED",
+    },
+    {
+      added: "2022-08-24T14:28:17Z",
+      url: "https://open.spotify.com/track/07NuQwlM6mQqpYQspsfcaA",
+      name: "Emerald Waters - Zazu Remix",
+      image: "https://i.scdn.co/image/ab67616d0000b273f66688e5a602f6da94d65762",
+      id: "07NuQwlM6mQqpYQspsfcaA",
+      artists: ["Chinensis", "ZAZU"],
+      uri: "spotify:track:07NuQwlM6mQqpYQspsfcaA",
+      length: 282083,
+      album: "Liquicity Drum & Bass 2017",
+    },
+    {
+      added: "2022-08-24T14:25:55Z",
+      url: "https://open.spotify.com/track/6bsmYFwAy2Y8e5fkzOLPLR",
+      name: "Like The Sun",
+      image: "https://i.scdn.co/image/ab67616d0000b27325865536e2540c31cb61dd45",
+      id: "6bsmYFwAy2Y8e5fkzOLPLR",
+      artists: ["Fred V & Grafix"],
+      uri: "spotify:track:6bsmYFwAy2Y8e5fkzOLPLR",
+      length: 227586,
+      album: "Oxygen",
+    },
+    {
+      added: "2022-08-24T14:31:10Z",
+      url: "https://open.spotify.com/track/5baQLiHIcy4Fsslxhvfo5V",
+      name: "Visionary",
+      image: "https://i.scdn.co/image/ab67616d0000b273454ddc31ae0fa1370183d52a",
+      id: "5baQLiHIcy4Fsslxhvfo5V",
+      artists: ["Rameses B"],
+      uri: "spotify:track:5baQLiHIcy4Fsslxhvfo5V",
+      length: 297639,
+      album: "Visionary",
+    },
+    {
+      added: "2022-08-24T11:57:06Z",
+      url: "https://open.spotify.com/track/0zLtlhG9ael9NXiugonW7k",
+      name: "Face To Face Again (The Joy) - Seba Remix",
+      image: "https://i.scdn.co/image/ab67616d0000b273c9330a83492217ec635606ed",
+      id: "0zLtlhG9ael9NXiugonW7k",
+      artists: ["Kirsty Hawkshaw", "Seba"],
+      uri: "spotify:track:0zLtlhG9ael9NXiugonW7k",
+      length: 384398,
+      album: "Face To Face Again (The Joy)",
+    },
+    {
+      added: "2022-08-24T11:58:46Z",
+      url: "https://open.spotify.com/track/200UULqHYtwIYleXNZgTGK",
+      name: "Don't Let Go - Polygon Remix",
+      image: "https://i.scdn.co/image/ab67616d0000b27315fe7c4be0867d63b2387e04",
+      id: "200UULqHYtwIYleXNZgTGK",
+      artists: ["Raise Spirit", "Polygon"],
+      uri: "spotify:track:200UULqHYtwIYleXNZgTGK",
+      length: 344046,
+      album: "Don't Let Go (Polygon Remix)",
+    },
+    {
+      added: "2022-08-24T14:29:32Z",
+      url: "https://open.spotify.com/track/5ZTjnks2CsIIyByksjhix7",
+      name: "Under The Sun - Original Mix",
+      image: "https://i.scdn.co/image/ab67616d0000b273595e826853a7d74407e55e3e",
+      id: "5ZTjnks2CsIIyByksjhix7",
+      artists: ["Seba"],
+      uri: "spotify:track:5ZTjnks2CsIIyByksjhix7",
+      length: 373028,
+      album: "Sine Language",
+    },
+    {
+      added: "2022-08-24T14:31:47Z",
+      url: "https://open.spotify.com/track/3Sx7CXto3iQWslynRFzRvn",
+      name: "I Need the Night",
+      image: "https://i.scdn.co/image/ab67616d0000b2736a38ee1a6106e9ffb23d4ee5",
+      id: "3Sx7CXto3iQWslynRFzRvn",
+      artists: ["Loadstar"],
+      uri: "spotify:track:3Sx7CXto3iQWslynRFzRvn",
+      length: 253793,
+      album: "I Need the Night",
+    },
+    {
+      added: "2022-08-27T16:12:31Z",
+      url: "https://open.spotify.com/track/426PBf18jsetDLMztk1MMM",
+      name: "Dreamcatcher",
+      image: "https://i.scdn.co/image/ab67616d0000b273aa9bb894dc4453ea0d819453",
+      id: "426PBf18jsetDLMztk1MMM",
+      artists: ["Edlan", "Ella Noël"],
+      uri: "spotify:track:426PBf18jsetDLMztk1MMM",
+      length: 274489,
+      album: "Dreamcatcher",
+    },
+    {
+      added: "2022-08-29T17:08:08Z",
+      url: "https://open.spotify.com/track/3QMR4TRPeeJLztrs71kLRm",
+      name: "Avalon - VIP",
+      image: "https://i.scdn.co/image/ab67616d0000b273ef083b1a9969bf2134779020",
+      id: "3QMR4TRPeeJLztrs71kLRm",
+      artists: ["Maduk"],
+      uri: "spotify:track:3QMR4TRPeeJLztrs71kLRm",
+      length: 290296,
+      album: "Escapism - (Liquicity Presents)",
+    },
+    {
+      added: "2022-08-24T11:58:33Z",
+      url: "https://open.spotify.com/track/6SgI2TrZnKUindNeujSAW6",
+      name: "Halcyon",
+      image: "https://i.scdn.co/image/ab67616d0000b273d34bf8cb1d8ba9f9dd0fcac2",
+      id: "6SgI2TrZnKUindNeujSAW6",
+      artists: ["Hybrid Minds", "Grimm"],
+      uri: "spotify:track:6SgI2TrZnKUindNeujSAW6",
+      length: 341538,
+      album: "Mountains",
+    },
+    {
+      added: "2022-08-27T16:12:28Z",
+      url: "https://open.spotify.com/track/5VxyIwQRhDMX08RPzkxQz6",
+      name: "Take It In - Hybrid Minds Remix",
+      image: "https://i.scdn.co/image/ab67616d0000b273293d8dc5d5699610c53db3a8",
+      id: "5VxyIwQRhDMX08RPzkxQz6",
+      artists: ["Feint", "Hybrid Minds", "Koven"],
+      uri: "spotify:track:5VxyIwQRhDMX08RPzkxQz6",
+      length: 320914,
+      album: "Liquicity Drum & Bass 2017",
+    },
+    {
+      added: "2022-08-28T13:12:23Z",
+      url: "https://open.spotify.com/track/52fb3usXUKzxPy7unqwfLs",
+      name: "Paradise Lost",
+      image: "https://i.scdn.co/image/ab67616d0000b273ecdb8f824367a53468100faf",
+      id: "52fb3usXUKzxPy7unqwfLs",
+      artists: ["Yung Lean", "Ant Wan"],
+      uri: "spotify:track:52fb3usXUKzxPy7unqwfLs",
+      length: 227385,
+      album: "Stardust",
+    },
+    {
+      added: "2022-08-24T11:57:00Z",
+      url: "https://open.spotify.com/track/29HKlqyzy3vnBJkdXbNiIt",
+      name: "Let Me Feel",
+      image: "https://i.scdn.co/image/ab67616d0000b273e20d752711f40985825a9d4e",
+      id: "29HKlqyzy3vnBJkdXbNiIt",
+      artists: ["Submatik", "Dualistic"],
+      uri: "spotify:track:29HKlqyzy3vnBJkdXbNiIt",
+      length: 272586,
+      album: "Let Me Feel",
+    },
+    {
+      added: "2022-08-24T14:27:39Z",
+      url: "https://open.spotify.com/track/1M85o2ruB9uTj68dIXj6dJ",
+      name: "Vagrant",
+      image: "https://i.scdn.co/image/ab67616d0000b273cb5e9973c66bfd141e144f0e",
+      id: "1M85o2ruB9uTj68dIXj6dJ",
+      artists: ["Feint", "Veela"],
+      uri: "spotify:track:1M85o2ruB9uTj68dIXj6dJ",
+      length: 268571,
+      album: "Vagrant",
+    },
+    {
+      added: "2022-08-24T11:57:14Z",
+      url: "https://open.spotify.com/track/4RUphASXlXEs8SJQvES7N0",
+      name: "Station Six",
+      image: "https://i.scdn.co/image/ab67616d0000b273f57980bf1a0ab726520fa6cc",
+      id: "4RUphASXlXEs8SJQvES7N0",
+      artists: ["Dualistic"],
+      uri: "spotify:track:4RUphASXlXEs8SJQvES7N0",
+      length: 300170,
+      album: "Station Six",
+    },
+    {
+      added: "2022-08-24T14:25:38Z",
+      url: "https://open.spotify.com/track/7rKNoKsC4wi2Bwbc6lhVzD",
+      name: "If I Smiled",
+      image: "https://i.scdn.co/image/ab67616d0000b273a32671f6459142cba965edd7",
+      id: "7rKNoKsC4wi2Bwbc6lhVzD",
+      artists: ["Dawn Wall"],
+      uri: "spotify:track:7rKNoKsC4wi2Bwbc6lhVzD",
+      length: 275862,
+      album: "You Remember",
+    },
+  ];
 
   return (
     <>
@@ -143,29 +359,46 @@ export default function Lobby() {
           </span>
         </div>
 
-        <ul className="p-10 mt-10 border-2 bg-spotify-bg border-spotify-text">
-          {/* {lobbyData?.tracks?.map((item, index) => (
-            <li key={index}>
-              <span>#{index + 1}</span>
-              {item.name}
+        <ul className="flex flex-col gap-2 p-10 mt-10 border-2 bg-spotify-bg border-spotify-text">
+          {tracks?.map((item, index) => (
+            <li className="grid grid-cols-5" key={index}>
+              <div className="flex col-span-2 gap-4">
+                <span className="w-4 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight">
+                  #{index + 1}
+                </span>
+                <img className="object-fill w-10 h-10" src={item.image} />
+                <div className="relative h-full">
+                  <h2
+                    className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
+                   max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
+                  >
+                    {item.name}
+                  </h2>
+                  <ul className="flex gap-1 mx-auto text-[14px] flex-1 leading-5 font-normal mt-1 text-neutral-700/80 tracking-tight">
+                    {item.artists.map((artist, index) => (
+                      <li key={index} className="whitespace-nowrap">
+                        {artist === item.artists[item.artists.length - 1]
+                          ? `${artist}`
+                          : `${artist},`}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-center">
+                <p className="text-left max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis block">
+                  {item.album}
+                </p>
+              </div>
+              <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right">
+                {item.added.slice(0, 10).split("-").reverse().join("/")}
+              </div>
+              <div className="col-span-1 h-max my-auto text-[14px] font-normal text-neutral-700/80 tracking-tight text-right mr-5">
+                {millsToMins(item.length)}
+              </div>
             </li>
-          ))} */}
-          <li className="flex gap-4">
-            <span className="h-full my-auto">#1</span>
-            <img className="w-10 h-10" src={example.image} />
-            <div className="relative h-full">
-              <h2 className="p-0 align-text-top x-0 mt-[-0.3rem] whitespace-nowrap">
-                {example.name}
-              </h2>
-              <ul className="flex">
-                {example.artists.map((artist, index) => (
-                  <li key={index} className="whitespace-nowrap">
-                    {artist}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
+          ))}
         </ul>
         <button
           className="block px-5 py-1 mt-10 border rounded-3xl border-spotify-text max-w-max"
