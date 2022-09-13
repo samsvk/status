@@ -75,8 +75,6 @@ export default function Lobby() {
 
   if (!userData) return null;
 
-  console.log(lobbyData);
-
   return (
     <>
       <Grid />
@@ -95,6 +93,7 @@ export default function Lobby() {
           send playlist
         </button>
       </div>
+      <div className="max-w-[1280px] mx-auto p-1.5">123</div>
 
       <div className="max-w-[1280px] mx-auto p-1.5">
         <p>
