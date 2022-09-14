@@ -95,17 +95,31 @@ export default function Lobby() {
       </div>
 
       <div className="h-full max-w-[1280px] w-full mx-auto flex items-start gap-5 relative bg-spotify-bg mt-[190px] min-h-[400px] border border-spotify-text/5 drop-shadow-xl">
-        <div className="absolute left-12 top-[-5rem] flex gap-5">
+        {/* <div className="absolute left-12 top-[-5rem] flex gap-5">
           <img
             src={userData.image}
             className="relative object-cover w-40 h-40 border rounded-full drop-shadow-xl border-spotify-text/5"
           />
-          <div className="mt-2.5">
+          <div className="">
             <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text first-letter:uppercase">
               {userData.name}
             </h1>
           </div>
-        </div>
+        </div> */}
+
+        <nav>
+          <ul className="flex gap-5">
+            <li className="text-base font-medium leading-none tracking-tight text-spotify-text">
+              Your Playlist
+            </li>
+            <li className="text-base font-medium leading-none tracking-tight text-spotify-text/20">
+              Members
+            </li>
+            <li className="text-base font-medium leading-none tracking-tight text-spotify-text/20">
+              Lobby Info
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <div className="max-w-[1280px] mx-auto p-1.5">
