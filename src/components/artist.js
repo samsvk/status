@@ -101,15 +101,12 @@ export default function Artist() {
                             Popularity
                           </h5>
                           <div className="relative z-10 mt-0.5 mb-0.5 overflow-hidden text-base font-medium leading-none tracking-tight text-spotify-text whitespace-nowrap text-ellipsis ">
-                            {randomArtist[
-                              index
-                            ].mainArtistInfo.followers.toString()
+                            {randomArtist[index].mainArtistInfo.followers.toString()
                               .length > 6
                               ? "World Famous"
                               : randomArtist[
                                   index
-                                ].mainArtistInfo.followers.toString()
-                                  .length > 4
+                                ].mainArtistInfo.followers.toString().length > 4
                               ? "Well known"
                               : "Low-key"}
                           </div>
@@ -128,15 +125,9 @@ export default function Artist() {
                         {randomArtist[index].mainArtistInfo.name}
                       </h2>
                       <ul className="relative flex flex-wrap z-10 font-medium tracking-[3px] text-[10px] uppercase text-spotify-bg">
-                        {randomArtist[index].mainArtistInfo
-                          ?.genres?.length > 0 && (
+                        {randomArtist[index].mainArtistInfo?.genres?.length > 0 && (
                           <>
-                            <li>
-                              {
-                                randomArtist[index]
-                                  .mainArtistInfo.genres[0]
-                              }
-                            </li>
+                            <li>{randomArtist[index].mainArtistInfo.genres[0]}</li>
                           </>
                         )}
                       </ul>
@@ -192,10 +183,7 @@ export default function Artist() {
                   />
                 </svg>
               </AnimatePresence>
-              <AnimatePresence
-                initial={false}
-                custom={direction}
-              >
+              <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   className="absolute right-[5.5rem]"
                   initial={{ opacity: 0 }}
@@ -209,18 +197,12 @@ export default function Artist() {
                     <img
                       alt=""
                       className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm "
-                      src={`${
-                        generatePreviousArtist().mainArtistInfo
-                          .image
-                      }`}
+                      src={`${generatePreviousArtist().mainArtistInfo.image}`}
                     />
                   </div>
                 </motion.div>
               </AnimatePresence>
-              <AnimatePresence
-                initial={false}
-                custom={direction}
-              >
+              <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   className="absolute"
                   initial={{ opacity: 0 }}
@@ -239,10 +221,7 @@ export default function Artist() {
                   </div>
                 </motion.div>
               </AnimatePresence>
-              <AnimatePresence
-                initial={false}
-                custom={direction}
-              >
+              <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   className="absolute left-[5.5rem]"
                   initial={{ opacity: 0 }}
@@ -256,10 +235,7 @@ export default function Artist() {
                     <img
                       alt=""
                       className="block min-h-[30px] min-w-[30px] max-w-[30px] max-h-[30px] relative w-full h-full bg-black rounded-full m-auto drop-shadow-sm"
-                      src={`${
-                        possibleNextArtist(1).mainArtistInfo
-                          .image
-                      }`}
+                      src={`${possibleNextArtist(1).mainArtistInfo.image}`}
                     />
                   </div>
                 </motion.div>
