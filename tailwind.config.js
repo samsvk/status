@@ -7,7 +7,7 @@ module.exports = {
         spotify: {
           green: "#52784f",
           bg: "#fdf7f2",
-          text: "#040403",
+          text: "#242426",
           offset: "#f4d2eb",
         },
       },
