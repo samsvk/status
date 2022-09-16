@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "../grid";
 import { FaSpotify } from "react-icons/fa";
-import Artist from "../artist2";
+import Artist from "../artist";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, child, getWindow } from "../../global";
 
@@ -12,7 +12,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-full min-h-screen">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl p-12">
         <div className="flex flex-col items-start max-w-lg gap-10">
           <h1 className="text-6xl font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight">
@@ -32,10 +32,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="flex-1 p-8 bg-spotify-bg">
-        <div className="h-full bg-black/5 rounded-3xl">
-          <Artist />
-        </div>
+      <div className="relative w-full h-full max-h-screen my-auto">
+        <Artist />
       </div>
     </div>
   );
