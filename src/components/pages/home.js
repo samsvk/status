@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "../grid";
 import { FaSpotify } from "react-icons/fa";
-import Artist from "../artist";
+import Artist from "../artist2";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, child, getWindow } from "../../global";
 
@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className="text-6xl font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight">
             Find, Share, Create. Good music, good mood.
           </h1>
-          <p className="w-full max-w-md text-xl font-normal leading-relaxed tracking-tight text-spotify-text/50">
+          <p className="w-full max-w-md text-xl font-normal leading-tight tracking-tight text-spotify-text/50">
             Discover musicians from around the world. Boost your mood with a fresh
             playlist that fits all.
           </p>
@@ -33,7 +33,9 @@ export default function Home() {
         </div>
       </div>
       <div className="flex-1 p-8 bg-spotify-bg">
-        <div className="h-full bg-black/5 rounded-3xl"></div>
+        <div className="h-full bg-black/5 rounded-3xl">
+          <Artist />
+        </div>
       </div>
     </div>
   );
