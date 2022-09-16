@@ -12,8 +12,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-full min-h-screen">
-      <div className="flex flex-col items-center justify-center w-full max-w-3xl p-12">
+    <div className="flex h-full min-h-screen mx-auto max-w-[1750px]">
+      <div className="flex flex-col items-center justify-center w-full max-w-2xl">
         <div className="flex flex-col items-start max-w-lg gap-10">
           <h1 className="text-6xl font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight">
             Find, Share, Create. Good music, good mood.
@@ -25,7 +25,7 @@ export default function Home() {
 
           <button
             onClick={handleLogin}
-            className="relative flex items-center gap-4 px-10 py-2.5 text-[17px] font-normal leading-relaxed tracking-tight duration-200  bg-spotify-text text-spotify-bg hover:shadow-lg after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:left-2 after:-z-10 after:bg-spotify-bg after:border-2 after:border-spotify-text hover:bg-spotify-green"
+            className="mt-5 relative flex items-center gap-4 px-10 py-2.5 text-[17px] font-normal leading-relaxed tracking-tight duration-200  bg-spotify-text text-spotify-bg hover:shadow-lg after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:left-2 after:-z-10 after:bg-spotify-bg after:border-2 after:border-spotify-text hover:bg-spotify-green"
           >
             Connect with Spotify
             <FaSpotify />
