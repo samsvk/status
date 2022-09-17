@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </div>
       <div className="relative w-full h-full max-h-screen my-auto">
-        <Artist />
+        {/* <Artist /> */}
       </div>
     </div>
   );
