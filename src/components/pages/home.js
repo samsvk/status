@@ -13,7 +13,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-full min-h-screen mx-auto max-w-[1750px] items-start">
+    <div className="flex h-full min-h-screen mx-auto max-w-[1850px] items-start">
       <Navbar />
     </div>
   );
