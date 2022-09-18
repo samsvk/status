@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-full min-h-screen mx-auto max-w-[1700px] items-start flex-col relative">
+    <div className="flex h-full min-h-screen mx-auto max-w-[1650px] items-start flex-col relative">
       <Navbar />
       <Info />
     </div>
