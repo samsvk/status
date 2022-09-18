@@ -5,6 +5,7 @@ import Artist from "../artist";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, child, getWindow } from "../../global";
 import Navbar from "../navbar";
+import Info from "../Info";
 
 export default function Home() {
   function handleLogin() {
@@ -13,8 +14,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-full min-h-screen mx-auto max-w-[1850px] items-start">
+    <div className="flex h-full min-h-screen mx-auto max-w-[1750px] items-start flex-col">
       <Navbar />
+      <Info />
     </div>
   );
 }
