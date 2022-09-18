@@ -22,8 +22,7 @@ export default function Artist() {
         <div className="bg-black max-h-[275px] min-h-[275px] overflow-hidden relative border border-grey-100 drop-shadow-sm z-40">
           <div className="relative z-50 text-white">
             <p className="relative block max-w-[150px] text-white overflow-hidden text-base font-medium leading-none tracking-tight whitespace-nowrap text-ellipsis">
-              {randomArtist[0].name} askjdfhasdkjfh askdjfh askjdfh askjdfh
-              askjdfhaskdjfhasdkjfha sdkjafdh akjsfdhjk
+              {randomArtist[0].name}
             </p>
           </div>
           <div className="absolute top-0 z-40 w-full h-full bg-black/50" />
