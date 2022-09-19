@@ -3,9 +3,9 @@ import Artist from "./artist";
 export default function Info() {
   return (
     <>
-      <div className="relative z-20 w-full h-full mt-12">
+      <div className="relative z-20 w-full h-full mt-14">
         <div className="relative z-20 flex flex-col items-start gap-10">
-          <h1 className="text-[5.3rem] font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight">
+          <h1 className="text-[4.5rem] font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight mix-blend-difference">
             Share & Create.
             <br /> The processor for
             <br />
@@ -16,20 +16,24 @@ export default function Info() {
           <FaSpotify />
         </button> */}
         </div>
-        <div className="relative grid w-full grid-cols-5 mt-12 gap-14">
+        <div className="relative grid w-full grid-cols-5 mt-24 gap-14">
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
             <div className="absolute min-h-[250px] bottom-0 w-full bg-spotify-green/50 h-full rounded-[4rem] overflow-hidden flex items-center justify-center">
               Connect with Spotify
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[635px] bottom-0 w-full bg-spotify-offset/50 h-full rounded-[4rem] overflow-hidden"></div>
+            <div className="absolute min-h-[635px] bottom-0 w-full bg-spotify-offset/50 h-full rounded-[4rem] overflow-hidden">
+              {" "}
+            </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[485px] bottom-0 w-full bg-spotify-text/10 h-full rounded-[4rem] overflow-hidden"></div>
+            <div className="absolute min-h-[485px] bottom-0 w-full bg-spotify-text/10 h-full rounded-[4rem] overflow-hidden">
+              {" "}
+            </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[570px] bottom-0 w-full h-fulloverflow-hidden">
+            <div className="absolute min-h-[570px] bottom-0 w-full h-full overflow-hidden">
               <div className="absolute top-0 w-full h-[250px]">
                 {/* <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
                   Process playlists anywhere with our simplistic 3 step system built
@@ -40,21 +44,21 @@ export default function Info() {
                   friends, and build a playlist that fits all.
                 </p>
               </div>
-              <div className="absolute bottom-0 bg-indigo-500/20 w-full h-[300px]  rounded-[4rem]"></div>
+              <div className="absolute bottom-0 bg-indigo-500/20 w-full h-[300px]  rounded-[4rem] overflow-hidden"></div>
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[525px] bottom-0 w-full h-full rounded-[4rem] overflow-hidden">
+            <div className="absolute min-h-[525px] bottom-0 w-full h-full rounded-[4rem] overflow-hidden bg-spotify-text/10">
               <Artist />
             </div>
           </div>
         </div>
 
         {/*connect, create, profit */}
-        <div className="relative grid w-full grid-cols-5 my-12 gap-14">
+        <div className="relative grid w-full grid-cols-5 my-10 gap-14">
           <div className="relative w-full h-full col-span-1 p-2">
             <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
-              Step 1: Connect
+              Connect
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[2deg]" />
             <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
@@ -63,7 +67,7 @@ export default function Info() {
           </div>
           <div className="relative w-full h-full col-span-1 p-2">
             <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
-              Step 2: Create
+              Create
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[-2deg]" />
             <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
@@ -73,7 +77,7 @@ export default function Info() {
           </div>
           <div className="relative w-full h-full col-span-1 p-2">
             <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
-              Step 3: Profit
+              Listen
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[2deg]" />
             <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
@@ -81,7 +85,13 @@ export default function Info() {
               account.
             </p>
           </div>
-          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-3xl"></div>
+          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-10  flex items-center justify-center">
+            <p className="text-[14px] font-medium text-spotify-bg tracking-normal">
+              We rely on the generosity of our community to keep Shuff/le running. If
+              you're interested in supporting us please join our discord.
+            </p>
+            <button className="p-6 rounded-full bg-spotify-offset">123</button>
+          </div>
         </div>
       </div>
     </>
