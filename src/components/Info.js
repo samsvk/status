@@ -14,7 +14,7 @@ export default function Info() {
           </h1>
         </div>
         <div className="relative grid w-full grid-cols-5 gap-10 mt-14">
-          <div className="relative w-full h-full col-span-1 duration-200 hover:drop-shadow-md hover:cursor-pointer">
+          <div className="relative w-full h-full col-span-1 duration-200 opacity-0 hover:drop-shadow-md hover:cursor-pointer">
             <div className="absolute flex items-center gap-3 justify-center max-h-[100px] bottom-0 w-full bg-spotify-green/50 h-full rounded-[3rem] overflow-hidden px-8 text-center">
               <FaSpotify className="text-3xl text-spotify-bg" />
               <span className="block w-full text-xl font-medium leading-snug tracking-normal text-spotify-bg">
@@ -81,13 +81,14 @@ export default function Info() {
               account.
             </p>
           </div>
-          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-10 gap-5 flex items-center justify-center">
+          <div className="relative w-full h-full col-span-2 bg-spotify-green rounded-[3rem] px-8 gap-5 flex items-center justify-center">
+            <FaSpotify className="text-3xl text-spotify-bg" />
             <p className="w-full text-[15px] font-normal leading-snug tracking-normal text-spotify-bg">
-              We rely on the generosity of our community to keep Shuff/le running. If
-              you're interested in supporting us please join our discord.
+              Connect your spotify with Shuff.le and begin shufflin' your playlists
+              with your friends! Our algorithm is great we promise.
             </p>
-            <button className="p-5 duration-300 rounded-full bg-spotify-offset hover:rotate-45">
-              <FiArrowUpRight className="text-2xl text-spotify-text" />
+            <button className="p-5 duration-300 rounded-full bg-spotify-bg hover:rotate-45 will-change-transform">
+              <FiArrowUpRight className="text-2xl text-spotify-green" />
             </button>
           </div>
         </div>
