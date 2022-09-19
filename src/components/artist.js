@@ -1,7 +1,6 @@
 import useRender from "../hooks/useRender";
 import { useEffect, useState } from "react";
 import { fetchRandomArtist } from "../api/actions";
-import { FaSpotify } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { container, child, variants } from "../global";
 

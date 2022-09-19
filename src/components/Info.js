@@ -1,45 +1,41 @@
-import { FaSpotify } from "react-icons/fa";
 import Artist from "./artist";
+import { FiArrowUpRight } from "react-icons/fi";
+import { FaSpotify } from "react-icons/fa";
 export default function Info() {
   return (
     <>
       <div className="relative z-20 w-full h-full mt-14">
         <div className="relative z-20 flex flex-col items-start gap-10">
-          <h1 className="text-[4.5rem] font-medium tracking-tighter z-[-10] text-left text-spotify-text leading-tight mix-blend-difference">
+          <h1 className="text-[4.5rem] font-semibold tracking-tight z-[-10] text-left text-spotify-text leading-tight mix-blend-difference">
             Share & Create.
             <br /> The processor for
             <br />
             playlist for everyone.
           </h1>
-          {/* <button className="mt-5 relative flex items-center gap-4 px-10 py-4 text-[17px] font-normal leading-relaxed tracking-tight duration-200  bg-spotify-text text-spotify-bg hover:shadow-lg after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:left-2 after:-z-10 after:bg-spotify-bg after:border-2 after:border-spotify-text hover:bg-spotify-green">
-          Connect with Spotify
-          <FaSpotify />
-        </button> */}
         </div>
-        <div className="relative grid w-full grid-cols-5 mt-24 gap-14">
-          <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[250px] bottom-0 w-full bg-spotify-green/50 h-full rounded-[4rem] overflow-hidden flex items-center justify-center">
-              Connect with Spotify
+        <div className="relative grid w-full grid-cols-5 gap-10 mt-14">
+          <div className="relative w-full h-full col-span-1 duration-200 hover:drop-shadow-md hover:cursor-pointer">
+            <div className="absolute flex items-center gap-3 justify-center max-h-[100px] bottom-0 w-full bg-spotify-green/50 h-full rounded-[3rem] overflow-hidden px-8 text-center">
+              <FaSpotify className="text-3xl text-spotify-bg" />
+              <span className="block w-full text-xl font-medium leading-snug tracking-normal text-spotify-bg">
+                Connect with Spotify
+              </span>
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[635px] bottom-0 w-full bg-spotify-offset/50 h-full rounded-[4rem] overflow-hidden">
+            <div className="absolute min-h-[600px] bottom-0 w-full bg-spotify-offset/50 h-full rounded-[4rem] overflow-hidden">
               {" "}
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[485px] bottom-0 w-full bg-spotify-text/10 h-full rounded-[4rem] overflow-hidden">
+            <div className="absolute min-h-[445px] bottom-0 w-full bg-spotify-text/10 h-full rounded-[4rem] overflow-hidden">
               {" "}
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
             <div className="absolute min-h-[570px] bottom-0 w-full h-full overflow-hidden">
               <div className="absolute top-0 w-full h-[250px]">
-                {/* <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
-                  Process playlists anywhere with our simplistic 3 step system built
-                  with a user centered design.
-                </p> */}
-                <p className="w-full max-w-lg text-2xl font-normal leading-snug tracking-tight text-spotify-text">
+                <p className="w-full max-w-lg text-xl font-medium leading-snug tracking-normal text-spotify-text">
                   Process your playlists, create, and share your music taste with
                   friends, and build a playlist that fits all.
                 </p>
@@ -48,7 +44,7 @@ export default function Info() {
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[525px] bottom-0 w-full h-full rounded-[4rem] overflow-hidden bg-spotify-text/10">
+            <div className="absolute min-h-[545px] bottom-0 w-full h-full rounded-[4rem] overflow-hidden bg-spotify-text/10">
               <Artist />
             </div>
           </div>
@@ -57,40 +53,42 @@ export default function Info() {
         {/*connect, create, profit */}
         <div className="relative grid w-full grid-cols-5 my-10 gap-14">
           <div className="relative w-full h-full col-span-1 p-2">
-            <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
+            <h1 className="w-full text-xl font-medium leading-snug tracking-normal text-spotify-text">
               Connect
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[2deg]" />
-            <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
+            <p className="w-full text-[15px] font-medium leading-snug tracking-normal text-spotify-text">
               Connect your spotify to our service, and we'll start working our magic.
             </p>
           </div>
           <div className="relative w-full h-full col-span-1 p-2">
-            <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
+            <h1 className="w-full text-xl font-medium leading-snug tracking-normal text-spotify-text">
               Create
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[-2deg]" />
-            <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
+            <p className="w-full text-[15px] font-medium leading-snug tracking-normal text-spotify-text">
               Create your lobby, invite your friends, pick your favorites and create
               a playlist.
             </p>
           </div>
           <div className="relative w-full h-full col-span-1 p-2">
-            <h1 className="relative z-10 text-lg font-semibold leading-none tracking-tight text-spotify-text">
+            <h1 className="w-full text-xl font-medium leading-snug tracking-normal text-spotify-text">
               Listen
             </h1>
             <span className="w-full h-[1px]  bg-spotify-text/20 block my-4 rotate-[2deg]" />
-            <p className="text-[14px] font-medium text-spotify-text tracking-normal ">
+            <p className="w-full text-[15px] font-medium leading-snug tracking-normal text-spotify-text">
               It's time to vibe, add the shuffled playlist to everyones spotify
               account.
             </p>
           </div>
-          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-10  flex items-center justify-center">
-            <p className="text-[14px] font-medium text-spotify-bg tracking-normal">
+          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-10 gap-5 flex items-center justify-center">
+            <p className="w-full text-[15px] font-normal leading-snug tracking-normal text-spotify-bg">
               We rely on the generosity of our community to keep Shuff/le running. If
               you're interested in supporting us please join our discord.
             </p>
-            <button className="p-6 rounded-full bg-spotify-offset">123</button>
+            <button className="p-5 duration-300 rounded-full bg-spotify-offset hover:rotate-45">
+              <FiArrowUpRight className="text-2xl text-spotify-text" />
+            </button>
           </div>
         </div>
       </div>
