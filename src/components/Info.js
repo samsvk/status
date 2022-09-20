@@ -84,8 +84,8 @@ export default function Info() {
           <div className="relative w-full h-full col-span-2 bg-spotify-green rounded-[3rem] px-8 gap-5 flex items-center justify-center">
             <FaSpotify className="text-3xl text-spotify-bg" />
             <p className="w-full text-[15px] font-normal leading-snug tracking-normal text-spotify-bg">
-              Connect your spotify with Shuff.le' services and invite your friends
-              our algorithm will get to work and you'll be jammin' in no time.
+              Connect your spotify with Shuff.le, invite your friends, create your
+              playlists - our algorithm will have you jammin' in no time.
             </p>
             <button className="p-5 duration-300 rounded-full bg-spotify-bg hover:rotate-45 will-change-transform">
               <FiArrowUpRight className="text-2xl text-spotify-green" />
