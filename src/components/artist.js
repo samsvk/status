@@ -11,8 +11,6 @@ export default function Artist() {
     fetchRandomArtist(setRandomArtist);
   }, []);
 
-  console.log(randomArtist);
-
   if (!randomArtist) return null;
 
   return (
