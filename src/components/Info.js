@@ -83,8 +83,8 @@ export default function Info() {
           </div>
           <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-8 gap-5 flex items-center justify-center">
             <div className="relative">
-              <FaSpotify className="text-3xl text-spotify-green" />
-              <span className="absolute block" />
+              <span className="absolute block w-6 h-6 rounded-full top-1 left-0.5 bg-spotify-bg" />
+              <FaSpotify className="relative text-3xl text-spotify-green" />
             </div>
             <p className="w-full text-[15px] font-normal leading-snug tracking-normal text-spotify-bg">
               Connect your spotify with Shuff.le, invite your friends, create your
