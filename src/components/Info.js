@@ -23,12 +23,12 @@ export default function Info() {
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[600px] bottom-0 w-full bg-spotify-offset/50 h-full rounded-[4rem] overflow-hidden">
+            <div className="absolute min-h-[600px] bottom-0 w-full bg-spotify-offset h-full rounded-[4rem] overflow-hidden">
               {" "}
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
-            <div className="absolute min-h-[445px] bottom-0 w-full bg-spotify-text/10 h-full rounded-[4rem] overflow-hidden">
+            <div className="absolute min-h-[445px] bottom-0 w-full bg-spotify-text h-full rounded-[4rem] overflow-hidden">
               {" "}
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function Info() {
                   friends, and build a playlist that fits all.
                 </p>
               </div>
-              <div className="absolute bottom-0 bg-indigo-500/20 w-full h-[300px]  rounded-[4rem] overflow-hidden"></div>
+              <div className="absolute bottom-0 bg-spotify-green w-full h-[300px]  rounded-[4rem] overflow-hidden"></div>
             </div>
           </div>
           <div className="relative col-span-1 w-full h-full min-h-[250px]">
@@ -81,14 +81,17 @@ export default function Info() {
               account.
             </p>
           </div>
-          <div className="relative w-full h-full col-span-2 bg-spotify-green rounded-[3rem] px-8 gap-5 flex items-center justify-center">
-            <FaSpotify className="text-3xl text-spotify-bg" />
+          <div className="relative w-full h-full col-span-2 bg-spotify-text rounded-[3rem] px-8 gap-5 flex items-center justify-center">
+            <div className="relative">
+              <FaSpotify className="text-3xl text-spotify-green" />
+              <span className="absolute block" />
+            </div>
             <p className="w-full text-[15px] font-normal leading-snug tracking-normal text-spotify-bg">
               Connect your spotify with Shuff.le, invite your friends, create your
               playlists - our algorithm will have you jammin' in no time.
             </p>
-            <button className="p-5 duration-300 rounded-full bg-spotify-bg hover:rotate-45 will-change-transform">
-              <FiArrowUpRight className="text-2xl text-spotify-green" />
+            <button className="p-5 duration-300 rounded-full bg-spotify-green hover:rotate-45 will-change-transform">
+              <FiArrowUpRight className="text-2xl text-spotify-bg" />
             </button>
           </div>
         </div>
