@@ -6,8 +6,8 @@ module.exports = {
       colors: {
         spotify: {
           green: "#52784f",
-          bg: "#fdf7f2",
-          text: "#242426",
+          bg: "#dbe1c7",
+          text: "#000000",
           offset: "#f4d2eb",
         },
       },
