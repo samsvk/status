@@ -13,26 +13,32 @@ export default function Artist() {
 
   if (!randomArtist) return null;
   return (
-    <div className="relative flex w-full h-full">
-      <div className="relative flex-1 h-full">
+    <div className="relative grid content-center w-full h-full grid-cols-3 gap-5">
+      <div className="pb-5 my-auto text-center">
         <img
           src={randomArtist[0].mainArtistInfo.image}
-          className="relative top-0 bottom-0 left-0 right-0 block object-cover w-full h-full -z-0"
+          className="rounded-lg drop-shadow-md h-[300px] object-cover"
         />
       </div>
-      <div className="flex flex-col flex-1 h-full bg-indigo-500">
-        <div className="relative flex-1 bg-slate-200">
+      <div className="flex flex-col gap-5 pt-10 my-auto text-center">
+        <div className="my-auto text-center">
           <img
             src={randomArtist[1].mainArtistInfo.image}
-            className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full"
+            className="rounded-lg drop-shadow-md h-[300px] object-cover"
           />
         </div>
-        <div className="relative flex-1 bg-neutral-500">
+        <div className="my-auto text-center">
           <img
             src={randomArtist[2].mainArtistInfo.image}
-            className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full"
+            className="rounded-lg drop-shadow-md h-[300px] object-cover"
           />
         </div>
+      </div>
+      <div className="my-auto text-center">
+        <img
+          src={randomArtist[8].mainArtistInfo.image}
+          className="rounded-lg drop-shadow-md h-[300px] object-cover"
+        />
       </div>
     </div>
   );
