@@ -8,20 +8,23 @@ export default function Info() {
   return (
     <>
       <div className="relative z-20 grid w-full h-full grid-cols-5 gap-10 pt-20">
-        <div className="grid grid-cols-4 col-span-3 gap-10 max-w-[1100px]">
-          <h1 className="text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-5 z-20">
-            Shuffle your playlist
-            <br /> and jam together.
-          </h1>
+        <h1 className="block text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-3 z-20">
+          Shuffle your playlist
+          <br /> and jam together.
+        </h1>
 
-          <div className="flex items-center h-full col-span-1">
-            <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
-              Good music, good mood. The free, open-source playlist processor.
-            </p>
-          </div>
-          <div className="relative h-full col-span-1"></div>
-          <div className="relative h-full col-span-2">1231231</div>
+        <div className="flex flex-col items-center h-full col-span-2">
+          <div className="flex-1 w-full bg-orange-500">1</div>
+          <div className="flex-1 w-full bg-orange-500">2</div>
         </div>
+
+        <div className="flex items-center h-full col-span-1">
+          <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
+            Good music, good mood. The free, open-source playlist processor.
+          </p>
+        </div>
+        <div className="relative h-full col-span-1"></div>
+        <div className="relative h-full col-span-2">1231231</div>
       </div>
     </>
   );
