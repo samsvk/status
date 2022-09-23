@@ -14,7 +14,7 @@ export default function Artist() {
   if (!randomArtist) return null;
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full min-h-[500px]">
       <img
         src={randomArtist[0].mainArtistInfo.image}
         className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full"
