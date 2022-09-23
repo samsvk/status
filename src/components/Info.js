@@ -8,14 +8,20 @@ export default function Info() {
   return (
     <>
       <div className="relative z-20 grid w-full h-full grid-cols-5 gap-10 pt-20">
-        <div className="grid grid-cols-5 col-span-3 gap-10 max-w-[1100px]">
+        <div className="grid grid-cols-4 col-span-3 gap-10 max-w-[1100px]">
           <h1 className="text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-5 z-20">
             Shuffle your playlist
             <br /> and jam together.
           </h1>
-          <div>123</div>
+
+          <div className="flex items-center h-full col-span-1">
+            <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
+              Good music, good mood. The free, open-source playlist processor.
+            </p>
+          </div>
+          <div className="relative h-full col-span-1"></div>
+          <div className="relative h-full col-span-2">1231231</div>
         </div>
-        <div className="col-span-2">123123123123123</div>
       </div>
     </>
   );
@@ -72,18 +78,12 @@ export default function Info() {
   </div>
 </div> */
 }
-
-// <div className="flex items-center h-full col-span-1">
-//   <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
-//     Good music, good mood. The free, open-source playlist processor.
-//   </p>
-// </div>
-// <div className="relative h-full col-span-2"></div>
-
-// <div className="col-span-2 mt-20">
-//   <p className="w-full  text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
-//     Our algorithm is systematically processes playlists creates, and shares
-//     users favorite songs from each playlist and relatively creates a
-//     playlist that represents each of those genres appropriately.
-//   </p>
-// </div>
+{
+  /* <div className="col-span-2">
+  <p className="w-full  text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
+    Our algorithm is systematically processes playlists creates, and shares users
+    favorite songs from each playlist and relatively creates a playlist that
+    represents each of those genres appropriately.
+  </p>
+</div>; */
+}
