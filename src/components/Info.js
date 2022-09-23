@@ -1,6 +1,8 @@
 import Artist from "./artist";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
+import { BiShuffle } from "react-icons/bi";
+
 export default function Info() {
   return (
     <>
@@ -10,16 +12,29 @@ export default function Info() {
             Shuffle your playlist
             <br /> and jam together.
           </h1>
-          <div className="grid col-span-2 bg-orange-500"></div>
-
+          <div className="flex col-span-2 gap-20">
+            <div className="flex-1 my-auto max-w-[250px] w-full">
+              <BiShuffle className="m-auto -rotate-45 text-7xl text-spotify-text/95 willchange-transform" />
+            </div>
+            <div className="flex flex-col w-full gap-5">
+              <div className="flex-1 w-full bg-spotify-green ">1</div>
+              <div className="flex-1 w-full bg-spotify-green ">2</div>
+            </div>
+          </div>
           <div className="min-h-[400px] col-span-3 grid grid-cols-3 gap-10">
             <div className="flex items-center h-full col-span-1">
-              <p className="w-full max-w-lg text-base font-normal leading-snug tracking-snug text-spotify-text">
+              <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
                 Process your playlists, create, and share your music taste with
                 friends, and build a playlist that fits all.
               </p>
             </div>
-            <div className="h-full col-span-2 bg-indigo-500">345</div>
+            <div className="relative h-full col-span-2">
+              {/* <div className="relative w-full h-full col-span-1">
+                <div className="absolute min-h-[438px] bottom-0 w-full bg-spotify-offset h-full overflow-hidden">
+                  <Artist />
+                </div>
+              </div> */}
+            </div>
           </div>
 
           <div className="col-span-2 bg-black"></div>
