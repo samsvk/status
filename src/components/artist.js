@@ -17,7 +17,7 @@ export default function Artist() {
     <div className="relative w-full h-full">
       <img
         src={randomArtist[0].mainArtistInfo.image}
-        className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full opacity-50"
+        className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full"
       />
     </div>
   );

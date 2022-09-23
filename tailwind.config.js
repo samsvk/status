@@ -5,10 +5,10 @@ module.exports = {
     extend: {
       colors: {
         spotify: {
-          green: "#52784f",
-          bg: "#dbe1c7",
-          text: "#000000",
-          offset: "#f4d2eb",
+          green: "#1DB954",
+          bg: "#121316",
+          text: "#fff",
+          offset: "#181a1d",
         },
       },
     },
