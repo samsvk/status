@@ -2,7 +2,7 @@ import Artist from "./artist";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
 import { BiShuffle } from "react-icons/bi";
-import { RiArrowRightLine } from "react-icons/ri";
+import { RiYoutubeFill } from "react-icons/ri";
 
 export default function Info() {
   return (
@@ -18,12 +18,24 @@ export default function Info() {
           <div className="flex-1 w-full bg-orange-500">2</div>
         </div>
 
-        <div className="flex items-center h-full col-span-1">
+        <div className="flex flex-col items-center h-full col-span-1">
           <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
-            Good music, good mood. The free, open-source playlist processor.
+            Good music, good mood. The free, open-source playlist processor. working
+            best with spoitfy
           </p>
+          <div className="w-full mt-36">
+            <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/60">
+              Working best with
+            </p>
+            <ul className="flex items-center gap-5 mt-6">
+              <li className="flex items-center gap-2 mb-auto text-[18px] font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text">
+                <FaSpotify className="my-auto text-2xl" />
+                Spotify
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="relative h-full col-span-1"></div>
+
         <div className="relative h-full col-span-2">1231231</div>
       </div>
     </>
