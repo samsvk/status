@@ -15,7 +15,7 @@ export default function Info() {
             <br /> and jam together.
           </h1>
 
-          <div className="flex flex-col items-start h-full col-span-2 mt-20 gap-14">
+          <div className="flex flex-col items-start h-full col-span-2 mt-13 gap-14">
             <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
               Good music, good mood. The free open-source playlist processor. working
               best with spoitfy
@@ -65,12 +65,13 @@ export default function Info() {
               See More <FiArrowRight className="ml-4 text-md" />
             </span>
           </div>
-          <div className="items-center col-span-1 mt-24 opacity-1 jusity-center">
-            <span className="block rounded-[3rem] mx-auto shadow-lg bg-spotify-text/5 p-8 ">
-              <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
-                Join our community discord and share your music with other
-                music-heads!
-              </p>
+          <div className="relative items-center col-span-1 mt-24 right-20 opacity-1 jusity-center">
+            <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
+              Intersted in sharing your music with other people? Join other
+              music-heads by joining our Discord community.
+            </p>
+            <span className="flex items-center mt-5 text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/50">
+              Join <FiArrowRight className="ml-4 -rotate-45 text-md" />
             </span>
           </div>
           <div className="col-span-1 mt-20 rounded-[4rem] min-h-[375px] w-3/4  bg-spotify-text/10">
