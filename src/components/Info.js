@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Artist from "./artist";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
 import { BiShuffle } from "react-icons/bi";
 import { RiYoutubeFill } from "react-icons/ri";
@@ -24,7 +24,7 @@ export default function Info() {
               Connect with Spotify
             </button>
             <div className="">
-              <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/52">
+              <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/50">
                 Working best with
               </p>
               <ul className="flex items-center gap-5 mt-3">
@@ -51,8 +51,6 @@ export default function Info() {
                 </h1>
                 <p className="mt-1.5 w-full text-[18px]  text-center font-medium leading-snug tracking-snug text-spotify-text">
                   Songs
-                  <br />
-                  Instrumentals
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center rounded-full left-20 h-52 w-52 bg-spotify-text"></div>
@@ -63,9 +61,16 @@ export default function Info() {
               Explore new music, deepen your passion and get lost in creativity. What
               you'll find from your friends might suprrise you.
             </p>
+            <span className="flex items-center mt-5 text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/50">
+              See More <FiArrowRight className="ml-4 text-md" />
+            </span>
           </div>
-
-          {/* <div className="col-span-2 bg-orange-500">123123123123123123123123</div> */}
+          <div className="col-span-1 bg-orange-500 opacity-0">
+            123123123123123123123123
+          </div>
+          <div className="col-span-1 mt-20 rounded-[4rem] min-h-[375px] w-3/4  bg-spotify-text/10">
+            <Artist />
+          </div>
         </div>
       </div>
     </>
