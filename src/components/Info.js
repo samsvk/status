@@ -24,7 +24,7 @@ export default function Info() {
               Connect with Spotify
             </button>
             <div className="">
-              <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/60">
+              <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/52">
                 Working best with
               </p>
               <ul className="flex items-center gap-5 mt-3">
@@ -36,16 +36,16 @@ export default function Info() {
             </div>
           </div>
           {/* <div className="relative flex items-end justify-end col-span-2 bg-[#cbb9ef] h-max rounded-[3rem]">
-            <div className="relative z-10 bg-white rounded-full h-60 w-60"></div>
-            <div className="absolute rounded-full h-60 w-60 bg-spotify-text right-20"></div>
+            <div className="relative z-10 bg-white rounded-full h-52 w-52"></div>
+            <div className="absolute rounded-full h-52 w-52 bg-spotify-text right-20"></div>
           </div> */}
         </div>
         {/* <Artist />
          */}
         <div className="grid w-full grid-cols-2 col-span-2 gap-10 mt-24 h-max">
-          <div className="col-span-1">
+          <div className="col-span-1 ">
             <div className="relative col-span-1 -bottom-0">
-              <div className="absolute z-10 flex flex-col items-center justify-center bg-white rounded-full h-60 w-60 left-24">
+              <div className="absolute z-10 flex flex-col items-center justify-center bg-white rounded-full h-52 w-52 left-24">
                 <h1 className="z-20 block col-span-5 text-5xl font-semibold leading-tight tracking-tight text-left text-spotify-text/95">
                   70.1M
                 </h1>
@@ -55,17 +55,17 @@ export default function Info() {
                   Instrumentals
                 </p>
               </div>
-              <div className="flex flex-col items-center justify-center rounded-full left-20 h-60 w-60 bg-spotify-text"></div>
+              <div className="flex flex-col items-center justify-center rounded-full left-20 h-52 w-52 bg-spotify-text"></div>
             </div>
           </div>
-          <div className="col-span-1 p-10 my-auto ">
+          <div className="col-span-1 my-auto ">
             <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
               Explore new music, deepen your passion and get lost in creativity. What
               you'll find from your friends might suprrise you.
             </p>
           </div>
 
-          <div className="col-span-2 bg-orange-500">123123123123123123123123</div>
+          {/* <div className="col-span-2 bg-orange-500">123123123123123123123123</div> */}
         </div>
       </div>
     </>
@@ -79,7 +79,7 @@ export default function Info() {
       70.1M+
     </h1>
     <span className="block h-[1px] w-full bg-spotify-text/20"></span>
-    <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/60">
+    <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/52">
       Songs for <br />
       Selection
     </p>
@@ -100,7 +100,7 @@ export default function Info() {
     </div>
   </div>
   <div className="relative col-span-1 w-full h-full min-h-[250px]">
-    <div className="absolute min-h-[600px] bottom-0 w-full bg-spotify-offset h-full rounded-2xl overflow-hidden"></div>
+    <div className="absolute min-h-[520px] bottom-0 w-full bg-spotify-offset h-full rounded-2xl overflow-hidden"></div>
   </div>
   <div className="relative col-span-1 w-full h-full min-h-[250px]">
     <div className="absolute min-h-[445px] bottom-0 w-full bg-spotify-offset h-full rounded-2xl overflow-hidden"></div>
