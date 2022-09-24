@@ -10,7 +10,7 @@ export default function Info() {
     <>
       <div className="grid grid-cols-5 gap-10">
         <div className="relative col-span-3 z-20 grid w-full h-full max-w-[1100px] grid-cols-5 gap-10 pt-20">
-          <h1 className="block text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-5 z-20">
+          <h1 className="block text-[6.5rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-5 z-20">
             Shuffle your songs
             <br /> and jam together.
           </h1>
@@ -23,8 +23,7 @@ export default function Info() {
             <button className="px-16 py-4 bg-spotify-text text-spotify-bg">
               Connect with Spotify
             </button>
-
-            <div>
+            <div className="">
               <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/60">
                 Working best with
               </p>
@@ -36,8 +35,38 @@ export default function Info() {
               </ul>
             </div>
           </div>
+          {/* <div className="relative flex items-end justify-end col-span-2 bg-[#cbb9ef] h-max rounded-[3rem]">
+            <div className="relative z-10 bg-white rounded-full h-60 w-60"></div>
+            <div className="absolute rounded-full h-60 w-60 bg-spotify-text right-20"></div>
+          </div> */}
         </div>
-        <div className="h-full col-span-2 mt-24 bg-orange-500">111</div>
+        {/* <Artist />
+         */}
+        <div className="grid w-full grid-cols-2 col-span-2 gap-10 mt-24 h-max">
+          <div className="col-span-1">
+            <div className="relative col-span-1 -bottom-0">
+              <div className="absolute z-10 flex flex-col items-center justify-center bg-white rounded-full h-60 w-60 left-24">
+                <h1 className="z-20 block col-span-5 text-5xl font-semibold leading-tight tracking-tight text-left text-spotify-text/95">
+                  70.1M
+                </h1>
+                <p className="mt-1.5 w-full text-[18px]  text-center font-medium leading-snug tracking-snug text-spotify-text">
+                  Songs
+                  <br />
+                  Instrumentals
+                </p>
+              </div>
+              <div className="flex flex-col items-center justify-center rounded-full left-20 h-60 w-60 bg-spotify-text"></div>
+            </div>
+          </div>
+          <div className="col-span-1 p-10 my-auto ">
+            <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
+              Explore new music, deepen your passion and get lost in creativity. What
+              you'll find from your friends might suprrise you.
+            </p>
+          </div>
+
+          <div className="col-span-2 bg-orange-500">123123123123123123123123</div>
+        </div>
       </div>
     </>
   );

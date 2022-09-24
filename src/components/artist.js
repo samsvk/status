@@ -13,23 +13,19 @@ export default function Artist() {
 
   if (!randomArtist) return null;
   return (
-    <div className="relative flex items-center justify-center">
-      <div className="absolute w-16 h-16 mx-auto mt-auto rounded-3xl top-12 left-20 bg-spotify-text/10 "></div>
-
-      <div className="absolute z-10 h-16 mx-auto mt-auto -right-20 max-w-max rounded-3xl top-34 bg-spotify-text">
-        12312310238713 aosjdas jakld jaslkd jalksd kajsd
+    <div className="h-full col-span-2 p-10 mt-24">
+      {/* <div className="relative grid grid-cols-2 gap-4">
+        <div className="relative col-span-1 rounded-tl-[6rem] rounded-br-[6rem] bg-pink-500 h-full w-full min-h-[400px]">
+          <div className="absolute left-0 right-0 w-full mx-auto bg-indigo-500 h-36 -bottom-40  rounded-br-[6rem]"></div>
+        </div>
+        <div className="relative col-span-1 rounded-tl-[6rem] rounded-br-[6rem] bg-pink-500 h-full w-full min-h-[400px]">
+          <div className="absolute left-0 right-0 w-52 h-52 mx-auto bg-indigo-500 border-[14px] rounded-full -bottom-24 border-spotify-bg "></div>
+        </div>
+      </div> */}
+      <div className="relative flex items-end justify-end col-span-2 -bottom-0">
+        <div className="relative z-10 bg-white rounded-full h-60 w-60"></div>
+        <div className="absolute rounded-full h-60 w-60 bg-spotify-text right-20"></div>
       </div>
-      <div className="relative min-h-[600px] h-full w-full max-w-[325px]">
-        <img
-          src={randomArtist[0].mainArtistInfo.image}
-          className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full rounded-[3rem]"
-        />
-      </div>
-
-      <div className="absolute -bottom-28 z-10  mx-auto mt-auto max-w-full rounded-3xl top-34 bg-spotify-text h-[150px]">
-        12312310238713 aosjdas jakld jaslkd jalksd kajsd
-      </div>
-      <div className="h-[600px] w-[600px] rounded-full bg-spotify-text/10 absolute top-0 left-0 right-0 -bottom-20 -z-10 mt-auto mx-auto"></div>
     </div>
   );
 }
