@@ -65,7 +65,7 @@ export default function Info() {
               See More <FiArrowRight className="ml-4 text-md" />
             </span>
           </div>
-          <div className="relative items-center col-span-1 mt-24 right-20 opacity-1 jusity-center">
+          <div className="relative items-center col-span-1 mt-24 opacity-1 jusity-center">
             <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
               Intersted in sharing your music with other people? Join other
               music-heads by joining our Discord community.
@@ -74,9 +74,7 @@ export default function Info() {
               Join <FiArrowRight className="ml-4 -rotate-45 text-md" />
             </span>
           </div>
-          <div className="col-span-1 mt-20 rounded-[4rem] min-h-[375px] w-3/4  bg-spotify-text/10">
-            <Artist />
-          </div>
+          <div className="col-span-1 mt-20 rounded-[4rem] min-h-[375px] w-3/4  bg-spotify-text/10"></div>
         </div>
       </div>
     </>
