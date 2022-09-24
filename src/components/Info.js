@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Artist from "./artist";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
@@ -5,38 +6,40 @@ import { BiShuffle } from "react-icons/bi";
 import { RiYoutubeFill } from "react-icons/ri";
 
 export default function Info() {
+  const [active, setActive] = useState(1);
   return (
     <>
-      <div className="relative z-20 grid w-full h-full grid-cols-5 gap-10 pt-20">
-        <h1 className="block text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-3 z-20">
-          Shuffle your playlist
-          <br /> and jam together.
-        </h1>
+      <div className="grid grid-cols-5 gap-10">
+        <div className="relative col-span-3 z-20 grid w-full h-full max-w-[1100px] grid-cols-5 gap-10 pt-20">
+          <h1 className="block text-[6.85rem] font-semibold tracking-tight text-left text-spotify-text/95 leading-tight col-span-5 z-20">
+            Shuffle your playlist
+            <br /> and jam together.
+          </h1>
 
-        <div className="flex flex-col items-center h-full col-span-2">
-          <div className="flex-1 w-full bg-orange-500">1</div>
-          <div className="flex-1 w-full bg-orange-500">2</div>
-        </div>
+          <div className="flex flex-col items-start h-full col-span-2 mt-20">
+            <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
+              Good music, good mood. The free open-source playlist processor. working
+              best with spoitfy
+            </p>
 
-        <div className="flex flex-col items-center h-full col-span-1">
-          <p className="w-full max-w-lg text-[18px] font-medium leading-snug tracking-snug text-spotify-text mb-auto">
-            Good music, good mood. The free, open-source playlist processor. working
-            best with spoitfy
-          </p>
-          <div className="w-full mt-36">
             <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/60">
               Working best with
             </p>
-            <ul className="flex items-center gap-5 mt-6">
+            <ul className="flex items-center gap-5 mt-3">
               <li className="flex items-center gap-2 mb-auto text-[18px] font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text">
                 <FaSpotify className="my-auto text-2xl" />
                 Spotify
               </li>
             </ul>
           </div>
-        </div>
 
-        <div className="relative h-full col-span-2">1231231</div>
+          <div className="relative flex items-start h-full col-span-3 mt-20">
+            <button className="px-16 py-4 bg-spotify-text text-spotify-bg">
+              Connect with Spotify
+            </button>
+          </div>
+        </div>
+        <div className="col-span-2">111</div>
       </div>
     </>
   );
