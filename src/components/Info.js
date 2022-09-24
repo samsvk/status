@@ -65,8 +65,13 @@ export default function Info() {
               See More <FiArrowRight className="ml-4 text-md" />
             </span>
           </div>
-          <div className="col-span-1 bg-orange-500 opacity-0">
-            123123123123123123123123
+          <div className="items-center col-span-1 mt-24 opacity-1 jusity-center">
+            <span className="block rounded-[3rem] mx-auto shadow-lg bg-spotify-text/5 p-8 ">
+              <p className="w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
+                Join our community discord and share your music with other
+                music-heads!
+              </p>
+            </span>
           </div>
           <div className="col-span-1 mt-20 rounded-[4rem] min-h-[375px] w-3/4  bg-spotify-text/10">
             <Artist />
@@ -84,7 +89,7 @@ export default function Info() {
       70.1M+
     </h1>
     <span className="block h-[1px] w-full bg-spotify-text/20"></span>
-    <p className="text-sm font-medium leading-snug whitespace-nowrap tracking-snug text-spotify-text/52">
+    <p className="text-sm font-medium leading-snug whitesvpace-nowrap tracking-snug text-spotify-text/52">
       Songs for <br />
       Selection
     </p>
