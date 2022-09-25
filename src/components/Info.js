@@ -3,6 +3,7 @@ import Artist from "./artist";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
 import { BiShuffle } from "react-icons/bi";
+import Grid from "./grid";
 import { RiYoutubeFill } from "react-icons/ri";
 
 export default function Info() {
@@ -25,28 +26,14 @@ export default function Info() {
                   Read Blog <FiArrowRight className="ml-4 text-md" />
                 </span>
               </p>
-              <button className="w-max gap-3 px-8 py-4 mt-auto bg-spotify-text h-max text-[18px] font-normal leading-snug tracking-snug text-spotify-bg flex items-center">
+              <button className="w-max gap-3 px-8 py-4 mt-auto bg-spotify-text h-max text-[17px] font-normal leading-snug tracking-snug text-spotify-bg flex items-center">
                 <FaSpotify className="text-2xl" />
                 Connect with Spotify
               </button>
             </div>
           </div>
         </div>
-        <div className="flex flex-col h-full min-h-screen col-span-2">
-          <div className="grid h-full grid-cols-3 p-10 my-auto">
-            <span className="block col-span-1 bg-spotify-text rounded-tr-[6rem] h-full w-full"></span>
-            <span className="block col-span-1 bg-spotify-text rounded-br-[6rem] h-full w-full"></span>
-            <span className="block col-span-1 bg-spotify-text rounded-tl-[6rem] h-full w-full"></span>
-            <span className="block col-span-2 bg-spotify-offset rounded-tl-[6rem] rounded-br-[6rem] h-full w-full"></span>
-            <span className="block col-span-1 bg-spotify-text rounded-bl-[6rem] h-full w-full"></span>
-            <span className="block col-span-1 bg-spotify-text rounded-tl-[6rem] h-full w-full"></span>
-            <span className="block w-full h-full col-span-1 rounded-full bg-spotify-text"></span>
-            <span className="block col-span-1 bg-spotify-offset rounded-tl-[6rem] h-full w-full"></span>
-            <span className="block w-full h-full col-span-1 bg-spotify-offset"></span>
-            <span className="block w-full h-full col-span-1 bg-spotify-text">1</span>
-            <span className="block col-span-1 bg-spotify-text rounded-bl-[6rem] rounded-tr-[6rem]  h-full w-full"></span>
-          </div>
-        </div>
+        <Grid />
       </div>
     </>
   );
