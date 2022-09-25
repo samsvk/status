@@ -19,7 +19,7 @@ export default function Info() {
   return (
     <>
       <div className="grid grid-cols-5 gap-10">
-        <div className="flex flex-col col-span-3 pl-24 mt-auto mb-20">
+        <div className="flex flex-col col-span-3 mt-auto mb-20">
           <h1 className="block text-[6rem] font-semibold mb-16 tracking-tight text-left text-spotify-text/95 leading-tight z-20">
             Share and shuffle your playlists with total control of your data.
           </h1>
