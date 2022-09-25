@@ -5,19 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { container, child, variants } from "../global";
 import { RiStarSFill } from "react-icons/ri";
 
-export default function Artist() {
-  const [randomArtist, setRandomArtist] = useState([]);
-
-  useEffect(() => {
-    fetchRandomArtist(setRandomArtist);
-  }, []);
-
-  // if (!randomArtist) return null;
-
+export default function Artist({ randomArtist }) {
   return (
     <div className="relative items-center justify-center w-full h-full min-h-[200px] max-w-[160px] min-w-[160px]">
       <img
-        src={randomArtist[0]?.mainArtistInfo?.image}
+        src={randomArtist?.mainArtistInfo?.image}
         className="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full mx-auto shadow-lg"
       />
       <div className="absolute w-full h-full bg-spotify-text left-0 -z-10 rotate-[6deg] max-h-[300px] bottom-0"></div>

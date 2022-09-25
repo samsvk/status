@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Artist from "./artist";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 import { FaSpotify } from "react-icons/fa";
 import { BiShuffle } from "react-icons/bi";
 import Grid from "./grid";
 import { RiYoutubeFill } from "react-icons/ri";
+import { fetchRandomArtist } from "../api/actions";
 
 export default function Info() {
+  const [randomArtist, setRandomArtist] = useState([]);
+
+  useEffect(() => {
+    fetchRandomArtist(setRandomArtist);
+  }, []);
+
+  if (!randomArtist) return null;
+
   return (
     <>
       <div className="grid grid-cols-5 gap-10">
@@ -16,7 +25,7 @@ export default function Info() {
           </h1>
           <div className="flex w-full gap-[5rem]">
             <div className="relative block text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
-              <Artist />
+              <Artist randomArtist={randomArtist[0]} />
             </div>
             <div className="flex flex-col h-full max-w-md min-h-[200px]">
               <p className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text">
@@ -33,7 +42,7 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <Grid />
+        <Grid randomArtist={randomArtist.slice(1)} />
       </div>
     </>
   );
