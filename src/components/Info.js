@@ -19,13 +19,13 @@ export default function Info() {
   return (
     <>
       <div className="flex w-full py-20">
-        <div className="flex flex-col w-full col-span-1 gap-5 max-w-[282px] bg-stone-500">
+        <div className="flex flex-col w-full col-span-1 gap-5 max-w-[272px]">
           <div className="relative w-full h-full max-w-full mx-auto border-2 border-spotify-text bg-[#f3d152]"></div>
           <div className="relative w-full h-full max-w-full border-2 max-auto border-spotify-text  bg-[#ef87d0]"></div>
         </div>
-        <div className="flex items-center justify-center w-full max-w-max">
-          <Start />
-        </div>
+
+        <Start />
+
         <Grid randomArtist={randomArtist.slice(1)} />
       </div>
     </>
@@ -34,11 +34,11 @@ export default function Info() {
 
 function Start() {
   return (
-    <div className="relative flex flex-col justify-center w-full max-w-screen-md bg-pink-500">
-      <h1 className="z-20 block mb-16 font-normal leading-tight tracking-tight text-8xl text-spotify-text">
-        <span>Explore</span> new playlists async.
+    <div className="relative flex flex-col items-start w-full max-w-screen-sm mx-auto">
+      <h1 className="z-20 block max-w-screen-sm mx-auto mb-16 font-normal leading-tight tracking-tight text-8xl text-spotify-text ">
+        Explore new playlists async.
       </h1>
-      <div className="flex flex-col h-full max-w-md min-h-[200px]">
+      <div className="flex flex-col w-full h-full max-w-screen-sm mx-auto ">
         <p className="block w-full text-[18px] font-normal leading-snug tracking-snug text-spotify-text">
           Explore new music, deepen your passion and get lost in creativity. What
           you'll find from your friends might suprrise you.{" "}
