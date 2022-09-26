@@ -7,7 +7,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 export default function Grid({ randomArtist }) {
   console.log(randomArtist);
   return (
-    <div className="flex flex-col items-start justify-start h-full max-w-lg col-span-2 gap-5 pt-12">
+    <div className="flex flex-col items-start justify-start w-full h-full max-w-lg gap-5">
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
           <div className="flex items-center justify-start flex-1 h-full p-4 border-2 rounded-full border-spotify-text">
@@ -21,10 +21,10 @@ export default function Grid({ randomArtist }) {
       </div>
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
-          <div className="relative flex items-center justify-start overflow-hidden border-2 rounded-full border-spotify-text h-[65px] w-[65px]">
+          <div className="relative flex items-center justify-center overflow-hidden rounded-full bg-spotify-text h-[65px] w-[65px] box-border">
             <img
               src={randomArtist[0]?.mainArtistInfo?.image}
-              className="absolute top-0 bottom-0 left-0 right-0 block object-cover"
+              className="box-border object-cover bg-black z-10 w-[61px] h-[61px] rounded-full"
             />
           </div>
           <div className="flex-1 border-2 rounded-full border-spotify-text min-w-[265px] flex items-center justify-center px-5">
@@ -171,10 +171,10 @@ export default function Grid({ randomArtist }) {
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
             </div>
           </div>
-          <div className="relative flex items-center justify-start overflow-hidden border-2 rounded-full border-spotify-text h-[65px] w-[65px]">
+          <div className="relative flex items-center justify-center overflow-hidden rounded-full bg-spotify-text h-[65px] w-[65px] box-border">
             <img
               src={randomArtist[1]?.mainArtistInfo?.image}
-              className="absolute top-0 bottom-0 left-0 right-0 block object-cover w-full h-full p-0 m-0 align-middle"
+              className="box-border object-cover bg-black z-10 w-[61px] h-[61px] rounded-full"
             />
           </div>
         </div>

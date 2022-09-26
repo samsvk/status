@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative flex flex-col max-w-[1650px] items-start h-full min-h-screen mx-auto">
+    <div className="relative flex flex-col items-start h-full min-h-screen mx-auto max-w-max">
       <Navbar />
       <Info />
     </div>
