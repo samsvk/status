@@ -6,6 +6,7 @@ import { BiShuffle } from "react-icons/bi";
 import Grid from "./grid";
 import { RiYoutubeFill } from "react-icons/ri";
 import { fetchRandomArtist } from "../api/actions";
+import { ImDiamonds, ImStarFull } from "react-icons/im";
 
 export default function Info() {
   const [randomArtist, setRandomArtist] = useState([]);
@@ -18,15 +19,18 @@ export default function Info() {
 
   return (
     <>
-      <div className="flex w-full py-20">
-        <div className="flex flex-col w-full col-span-1 gap-5 max-w-[272px]">
-          <div className="relative w-full h-full max-w-full mx-auto border-2 border-spotify-text bg-[#f3d152]"></div>
-          <div className="relative w-full h-full max-w-full border-2 max-auto border-spotify-text  bg-[#ef87d0]"></div>
-        </div>
-
+      <div className="flex w-full gap-32 py-20">
         <Start />
 
         <Grid randomArtist={randomArtist.slice(1)} />
+        {/* <div className="flex flex-col w-full col-span-1 gap-5 max-w-[260px]">
+          <div className="relative w-full max-w-full p-3">
+            <p className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text max-w-sm">
+              Our community is growing music-heads from around the world are
+              creating, sharing, and taking part.
+            </p>
+          </div>
+        </div> */}
       </div>
     </>
   );
@@ -34,18 +38,21 @@ export default function Info() {
 
 function Start() {
   return (
-    <div className="relative flex flex-col items-start w-full max-w-screen-sm mx-auto">
-      <h1 className="z-20 block max-w-screen-sm mx-auto mb-16 font-normal leading-tight tracking-tight text-8xl text-spotify-text ">
-        Explore new playlists async.
+    <div className="relative flex flex-col items-start w-full max-w-screen-sm gap-16">
+      <h1 className="z-20 inline-block max-w-screen-sm mx-auto font-normal leading-tight tracking-tight text-8xl text-spotify-text">
+        Explore new <ImDiamonds className="inline-block text-7xl" />
+        music async.
       </h1>
-      <div className="flex flex-col w-full h-full max-w-screen-sm mx-auto ">
-        <p className="block w-full text-[18px] font-normal leading-snug tracking-snug text-spotify-text">
+      <div className="flex flex-col w-full h-full max-w-screen-sm mx-auto">
+        <p className="block w-full text-[18px] font-medium leading-normal tracking-snug text-spotify-text max-w-sm">
           Explore new music, deepen your passion and get lost in creativity. What
           you'll find from your friends might suprrise you.{" "}
         </p>
-        <button className="w-max gap-3 px-8 py-4 mt-auto bg-spotify-text h-max text-[17px] font-normal leading-snug tracking-snug text-spotify-bg flex items-center min-h-[65px]">
-          <FaSpotify className="text-2xl" />
-          Connect with Spotify
+      </div>
+      <div className="flex items-center">
+        <button className="flex items-center pl-5 pr-8 rounded-full h-[65px] min-h-[65px] min-w-[65px] whitespace-nowrap text-[18px] font-medium leading-snug tracking-snug text-spotify-text max-w-sm w-full uppercase  border-2 border-spotify-text gap-3">
+          <FaSpotify className="mx-auto text-4xl rounded-full text-spotify-text" />
+          Connect With Spotify
         </button>
       </div>
     </div>

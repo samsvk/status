@@ -1,13 +1,13 @@
 import React from "react";
 import { BsMusicNote } from "react-icons/bs";
 import { FaMicrophone } from "react-icons/fa";
-import { IoMdArrowForward } from "react-icons/io";
+import { VscArrowRight } from "react-icons/vsc";
 
 import { AiFillPlayCircle } from "react-icons/ai";
 export default function Grid({ randomArtist }) {
   console.log(randomArtist);
   return (
-    <div className="flex flex-col items-start justify-start w-full h-full max-w-lg gap-5">
+    <div className="flex flex-col items-end justify-start w-full h-full max-w-lg gap-5 mx-auto mt-8">
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
           <div className="flex items-center justify-start flex-1 h-full p-4 border-2 rounded-full border-spotify-text">
@@ -120,7 +120,7 @@ export default function Grid({ randomArtist }) {
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
           <div className="flex items-center justify-center h-full min-w-[65px] min-h-[65px]  border-2 rounded-full border-spotify-text">
-            <div className="w-6 h-6 bg-spotify-text"></div>
+            <div className="w-6 h-6 -rotate-45 bg-spotify-text"></div>
           </div>
           <div className="flex items-center justify-start flex-1 h-full px-5 border-2 rounded-full border-[#ef87d0] bg-[#ef87d0]">
             <AiFillPlayCircle size={36} />
@@ -208,7 +208,7 @@ export default function Grid({ randomArtist }) {
             </span>
           </div>
           <div className="flex items-center justify-center overflow-hidden rounded-full  -[65px] w-[65px] bg-spotify-text/20">
-            <IoMdArrowForward size={32} className="-rotate-45" />
+            <VscArrowRight size={32} className="-rotate-45" />
           </div>
         </div>
       </div>
