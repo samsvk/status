@@ -16,7 +16,13 @@ export default function Grid({ randomArtist }) {
           <div className="flex items-center flex-1 min-w-[65px] min-h-[65px] justify-center border-2 rounded-full border-spotify-text max-w-max">
             <BsMusicNote size={26} />
           </div>
-          <div className="flex-1 border-2 rounded-full border-spotify-text min-w-[240px]"></div>
+          <div className="flex-1 border-2 rounded-full border-spotify-text min-w-[240px]">
+            {" "}
+            <img
+              src={randomArtist[3]?.image}
+              className="box-border object-cover bg-black z-10 w-full h-[61px] rounded-full"
+            />
+          </div>
         </div>
       </div>
       <div className="grid w-full grid-cols-1 gap-5">
@@ -52,7 +58,7 @@ export default function Grid({ randomArtist }) {
 
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
-          <div className="flex items-center justify-start flex-1 h-full px-5 border-2 rounded-full border-[#f3d152] bg-[#f3d152]">
+          <div className="flex items-center justify-start flex-1 h-full px-5 border-2 rounded-full border-spotify-text bg-[#fcd603]">
             <FaMicrophone size={26} />
             <div className="flex items-center gap-1 ml-5">
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
@@ -64,7 +70,7 @@ export default function Grid({ randomArtist }) {
               <span className="w-[2px] h-[20px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
@@ -72,10 +78,10 @@ export default function Grid({ randomArtist }) {
               <span className="w-[2px] h-[30px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[8px] block bg-spotify-text"></span>
@@ -122,24 +128,24 @@ export default function Grid({ randomArtist }) {
           <div className="flex items-center justify-center h-full min-w-[65px] min-h-[65px]  border-2 rounded-full border-spotify-text">
             <div className="w-6 h-6 -rotate-45 bg-spotify-text"></div>
           </div>
-          <div className="flex items-center justify-start flex-1 h-full px-5 border-2 rounded-full border-[#ef87d0] bg-[#ef87d0]">
+          <div className="flex items-center justify-start flex-1 h-full px-5 border-2 rounded-full border-spotify-text bg-spotify-green">
             <AiFillPlayCircle size={36} />
             <div className="flex items-center gap-1 ml-5">
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[20px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[30px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[8px] block bg-spotify-text"></span>
@@ -149,7 +155,7 @@ export default function Grid({ randomArtist }) {
               <span className="w-[2px] h-[20px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
@@ -157,12 +163,12 @@ export default function Grid({ randomArtist }) {
               <span className="w-[2px] h-[30px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[18px] block bg-spotify-text"></span>
-              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>{" "}
-              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>{" "}
+              <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
+              <span className="w-[2px] h-[9px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[12px] block bg-spotify-text"></span>
               <span className="w-[2px] h-[20px] block bg-spotify-text"></span>
@@ -191,9 +197,7 @@ export default function Grid({ randomArtist }) {
             <span className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text text-center underline decoration-2">
               R
             </span>
-            <span className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text text-center underline decoration-2">
-              {" "}
-            </span>
+            <span className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text text-center underline decoration-2"></span>
             <span className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text text-center underline decoration-2">
               F
             </span>
@@ -207,7 +211,7 @@ export default function Grid({ randomArtist }) {
               E
             </span>
           </div>
-          <div className="flex items-center justify-center overflow-hidden rounded-full  -[65px] w-[65px] bg-spotify-text/20">
+          <div className="flex items-center justify-center overflow-hidden rounded-full  h-[65px] w-[65px] bg-spotify-text/20">
             <VscArrowRight size={32} className="-rotate-45" />
           </div>
         </div>
