@@ -10,13 +10,8 @@ import Footer from "../footer";
 import { AiFillGithub } from "react-icons/ai";
 
 export default function Home() {
-  function handleLogin() {
-    const window = getWindow();
-    window.location.href = "http://localhost:3001/login";
-  }
-
   return (
-    <div className="relative flex flex-col items-start h-full min-h-screen mx-auto overflow-hidden max-w-max">
+    <div className="relative flex flex-col items-center justify-center h-full min-h-screen mx-auto overflow-hidden max-w-max">
       <Navbar />
       <Info />
       {/* <Footer /> */}

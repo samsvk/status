@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <div className="flex w-full gap-32 pb-8 mt-14">
+    <div className="flex w-full">
       <div className="relative w-full max-w-screen-sm">
         <div className="absolute flex items-center pr-10 bg-spotify-bg">
           <span className="relative z-10 block w-6 h-6 border-2 rounded-full bg-spotify-bg border-spotify-text" />

@@ -6,6 +6,7 @@ import { BiShuffle } from "react-icons/bi";
 import Grid from "./grid";
 import { RiYoutubeFill } from "react-icons/ri";
 import { fetchRandomArtist } from "../api/actions";
+import { getWindow } from "../global";
 import { ImDiamonds, ImStarFull } from "react-icons/im";
 
 export default function Info() {
@@ -37,6 +38,10 @@ export default function Info() {
 }
 
 function Start() {
+  function handleLogin() {
+    const window = getWindow();
+    window.location.href = "http://localhost:3001/login";
+  }
   return (
     <div className="relative flex flex-col items-start w-full max-w-screen-sm gap-16">
       <h1 className="z-20 inline-block max-w-screen-sm mx-auto font-normal leading-tight tracking-tight text-8xl text-spotify-text">
@@ -53,7 +58,10 @@ function Start() {
         </p>
       </div>
       <div className="flex items-center">
-        <button className="flex items-center pl-5 pr-8 rounded-full h-[65px] min-h-[65px] min-w-[65px] whitespace-nowrap text-[18px] font-medium leading-snug tracking-normal text-spotify-text max-w-sm w-full uppercase  border-2 border-spotify-text gap-3 hover:bg-spotify-green hover:text-spotify-bg duration-150">
+        <button
+          onClick={handleLogin}
+          className="flex items-center pl-5 pr-8 rounded-full h-[65px] min-h-[65px] min-w-[65px] whitespace-nowrap text-[18px] font-medium leading-snug tracking-normal text-spotify-text max-w-sm w-full uppercase  border-2 border-spotify-text gap-3 hover:bg-spotify-green hover:text-spotify-bg duration-150"
+        >
           <FaSpotify className="mx-auto text-4xl rounded-full text-inherit" />
           Connect With Spotify
         </button>

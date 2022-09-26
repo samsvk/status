@@ -78,7 +78,6 @@ export default function Lobby() {
 
   return (
     <>
-      <Grid />
       <div className="flex gap-10 max-w-[1280px] px-1.5 mx-auto  fixed top-0 bg-black text-white">
         <button onClick={() => SOCKET.logUsers()}>log users</button>
         <button onClick={() => SOCKET.logLobbies()}>log lobbies</button>
