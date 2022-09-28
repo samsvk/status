@@ -9,9 +9,9 @@ const Profile = ({ user, users }) => {
       <p className="block w-full max-w-sm text-base font-medium leading-normal tracking-normal text-spotify-text">
         Hi, {user.name} your lobby currently has {users?.length} users online.
       </p>
-      <ul className="flex ml-4">
+      <ul className="flex">
         {users.map((u, i) => (
-          <li style={{ marginLeft: `${i - "20"}px` }}>
+          <li>
             <div className="relative flex items-center justify-center overflow-hidden rounded-full bg-spotify-bg h-[65px] w-[65px] box-border">
               <img
                 src={u?.image}
