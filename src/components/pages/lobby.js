@@ -95,12 +95,9 @@ export default function Lobby() {
       </div> */}
       <div className="max-w-screen-xl mx-auto my-20">
         <Navbar />
-        <Profile user={userData} />
+        <Profile user={userData} users={lobbyUsers} />
 
         <div className="max-w-[1280px] mx-auto p-1.5">
-          <p>
-            {lobbyUsers.length}'s users in this lobby with the ID: {lobbyData.id}
-          </p>
           <ul>{lobbyUsers.map((item) => item.name).join(", ")}</ul>
           <div className="mt-10">
             {userData.playlists.map((playlist, index) => (
