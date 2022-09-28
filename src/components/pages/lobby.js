@@ -150,32 +150,7 @@ export default function Lobby() {
             Submit Songs
           </span>
         </div>
-        {/* <div>
-          <div className="flex flex-col flex-1 gap-10">
-            <h1 className="text-7xl font-medium tracking-tighter z-[-10]text-left text-spotify-text leading-tight">
-              Welcome to your
-              <br /> lobby,{" "}
-              <span className="text-spotify-green">{userData.name}</span>
-            </h1>
-            <p className="w-full max-w-lg text-2xl font-normal leading-relaxed tracking-tight text-spotify-text">
-              You have {userData.playlists.length} playlists available for shufflin',
-              invite your friends and we'll work our magic.
-            </p>
-            <div>
-              <div>
-                <button
-                  className="flex items-center gap-4 px-8 py-5 text-xl font-normal leading-relaxed tracking-tight rounded-lg bg-spotify-green relative text-spotify-bg 
-                  after:absolute after:content-[''] after:w-full after:h-full after:bottom-2 after:right-2 after:-z-10 after:rounded-lg after:bg-spotify-bg after:border-2 after:border-spotify-text
-                  hover:shadow-lg duration-200
-                  "
-                >
-                  <IoPeopleSharp size={27} />
-                  Invite your friends
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
+
         {lobbyData?.tracks?.length > 0 && (
           <div>
             <ul className="flex flex-col gap-2 mt-10 rounded-md">
@@ -220,8 +195,10 @@ export default function Lobby() {
                     <img className="object-fill w-10 h-10" src={item.image} />
                     <div className="relative h-full">
                       <h2
-                        className="block relative z-10 p-0 text-base font-medium leading-none tracking-tight align-text-top text-spotify-text
-                      max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis"
+                        className="block relative z-10 p-0 leading-none
+                      max-w-[185px] overflow-hidden whitespace-nowrap text-ellipsis
+                      text-base font-medium tracking-normal text-spotify-text
+                      "
                       >
                         {item.name}
                       </h2>
