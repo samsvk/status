@@ -11,7 +11,7 @@ const Profile = ({ user, users }) => {
       </p>
       <ul className="flex">
         {users.map((u, i) => (
-          <li>
+          <li key={i}>
             <div className="relative flex items-center justify-center overflow-hidden rounded-full bg-spotify-bg h-[65px] w-[65px] box-border">
               <img
                 src={u?.image}
