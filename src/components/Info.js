@@ -24,14 +24,6 @@ export default function Info() {
         <Start />
 
         <Grid randomArtist={randomArtist.slice(1)} />
-        {/* <div className="flex flex-col w-full col-span-1 gap-5 max-w-[260px]">
-          <div className="relative w-full max-w-full p-3">
-            <p className="block w-full text-[18px] font-medium leading-snug tracking-snug text-spotify-text max-w-sm">
-              Our community is growing music-heads from around the world are
-              creating, sharing, and taking part.
-            </p>
-          </div>
-        </div> */}
       </div>
     </>
   );
