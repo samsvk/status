@@ -85,7 +85,7 @@ export default function Lobby() {
         <button
           onClick={() =>
             SOCKET.sendPlaylistTracks({
-              id: lobbyData.id,
+              id: lobbyData.id  ,
               playlistTunes,
             })
           }
@@ -96,7 +96,6 @@ export default function Lobby() {
       <div className="max-w-screen-xl mx-auto my-20">
         <Navbar />
         <Profile user={userData} users={lobbyUsers} />
-
         <div className="max-w-[1280px] mx-auto p-1.5">
           <ul>{lobbyUsers.map((item) => item.name).join(", ")}</ul>
           <div className="mt-10">
