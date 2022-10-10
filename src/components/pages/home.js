@@ -14,7 +14,7 @@ export default function Home() {
     <div className="relative flex flex-col items-center justify-center h-full max-w-screen-xl min-h-screen mx-auto overflow-hidden">
       {/* <Navbar /> */}
       <Info />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
