@@ -7,7 +7,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 export default function Grid({ randomArtist }) {
   console.log(randomArtist);
   return (
-    <div className="flex flex-col items-end justify-start w-full h-full max-w-lg gap-5 mx-auto mt-8">
+    <div className="flex flex-col w-full h-full gap-5 mt-8">
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[65px] max-h-[65px] gap-3">
           <div className="flex items-center justify-start flex-1 h-full p-4 border-2 rounded-full border-spotify-text">

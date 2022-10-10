@@ -20,8 +20,9 @@ export default function Info() {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full gap-32 pb-16 justiyf-center pt-14">
+      <div className="flex w-full gap-32 pb-16 pt-14">
         <Start />
+
         <Grid randomArtist={randomArtist.slice(1)} />
       </div>
     </>
@@ -34,9 +35,13 @@ function Start() {
     window.location.href = "http://localhost:3001/login";
   }
   return (
-    <div className="relative flex flex-col items-start w-full gap-16">
-      <h1 className="z-20 inline-block max-w-4xl mx-auto font-medium leading-[1.1] tracking-tighter text-center text-7xl text-spotify-text">
-        Leader in management for your spotify playlists asynchronously.
+    <div className="relative flex flex-col items-start w-full max-w-screen-sm gap-16">
+      <h1 className="z-20 inline-block max-w-screen-sm mx-auto font-normal leading-tight tracking-tight text-8xl text-spotify-text">
+        Explore new <ImDiamonds className="inline-block text-7xl" />
+        music{" "}
+        <span className="relative inline-block z-10 before:-z-10 before:absolute before:content-[''] before:-rotate-6 before:h-2 before:w-full before:bg-spotify-green before:bottom-8 before:left-2">
+          async
+        </span>
       </h1>
       <div className="flex flex-col w-full h-full max-w-screen-sm mx-auto">
         <p className="block w-full max-w-sm text-base font-medium leading-normal tracking-normal text-spotify-text">
