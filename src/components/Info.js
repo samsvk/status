@@ -20,7 +20,7 @@ export default function Info() {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full gap-32 pb-16 justiyf-center pt-14">
+      <div className="flex flex-col items-center justify-center w-full gap-32 pb-16 pt-14">
         <Start />
         {/* <Grid randomArtist={randomArtist.slice(1)} /> */}
       </div>
