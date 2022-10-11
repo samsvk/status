@@ -42,8 +42,8 @@ export default function Navbar() {
             Contact Us
           </li>
           <li
-            className="flex-1 px-12  relative text-base font-medium tracking-normal text-spotify-text whitespace-nowrap after:absolute after:w-0 after:h-[2px] after:left-0 after:right-0 after:bottom-0 after:bg-spotify-text/5  hover:after:w-full after:duration-200 hover:cursor-pointer
-            py-8  border-r border-spotify-text/20 flex items-center justify-center min-w-[300px]
+            className="flex-1 px-12  relative text-base font-medium tracking-normal whitespace-nowrap after:absolute after:w-0 after:h-[2px] after:left-0 after:right-0 after:bottom-0 after:bg-spotify-text/5  hover:after:w-full after:duration-200 hover:cursor-pointer
+            py-8  border-r border-spotify-text/20 flex items-center justify-center min-w-[300px] text-spotify-green
           "
           >
             Donate & Support <BsArrowRight size={22} className="ml-2" />
