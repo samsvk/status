@@ -17,7 +17,7 @@ export default function Info() {
   }, []);
   return (
     <>
-      <div className="flex w-full gap-24 pt-24 max-w-max">
+      <div className="flex w-full gap-32 pt-24 mx-auto max-w-screen-2xl">
         <Start />
         <Grid randomArtist={randomArtist.slice(1)} />
       </div>
@@ -33,7 +33,7 @@ function Start() {
 
   return (
     <div className="relative flex flex-col items-start w-full gap-16 max-w-max">
-      <h1 className="z-20 inline-block font-bold leading-[1.15] tracking-tight text-left text-7xl text-spotify-text">
+      <h1 className="z-20 inline-block font-bold leading-none tracking-tight text-left text-[5.5rem] text-spotify-text">
         Spotify playlist
         <br /> management
         <br />
@@ -50,7 +50,7 @@ function Start() {
 
       <button
         onClick={handleLogin}
-        className="flex items-center pl-5 pr-8 rounded-full h-[65px] min-h-[65px] min-w-[65px] whitespace-nowrap text-[18px] font-medium leading-snug tracking-normal hover:bg-spotify-bg hover:text-spotify-text w-full uppercase border-2 border-spotify-text gap-3 bg-spotify-green text-spotify-bg duration-150 max-w-max"
+        className="flex items-center pl-5 pr-8 rounded-full h-[75px] min-h-[75px] min-w-[75px] whitespace-nowrap text-[18px] font-medium leading-snug tracking-normal hover:bg-spotify-bg hover:text-spotify-text w-full uppercase border-2 border-spotify-text gap-3 bg-spotify-green text-spotify-bg duration-150 max-w-max"
       >
         <FaSpotify className="mx-auto text-4xl rounded-full text-inherit" />
         Connect With Spotify
