@@ -5,7 +5,6 @@ import { VscArrowRight } from "react-icons/vsc";
 
 import { AiFillPlayCircle } from "react-icons/ai";
 export default function Grid({ randomArtist }) {
-  console.log(randomArtist);
   return (
     <div className="flex flex-col w-full h-full gap-5 mt-8">
       <div className="grid w-full grid-cols-1 gap-5">
