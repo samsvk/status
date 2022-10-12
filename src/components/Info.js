@@ -17,7 +17,7 @@ export default function Info() {
   }, []);
   return (
     <>
-      <div className="flex items-center justify-center w-full gap-32 pb-16 max-w-[1750px]  pt-14  bg-orange-500">
+      <div className="flex w-full gap-32 pt-24 max-w-max">
         <Start />
         <Grid randomArtist={randomArtist.slice(1)} />
       </div>
@@ -33,7 +33,8 @@ function Start() {
   return (
     <div className="relative flex flex-col items-start w-full gap-16">
       <h1 className="z-20 inline-block max-w-4xl font-medium leading-[1.15] tracking-tight text-left text-7xl text-spotify-text">
-        Leader in management for your spotify playlists
+        Leader in management <br />
+        for your spotify playlists
         <span className="relative inline-block z-10 before:-z-10 before:absolute before:content-[''] before:-rotate-3 before:h-2 before:w-full before:bg-spotify-green before:bottom-4 before:left-2">
           asynchronously
         </span>
