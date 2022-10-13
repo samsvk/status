@@ -12,19 +12,11 @@ export default function Navbar() {
       </div>
       <nav className="flex">
         <ul className="flex items-center justify-center w-full gap-8">
-          <li
-            className="flex-1  relative text-base font-medium tracking-normal text-spotify-text whitespace-nowrap after:absolute after:w-0 after:h-[2px] after:left-0 after:right-0 after:bottom-0 after:bg-spotify-text/5  hover:after:w-full after:duration-200 hover:cursor-pointer
-            flex items-center justify-center gap-2 
-          "
-          >
+          <li className="relative flex items-center justify-center flex-1 gap-2 text-base font-medium tracking-normal text-spotify-text whitespace-nowrap ">
             <IoLink size={28} />
             Share
           </li>
-          <li
-            className="flex-1  relative text-base font-medium tracking-normal text-spotify-text whitespace-nowrap after:absolute after:w-0 after:h-[2px] after:left-0 after:right-0 after:bottom-0 after:bg-spotify-text/5  hover:after:w-full after:duration-200 hover:cursor-pointer
-            flex items-center justify-center gap-2
-          "
-          >
+          <li className="relative flex items-center justify-center flex-1 gap-2 text-base font-medium tracking-normal text-spotify-text whitespace-nowrap ">
             <FaShareAlt size={20} />
             Share
           </li>

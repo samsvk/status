@@ -34,6 +34,28 @@ function Start() {
   return (
     <div className="relative flex flex-col items-start w-full gap-16 max-w-max">
       <h1 className="z-20 inline-block font-bold leading-none tracking-tight text-left text-[5.5rem] text-spotify-text">
+        {/* <div className="absolute grid w-48 max-w-xs grid-cols-4 grid-rows-5 gap-12 -left-14 -top-14 -z-20">
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+          <span className="block w-1 h-1 col-span-1 rounded-full bg-spotify-green" />
+        </div> */}
         Spotify playlist
         <br /> management
         <br />
