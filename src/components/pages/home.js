@@ -11,8 +11,8 @@ import { AiFillGithub } from "react-icons/ai";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col items-center justify-center mx-auto overflow-hidden ">
-      <Navbar />
+    <div className="relative flex flex-col items-center justify-center min-h-screen mx-auto overflow-hidden">
+      {/* <Navbar /> */}
       <Info />
       {/* <Footer /> */}
     </div>

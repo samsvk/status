@@ -17,7 +17,7 @@ export default function Info() {
   }, []);
   return (
     <>
-      <div className="flex w-full gap-32 pt-24 mx-auto max-w-screen-2xl">
+      <div className="flex w-full gap-32 mx-auto max-w-screen-2xl">
         <Start />
         <Grid randomArtist={randomArtist.slice(1)} />
       </div>
