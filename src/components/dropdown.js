@@ -9,6 +9,7 @@ export const container = {
     transition: {
       staggerChildren: 0.05,
       delayChildren: i * 0.18,
+      opacity: { duration: 0.25 },
     },
   }),
 };
