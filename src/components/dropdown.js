@@ -46,7 +46,7 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
       {show === name && (
         <div
           className={`${
-            show === name ? " animate-opac" : "opacity-0"
+            show === name ? "animate-clip" : "opacity-0"
           } delay-300 absolute left-0 z-50 w-full h-max min-w-[550px] text-white bg-spotify-bg  max-w-max top-12 rounded-3xl overflow-hidden p-8 flex flex-col gap-3.5 drop-shadow-lg`}
         >
           {children}

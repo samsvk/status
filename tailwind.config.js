@@ -6,16 +6,20 @@ module.exports = {
       keyframes: {
         tx: {
           "0%": {
-            transform: "translateY(100%)",
-            opacity: 0,
-          },
-          "80%": {
-            transform: "translateY(100%)",
+            transform: "translateY(150px)",
             opacity: 0,
           },
           "100%": {
             transform: "translateY(0%)",
             opacity: 1,
+          },
+        },
+        clip: {
+          "0%": {
+            clipPath: "polygon(0 0, 0 0, 0 0, 0 0);",
+          },
+          "100%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           },
         },
       },

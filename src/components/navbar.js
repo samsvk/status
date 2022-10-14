@@ -42,12 +42,12 @@ export default function Navbar() {
             setShowId={setShowId}
             show={show}
           >
-            <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text animate-[tx_2s_cubic-bezier(.2,.6,.35,1)_0.5s_both]">
+            <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text animate-[tx_0.5s_ease_0s_both] will-change-transform">
               About the app
             </h1>
             <p
-              className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal 
-                animate-[tx_2s_cubic-bezier(.2,.6,.35,1)_0.8s_both]"
+              className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal  will-change-transform
+                animate-[tx_0.5s_ease_0.15s_both]"
             >
               <span className="text-spotify-text">Company: </span>Shuff.le is a song
               analysis and music discovery tool for Spotify users that is built on{" "}
@@ -55,7 +55,10 @@ export default function Navbar() {
                 Spotify's Web API
               </ExternalLink>
             </p>
-            {/* <p className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal animate-tx delay-[3s]">
+            <p
+              className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal  will-change-transform
+             animate-[tx_0.5s_ease_0.3s_both]"
+            >
               <span className="text-spotify-text">Privacy: </span>
               Shuff.le requires access to some of your Spotify account data but not
               to worry, we do NOT store any data on any server. Once your playlist is
@@ -63,10 +66,13 @@ export default function Navbar() {
               code is{" "}
               <ExternalLink link="http://github.com">Open Source</ExternalLink>)
             </p>
-            <p className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal animate-tx delay-[4s]">
+            <p
+              className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal   will-change-transform
+              animate-[tx_0.5s_ease_0.45s_both]"
+            >
               <span className="text-spotify-text ">Version: </span>
               Shuff.le is in early alpha: 0.0.4
-            </p> */}
+            </p>{" "}
           </Dropdown>
           {/* <Dropdown
             icon={<FaShareAlt size={20} />}
