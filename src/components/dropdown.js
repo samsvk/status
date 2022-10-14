@@ -10,7 +10,7 @@ export const Dropdown = ({ children, icon, name }) => {
       {icon}
       {name}
       {show && (
-        <div className="absolute left-0 z-50 w-full h-max min-w-[550px] text-white bg-spotify-bg border-spotify-border border-2 max-w-max top-12 rounded-3xl overflow-hidden p-8 flex flex-col gap-3.5">
+        <div className="absolute left-0 z-50 w-full h-max min-w-[550px] text-white bg-spotify-bg  max-w-max top-12 rounded-3xl overflow-hidden p-8 flex flex-col gap-3.5 drop-shadow-lg">
           {children}
         </div>
       )}
