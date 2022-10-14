@@ -27,7 +27,7 @@ function Start() {
   }
 
   return (
-    <div className="relative flex flex-col items-start w-full gap-16 -z-10 max-w-max">
+    <div className="relative flex flex-col items-start w-full gap-16 max-w-max">
       <h1 className="z-0 inline-block font-semibold leading-[1.15] tracking-tight text-left text-[5.3rem] text-spotify-text">
         Spotify playlist
         <br /> management

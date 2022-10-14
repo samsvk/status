@@ -27,7 +27,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 flex w-full py-10 pl-2">
+    <div className="fixed top-0 z-30 flex w-full py-10 pl-2">
       <div className="relative flex items-center w-24 pl-8">
         <div className="absolute flex items-center pr-8 bg-spotify-bg">
           <span className="relative block w-6 h-6 border-2 rounded-full z-8 bg-spotify-bg border-spotify-text" />
@@ -46,11 +46,15 @@ export default function Navbar() {
               About the app
             </h1>
             <p
-              className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal  will-change-transform
+              className="w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal  will-change-transform
                 animate-[tx_0.5s_ease_0.4s_both]"
             >
-              <span className="text-spotify-text">Company: </span>Shuff.le is a song
-              analysis and music discovery tool for Spotify users that is built on{" "}
+              <span className="w-full text-spotify-text">
+                Company:
+                <br />{" "}
+              </span>
+              Shuff.le is a song analysis and music discovery tool for Spotify users
+              that is built on{" "}
               <ExternalLink link="http://spotify.com">
                 Spotify's Web API
               </ExternalLink>
@@ -59,7 +63,9 @@ export default function Navbar() {
               className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal  will-change-transform
              animate-[tx_0.5s_ease_0.5s_both]"
             >
-              <span className="text-spotify-text">Privacy: </span>
+              <span className="text-spotify-text">
+                Privacy: <br />
+              </span>
               Shuff.le requires access to some of your Spotify account data but not
               to worry, we do NOT store any data on any server. Once your playlist is
               created, we then cleanup and delete all data (Still not at eases? Our
@@ -70,21 +76,11 @@ export default function Navbar() {
               className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border whitespace-normal   will-change-transform
               animate-[tx_0.5s_ease_0.6s_both]"
             >
-              <span className="text-spotify-text ">Version: </span>
+              <span className="text-spotify-text ">
+                Version: <br />
+              </span>
               Shuff.le is in early alpha: 0.0.4
             </p>{" "}
-            <div
-              className="flex items-center justify-center col-span-1 overflow-hidden bg-spotify-border/5 rounded-2xl max-w-max    will-change-transform
-              animate-[tx_0.5s_ease_0.7s_both]"
-            >
-              <span className="px-3 py-4 bg-spotify-text">
-                <AiFillGithub className="mx-auto text-4xl text-spotify-bg" />
-              </span>
-              <p className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border pl-4 pr-6">
-                <span className="block text-spotify-text">Source Code: </span>
-                Available free
-              </p>
-            </div>
           </Dropdown>
           <Dropdown
             icon={<FaShareAlt size={20} />}
