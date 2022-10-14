@@ -1,5 +1,5 @@
 import { useState } from "react";
-export const Dropdown = ({ icon, name }) => {
+export const Dropdown = ({ icon, name, children }) => {
   const [show, setShow] = useState(false);
   console.log(show, name);
   return (
@@ -13,7 +13,9 @@ export const Dropdown = ({ icon, name }) => {
       {icon}
       {name}
       {show && (
-        <div className="absolute left-0 z-50 w-20 h-48 bg-pink-500 top-12"></div>
+        <div className="absolute left-0 z-50 w-20 h-48 bg-pink-500 top-12 rounded-3xl">
+          {children}
+        </div>
       )}
     </li>
   );
