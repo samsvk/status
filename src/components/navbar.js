@@ -1,6 +1,7 @@
 import { FaShareAlt } from "react-icons/fa";
 import { IoLink } from "react-icons/io5";
 import { Dropdown } from "./dropdown";
+
 export default function Navbar() {
   return (
     <div className="fixed top-0 flex w-full py-10 pl-2">
@@ -22,7 +23,19 @@ export default function Navbar() {
               since the 1500s.
             </p>
           </Dropdown>
-          <Dropdown icon={<FaShareAlt size={20} />} name="Share" />
+          <Dropdown icon={<FaShareAlt size={20} />} name="Share">
+            <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text">
+              Share Shuff.le
+            </h1>
+            <p className="block w-full max-w-lg text-[1.05rem] font-semibold leading-normal tracking-tight text-left text-spotify-border">
+              Choose your prefered social platform
+            </p>
+            <div className="grid grid-cols-3 gap-3.5">
+              <span className="block col-span-1 p-10 bg-spotify-border/5 rounded-2xl"></span>
+              <span className="block col-span-1 p-10 bg-orange-500"></span>
+              <span className="block col-span-1 p-10 bg-orange-500"></span>
+            </div>
+          </Dropdown>
         </ul>
       </nav>
     </div>
