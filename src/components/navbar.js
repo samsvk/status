@@ -12,7 +12,16 @@ export default function Navbar() {
       </div>
       <nav className="flex">
         <ul className="flex items-center justify-center w-full gap-8">
-          <Dropdown icon={<IoLink size={28} />} name="About" />
+          <Dropdown icon={<IoLink size={28} />} name="About">
+            <h1 className="z-0 inline-block text-4xl font-bold leading-none tracking-tight text-left text-spotify-bg">
+              Share Shuff.le
+            </h1>
+            <p className="whitespace-normal">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s.
+            </p>
+          </Dropdown>
           <Dropdown icon={<FaShareAlt size={20} />} name="Share" />
         </ul>
       </nav>
