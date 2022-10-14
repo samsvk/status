@@ -1,6 +1,6 @@
-import { BsArrowRight } from "react-icons/bs";
 import { FaShareAlt } from "react-icons/fa";
 import { IoLink } from "react-icons/io5";
+import { Dropdown } from "./dropdown";
 export default function Navbar() {
   return (
     <div className="fixed top-0 flex w-full py-10 pl-2">
@@ -12,14 +12,8 @@ export default function Navbar() {
       </div>
       <nav className="flex">
         <ul className="flex items-center justify-center w-full gap-8">
-          <li className="relative flex items-center justify-center flex-1 gap-2 text-base font-medium tracking-normal text-spotify-text whitespace-nowrap ">
-            <IoLink size={28} />
-            Share
-          </li>
-          <li className="relative flex items-center justify-center flex-1 gap-2 text-base font-medium tracking-normal text-spotify-text whitespace-nowrap ">
-            <FaShareAlt size={20} />
-            Share
-          </li>
+          <Dropdown icon={<IoLink size={28} />} name="About" />
+          <Dropdown icon={<FaShareAlt size={20} />} name="Share" />
         </ul>
       </nav>
     </div>
