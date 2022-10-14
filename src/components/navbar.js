@@ -11,6 +11,7 @@ function ExternalLink(props) {
     <a
       target="_blank"
       href={props.link}
+      rel="noreferrer"
       className="font-medium hover:cursor-pointer text-spotify-green"
     >
       {props.children}

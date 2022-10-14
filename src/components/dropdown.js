@@ -54,7 +54,7 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
               variants={container}
               initial="hidden"
               animate={"visible"}
-              exit="hidden"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
               className="absolute left-0 z-50 w-full h-max min-w-[550px] text-white bg-spotify-bg  max-w-max top-12 rounded-3xl overflow-hidden p-8 flex flex-col gap-3.5 drop-shadow-lg"
             >
               {children}
