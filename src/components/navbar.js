@@ -3,6 +3,7 @@ import { IoLink } from "react-icons/io5";
 import { Dropdown } from "./dropdown";
 import { AiOutlineTwitter, AiOutlineMail } from "react-icons/ai";
 import { TbCopy } from "react-icons/tb";
+import { useState } from "react";
 
 function ExternalLink(props) {
   return (
@@ -17,6 +18,13 @@ function ExternalLink(props) {
 }
 
 export default function Navbar() {
+  const [show, setShow] = useState(false);
+
+  function setShowId(id) {
+    if (show === id) setShow(false);
+    else setShow(id);
+  }
+
   return (
     <div className="fixed top-0 flex w-full py-10 pl-2">
       <div className="relative flex items-center w-24 pl-8">
@@ -27,7 +35,12 @@ export default function Navbar() {
       </div>
       <nav className="flex">
         <ul className="flex items-center justify-center w-full gap-8">
-          <Dropdown icon={<IoLink size={28} />} name="About">
+          <Dropdown
+            icon={<IoLink size={28} />}
+            name="About"
+            setShowId={setShowId}
+            show={show}
+          >
             <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text">
               About the app
             </h1>
@@ -51,7 +64,12 @@ export default function Navbar() {
               Shuff.le is in early alpha: 0.0.4
             </p>
           </Dropdown>
-          <Dropdown icon={<FaShareAlt size={20} />} name="Share">
+          <Dropdown
+            icon={<FaShareAlt size={20} />}
+            name="Share"
+            setShowId={setShowId}
+            show={show}
+          >
             <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text">
               Share Shuff.le
             </h1>
