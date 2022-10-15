@@ -5,6 +5,7 @@ import { AiOutlineTwitter, AiOutlineMail, AiFillGithub } from "react-icons/ai";
 import { TbCopy } from "react-icons/tb";
 import { useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import { SiKofi, SiPatreon, SiPaypal } from "react-icons/si";
 
 function ExternalLink(props) {
   return (
@@ -111,12 +112,26 @@ export default function Navbar() {
             </div>
           </Dropdown>
           <Dropdown name="Donate" setShowId={setShowId} show={show}>
-            <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text  animate-[tx_0.5s_ease_0.3s_both] will-change-transform">
-              Donate & Support
-            </h1>
-            <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-left  text-spotify-text/60  animate-[tx_0.5s_ease_0.4s_both] will-change-transform">
-              Choose your prefered donation platform
-            </p>
+            <div className="grid grid-cols-3 gap-6">
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl bg-spotify-bg animate-[tx_0.5s_ease_0.5s_both] will-change-transform">
+                <SiKofi className="mx-auto text-3xl text-spotify-text/60" />
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center text-spotify-text">
+                  Kofi
+                </p>
+              </span>
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg  animate-[tx_0.5s_ease_0.6s_both] will-change-transform">
+                <SiPatreon className="mx-auto text-3xl text-spotify-text/60" />
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
+                  Patreon
+                </p>
+              </span>
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg   animate-[tx_0.5s_ease_0.7s_both] will-change-transform">
+                <SiPaypal className="mx-auto text-3xl text-spotify-text/60" />
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
+                  PayPal
+                </p>
+              </span>
+            </div>
           </Dropdown>
           <li
             className="relative z-20 flex items-center justify-center flex-1 gap-2 whitespace-nowrap hover:cursor-pointer 
