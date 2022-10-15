@@ -27,8 +27,8 @@ export default function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 z-30 flex w-full py-10 pl-2">
-      <div className="relative flex items-center w-24 pl-8">
+    <div className="fixed top-0 z-30 flex w-full mx-auto py-14 max-w-screen-2xl">
+      <div className="relative flex items-center w-16">
         <div className="absolute flex items-center pr-8 bg-spotify-bg">
           <span className="relative block w-6 h-6 border-2 rounded-full z-8 bg-spotify-bg border-spotify-text" />
           <span className="relative z-0 block w-5 h-5 rounded-full right-3 bg-spotify-text border-spotify-text" />
