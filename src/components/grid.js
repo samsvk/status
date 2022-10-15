@@ -16,7 +16,6 @@ export default function Grid({ randomArtist }) {
             <BsMusicNote size={26} className="text-spotify-text" />
           </div>
           <div className="flex-1 border-2 rounded-full border-spotify-text min-w-[240px]">
-            {" "}
             <img
               src={randomArtist[3]?.image}
               className="box-border object-cover bg-black z-10 w-full h-[71px] rounded-full"

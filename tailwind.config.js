@@ -14,12 +14,28 @@ module.exports = {
             opacity: 1,
           },
         },
+        scale: {
+          "0%": {
+            transform: "scale(1.5)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
         leading: {
           "0%": {
             lineHeight: "1.8",
           },
           "100%": {
-            lineHeight: "1.25",
+            lineHeight: "1.3",
+          },
+        },
+        leadingImage: {
+          "0%": {
+            clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+          },
+          "100%": {
+            clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)",
           },
         },
         clip: {
