@@ -5,7 +5,13 @@ import { AiOutlineTwitter, AiOutlineMail, AiFillGithub } from "react-icons/ai";
 import { TbCopy } from "react-icons/tb";
 import { useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import { getWindow } from "../global";
 import { SiKofi, SiPatreon, SiPaypal } from "react-icons/si";
+
+function handleLogin() {
+  const window = getWindow();
+  window.location.href = "http://localhost:3001/login";
+}
 
 function ExternalLink(props) {
   return (
@@ -141,6 +147,13 @@ export default function Navbar() {
               Community
             </span>
           </li>
+          <button
+            onClick={handleLogin}
+            className="flex items-center pl-3 pr-5 rounded-full py-3 whitespace-nowrap text-[1.05rem] font-normal leading-snug  w-full tracking-tight border border-spotify-text/60 gap-3 duration-150 max-w-max border-spotify-text/60 text-spotify-text/60 hover:border-spotify-green"
+          >
+            <FaSpotify className="mx-auto text-2xl rounded-full text-inherit" />
+            Connect with Spotify
+          </button>
         </ul>
       </nav>
     </div>

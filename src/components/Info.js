@@ -34,7 +34,7 @@ export default function Info() {
                 className="box-border absolute top-0 bottom-0 left-0 right-0 z-10 object-cover object-center w-full h-full bg-black animate-[scale_0.4s_ease_0.9s_both]"
               />
             </span>{" "}
-            Our algorithm was developed to help form playlists between multiple
+            our algorithm was developed to help form playlists between multiple
             people to keep the good vibes going all day.
           </div>
           {/* <Arrows /> */}
