@@ -90,21 +90,21 @@ export default function Navbar() {
               Choose your prefered social platform
             </p>
             <div className="grid grid-cols-3 gap-6">
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  animate-[tx_0.5s_ease_0.5s_both] will-change-transform">
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl bg-spotify-bg animate-[tx_0.5s_ease_0.5s_both] will-change-transform">
                 <AiOutlineTwitter className="mx-auto text-4xl text-[#1DA1F2]" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text/60">
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center text-spotify-text">
                   Twitter
                 </p>
               </span>
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  animate-[tx_0.5s_ease_0.6s_both] will-change-transform">
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg  animate-[tx_0.5s_ease_0.6s_both] will-change-transform">
                 <AiOutlineMail className="mx-auto text-4xl text-[#ff0050]" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text/60">
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
                   Email
                 </p>
               </span>
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  animate-[tx_0.5s_ease_0.7s_both] will-change-transform">
+              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg   animate-[tx_0.5s_ease_0.7s_both] will-change-transform">
                 <TbCopy className="mx-auto text-4xl text-spotify-text" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text/60">
+                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
                   Copy Link
                 </p>
               </span>
