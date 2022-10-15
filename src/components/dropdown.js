@@ -3,12 +3,16 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
   return (
     <li
       className="relative z-20 flex items-center justify-center flex-1 gap-2 whitespace-nowrap hover:cursor-pointer 
-    text-[1.05rem] font-normal leading-normal tracking-tight text-spotify-text/60
+    text-[1.05rem] font-normal leading-normal tracking-tight
     "
     >
       <span
         onClick={() => setShowId(name)}
-        className="flex items-center justify-center gap-2 text-center"
+        className={`flex items-center justify-center gap-2 text-center rounded-full px-3 py-1 transition-all duration-[600ms] ${
+          show === name
+            ? "bg-spotify-offset text-spotify-text"
+            : "text-spotify-text/60"
+        }`}
       >
         {name}
         <HiPlusSm size={16} />
