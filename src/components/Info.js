@@ -15,14 +15,10 @@ export default function Info() {
     <>
       <div className="flex flex-col items-center justify-center w-full min-h-screen max-w-screen-2xl">
         <div className="animate-[tx_0.5s_ease_0.3s_both] will-change-transform relative w-full max-h-max">
-          <div className="text-6xl font-normal leading-tight tracking-tight text-center text-spotify-text/60 animate-[leading_0.5s_ease_0.3s_both] relative w-full mx-auto">
-            <p className="block text-[1.05rem] font-normal leading-normal tracking-tight text-spotify-text/60 whitespace-normal mb-8">
-              Shuffle
-            </p>
-            Shuff.le is a streaming{" "}
-            <span className="text-spotify-text/90">analysis</span> and{" "}
-            <span className="text-spotify-text/90">discovery</span> tool that uses{" "}
-            <span className="text-spotify-text/90">asynchronous</span> technology
+          <div className="text-6xl font-normal leading-tight tracking-tight text-center text-spotify-text/60 animate-[leading_0.5s_ease_0.3s_both] relative w-full">
+            A streaming <span className="text-spotify-text/95">analysis</span> and{" "}
+            <span className="text-spotify-text/95">discovery</span> tool that uses{" "}
+            <span className="text-spotify-text/95">asynchronous</span> technology
             using <span className="text-spotify-text/90">Spotify's Web API.</span>{" "}
             You'll discover tons of new artists like{" "}
             <span className="inline-flex items-center w-36 my-auto bg-black h-14 animate-[leadingImage_0.6s_ease_0.8s_both] relative">
@@ -41,7 +37,7 @@ export default function Info() {
             Our algorithm was developed to help form playlists between multiple
             people to keep the good vibes going all day.
           </div>
-          <Arrows />
+          {/* <Arrows /> */}
         </div>
       </div>
     </>
