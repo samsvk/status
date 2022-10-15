@@ -14,6 +14,14 @@ module.exports = {
             opacity: 1,
           },
         },
+        leading: {
+          "0%": {
+            lineHeight: "1.8",
+          },
+          "100%": {
+            lineHeight: "1.25",
+          },
+        },
         clip: {
           "0%": {
             clipPath: "polygon(0 0, 0 0, 0 0, 0 0);",
@@ -26,8 +34,8 @@ module.exports = {
       colors: {
         spotify: {
           green: "#1DB954",
-          bg: "#f2ece4",
-          text: "#000",
+          bg: "#000",
+          text: "#fff",
           offset: "#181a1d",
           border: "rgba(0, 0, 0, 0.6)",
         },
