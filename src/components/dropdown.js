@@ -8,10 +8,8 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
     >
       <span
         onClick={() => setShowId(name)}
-        className={`flex items-center justify-center gap-2 text-center rounded-full px-3 py-1 transition-all duration-[600ms] ${
-          show === name
-            ? "bg-spotify-offset text-spotify-text"
-            : "text-spotify-text/60"
+        className={`flex items-center justify-center gap-2 text-center rounded-full px-3 py-1 transition-all duration-[600ms] hover:text-spotify-text ${
+          show === name ? "text-spotify-text" : "text-spotify-text/60"
         }`}
       >
         {name}
@@ -21,7 +19,7 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
         <div
           className={`${
             show === name && "animate-[clip_0.4s_ease_0.15s_both]"
-          } delay-300 absolute right-0 z-50 w-full h-max min-w-[550px] text-white bg-spotify-offset  max-w-max top-12 rounded-3xl overflow-hidden p-8 flex flex-col gap-5 `}
+          } delay-300 absolute right-0 mx-auto z-50 w-full h-max min-w-[550px] text-white bg-spotify-offset  max-w-max top-16 rounded-3xl overflow-hidden p-8 flex flex-col gap-5 `}
         >
           {children}
         </div>
@@ -29,3 +27,5 @@ export const Dropdown = ({ children, icon, name, setShowId, show }) => {
     </li>
   );
 };
+
+// left - 1 / 2 - translate - x - 1 / 2;

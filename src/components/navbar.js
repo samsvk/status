@@ -35,7 +35,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 z-30 flex w-full px-8 mx-auto py-14 max-w-screen-2xl">
+    <div className="fixed top-0 z-30 flex w-full px-10 mx-auto py-14">
       <div className="relative flex items-center justify-center w-max">
         <div className="flex items-center justify-center">
           <span className="relative block w-6 h-6 border-2 rounded-full z-8 bg-spotify-bg border-spotify-text" />
@@ -45,8 +45,8 @@ export default function Navbar() {
           </p>
         </div>
       </div>
-      <nav className="flex ml-auto">
-        <ul className="flex items-center justify-center w-full gap-12">
+      <nav className="flex py-3 pl-5 pr-8 ml-auto border rounded-full border-spotify-text/20">
+        <ul className="flex items-center justify-center w-full gap-10">
           <Dropdown name="About" setShowId={setShowId} show={show}>
             <h1 className="z-0 inline-block text-3xl font-bold leading-none tracking-tight text-left text-spotify-text animate-[tx_0.5s_ease_0.3s_both] will-change-transform">
               About the app
@@ -117,28 +117,6 @@ export default function Navbar() {
               </span>
             </div>
           </Dropdown>
-          <Dropdown name="Donate" setShowId={setShowId} show={show}>
-            <div className="grid grid-cols-3 gap-6">
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl bg-spotify-bg animate-[tx_0.5s_ease_0.5s_both] will-change-transform">
-                <SiKofi className="mx-auto text-3xl text-spotify-text/60" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center text-spotify-text">
-                  Kofi
-                </p>
-              </span>
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg  animate-[tx_0.5s_ease_0.6s_both] will-change-transform">
-                <SiPatreon className="mx-auto text-3xl text-spotify-text/60" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
-                  Patreon
-                </p>
-              </span>
-              <span className="flex flex-col items-center justify-center col-span-1 py-10 bg-spotify-border/5 rounded-2xl  bg-spotify-bg   animate-[tx_0.5s_ease_0.7s_both] will-change-transform">
-                <SiPaypal className="mx-auto text-3xl text-spotify-text/60" />
-                <p className="block w-full max-w-lg text-[1.05rem] font-normal leading-normal tracking-tight text-center  text-spotify-text">
-                  PayPal
-                </p>
-              </span>
-            </div>
-          </Dropdown>
           <li
             className="relative z-20 flex items-center justify-center flex-1 gap-2 whitespace-nowrap hover:cursor-pointer 
            text-[1.05rem] font-normal leading-normal tracking-tight text-spotify-text/60"
@@ -147,6 +125,13 @@ export default function Navbar() {
               Community
             </span>
           </li>
+          {/* <button
+            onClick={handleLogin}
+            className="flex items-center px-4 rounded-full py-3 whitespace-nowrap text-[1.05rem] font-normal leading-snug  w-full tracking-tight  border-2 gap-3 duration-150 max-w-max border-spotify-text/60 text-spotify-text/60 hover:border-spotify-text hover:text-spotify-text duration-600"
+          >
+            <FaSpotify className="mx-auto text-2xl rounded-full text-inherit" />
+            Connect with Spotify
+          </button> */}
         </ul>
       </nav>
     </div>

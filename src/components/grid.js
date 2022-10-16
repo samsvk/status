@@ -6,7 +6,7 @@ import { VscArrowRight } from "react-icons/vsc";
 import { AiFillPlayCircle } from "react-icons/ai";
 export default function Grid({ randomArtist }) {
   return (
-    <div className="flex flex-col w-full h-full gap-5 max-w-max">
+    <div className="flex flex-col w-full h-full gap-5 pl-20 max-w-max">
       <div className="grid w-full grid-cols-1 gap-5">
         <div className="flex w-full max-w-lg grid-span-1 min-h-[75px] max-h-[75px] gap-5">
           <div className="flex items-center justify-start flex-1 h-full p-4 border-2 rounded-full border-spotify-text">
