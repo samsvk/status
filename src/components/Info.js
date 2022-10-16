@@ -22,22 +22,20 @@ export default function Info() {
             <span className="text-spotify-text/95">discovery</span> using{" "}
             <span className="text-spotify-text/95">asynchronous</span> technology
             through <span className="text-spotify-text/90">Spotify's Web API.</span>{" "}
-            We aim to help you discover artists like{" "}
+            We help you discover artists like{" "}
             <span className="inline-flex items-center w-36 my-auto bg-black h-14 animate-[leadingImage_0.6s_ease_0.8s_both] relative align-middle">
               <img
                 src={randomArtist[0]?.mainArtistInfo.image}
                 className="box-border absolute top-0 bottom-0 left-0 right-0 z-10 object-cover object-center w-full h-full bg-black animate-[scale_0.4s_ease_0.9s_both]"
               />
             </span>{" "}
-            to already world-famous artists such as{" "}
-            <span className="inline-flex items-center w-36 my-auto bg-black h-14 animate-[leadingImage_0.6s_ease_0.8s_both] relative align-middle">
-              <img
-                src={randomArtist[1]?.mainArtistInfo.image}
-                className="box-border absolute top-0 bottom-0 left-0 right-0 z-10 object-cover object-center w-full h-full bg-black animate-[scale_0.4s_ease_0.9s_both]"
-              />
-            </span>{" "}
+            and complex playlist integration{" "}
+            <span className="font-['Tinos'] underline text-spotify-text/95 decoration-2 underline-offset-4">
+              Super Easy
+            </span>
           </div>
-          {/* <Arrows /> */}
+          {/* <Grid randomArtist={randomArtist.slice(1)} /> */}
+          <Arrows />
         </div>
       </div>
     </>

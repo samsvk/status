@@ -41,7 +41,7 @@ export default function Navbar() {
           <span className="relative block w-6 h-6 border-2 rounded-full z-8 bg-spotify-bg border-spotify-text" />
           <span className="relative z-0 block w-5 h-5 rounded-full right-3 bg-spotify-text border-spotify-text" />
           <p className="block text-[1.05rem] font-normal leading-normal tracking-tight text-spotify-text whitespace-normal">
-            Shuffle
+            hello@shuff.le
           </p>
         </div>
       </div>
@@ -147,13 +147,6 @@ export default function Navbar() {
               Community
             </span>
           </li>
-          <button
-            onClick={handleLogin}
-            className="flex items-center pl-3 pr-5 rounded-full py-3 whitespace-nowrap text-[1.05rem] font-normal leading-snug  w-full tracking-tight border border-spotify-text/60 gap-3 duration-150 max-w-max border-spotify-text/60 text-spotify-text/60 hover:border-spotify-green"
-          >
-            <FaSpotify className="mx-auto text-2xl rounded-full text-inherit" />
-            Connect with Spotify
-          </button>
         </ul>
       </nav>
     </div>
